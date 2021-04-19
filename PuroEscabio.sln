@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuroEscabio", "PuroEscabio.csproj", "{F68FF406-BCEF-4090-954D-117A1AE73977}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F68FF406-BCEF-4090-954D-117A1AE73977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F68FF406-BCEF-4090-954D-117A1AE73977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F68FF406-BCEF-4090-954D-117A1AE73977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F68FF406-BCEF-4090-954D-117A1AE73977}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C17398F-92CA-49E6-A99E-57FEFF0B4ADC}
+	EndGlobalSection
+EndGlobal
