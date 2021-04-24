@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Seguridad" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="Security.aspx.cs" Inherits="PuroEscabio.Security.Security" %>
+﻿<%@ Page Title="Seguridad" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="BackUp.aspx.cs" Inherits="PuroEscabio.Security.Security" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>

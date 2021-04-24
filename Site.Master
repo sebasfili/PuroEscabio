@@ -52,12 +52,13 @@
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Inicio</a></li>
                         <li><a runat="server" href="~/About">Sobre nosotros</a></li>
-                        <li><a runat="server" href="~/Contact">Contacto</a></li>
-                        <li><a runat="server" href="~/Security/Security">Seguridad</a></li>
+                        <li><a runat="server" href="~/Contact">Contacto</a></li>                        
                         <li><a runat="server" href="~/Security/Roles">Roles de Seguridad</a></li>
                         <li><a runat="server" href="~/Security/Users">Usuarios</a></li>
                         <li><a runat="server" href="~/Products/PackList">Lista de Packs</a></li>
                         <li><a runat="server" href="~/Products/ProductsList">Lista de Productos</a></li>
+                        <li><a runat="server" href="~/Login/Login">Log in</a></li>
+                        <li><a runat="server" href="~/Login/Register">Registrarse</a></li>
                     </ul>
                 </div>
             </div>
