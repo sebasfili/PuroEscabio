@@ -41,10 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="Compra.cs" />
+    <Compile Include="ICompra.cs" />
+    <Compile Include="ILogIn.cs" />
+    <Compile Include="IProducto.cs" />
+    <Compile Include="ISeguridad.cs" />
+    <Compile Include="LogIn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{3A0C046A-02D3-433E-9B95-2564D124AA97}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DAL\DAL.csproj">
       <Project>{82b0c243-b2e7-45d5-935a-116c09d74c2e}</Project>
       <Name>DAL</Name>
