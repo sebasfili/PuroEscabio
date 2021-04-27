@@ -1,13 +1,8 @@
-﻿using BE;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace BLL
+namespace BE.Interface
 {
-    interface ICompra
+    public interface ICompra
     {
         bool AgregarAlCarritoDeCompra(Item item);
         bool BorrarDelCarritoDeCompra(Item item);

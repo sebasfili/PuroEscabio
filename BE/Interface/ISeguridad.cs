@@ -1,9 +1,8 @@
-﻿using BE;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace BLL
+namespace BE.Interface
 {
-    interface ISeguridad
+    public interface ISeguridad
     {
         string GenerarTokenDeSesion(Usuario user);
         bool BorrarTokenDeSesion(Usuario user);

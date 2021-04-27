@@ -10,7 +10,7 @@ namespace BE
     {
         public int Id { get; set; }
         public DateTime Fecha { get; set; }
-        public List<Producto> Producto { get; set; }
+        public List<Bebidas> Producto { get; set; }
 
     }
 }

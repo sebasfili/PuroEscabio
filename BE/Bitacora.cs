@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Seguridad
+    public class Bitacora
     {
         public int Id { get; set; }
         

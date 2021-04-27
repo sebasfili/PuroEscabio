@@ -1,13 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BE;
+using BE.Interface;
+using System;
 
 namespace BLL
 {
-    public class LogIn
+    public class LogIn : ILogIn
     {
-        
+        public bool BorrarUsuario(Usuario user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Usuario ModificarUsuario(Usuario user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Usuario ObtenerLoginIn(Usuario user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Usuario RegistrarUsuario(Usuario user)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool ValidarSesion(Usuario user)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
