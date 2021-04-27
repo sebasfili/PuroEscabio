@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Item
+    class Persona
     {
         public int Id { get; set; }
-        public DateTime Fecha { get; set; }
-        public List<Producto> Producto { get; set; }
-
     }
 }

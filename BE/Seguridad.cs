@@ -8,6 +8,7 @@ namespace BE
 {
     public class Seguridad
     {
+        public int Id { get; set; }
         
     }
 }
