@@ -39,9 +39,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 			<div class="agile-login">
 				<ul>
-					<li><a href="registered.html"> Create Account </a></li>
-					<li><a href="login.html">Login</a></li>
-					<li><a href="contact.html">Help</a></li>
+					<li><a runat="server" href="~/Login/Register"> Nuevo Usuario </a></li>
+					<li><a runat="server" href="~/Login/Login">Login</a></li>
 				</ul>
 			</div>
 			<div class="product_list_header">  
@@ -130,11 +129,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="col-md-3 w3_footer_grid">
 					<h3>Categoría</h3>
 					<ul class="info"> 
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="#">Cerveza</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="#">Vino</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="#">Champagne</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="#">Aperitivo</a></li>
-						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="#">Whisky</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Beer">Cerveza</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Wine">Vino</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Champagne">Champagne</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Appetizer">Aperitivo</a></li>
+						<li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Whiskey">Whisky</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
