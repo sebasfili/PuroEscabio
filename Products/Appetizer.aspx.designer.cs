@@ -11,7 +11,7 @@ namespace PuroEscabio.Products
 {
 
 
-    public partial class ProductsList
+    public partial class Appetizer
     {
     }
 }
