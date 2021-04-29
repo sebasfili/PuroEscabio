@@ -1,7 +1,15 @@
 ﻿<%@ Page Title="Contacto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="PuroEscabio.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="about">
+    <div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+				<li><a runat="server" href="~/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio</a></li>
+				<li class="active">Contacto</li>
+			</ol>
+		</div>
+	</div>
+	<div class="about">
         <h3 class="w3_agile_header"><%: Title %></h3><br />
 		<div class="w3_agileits_contact_grids">
 			<div class="col-md-6 w3_agileits_contact_grid_left">

@@ -1,7 +1,15 @@
 ﻿<%@ Page Title="Preguntas Frecuentes" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FrequentQuestions.aspx.cs" Inherits="PuroEscabio.FrequentQuestions" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="about">
+    <div class="breadcrumbs">
+		<div class="container">
+			<ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+				<li><a runat="server" href="~/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Inicio</a></li>
+				<li class="active">Preguntas Frecuentes</li>
+			</ol>
+		</div>
+	</div>
+	<div class="about">
 		<div class="container">
 			<h3 class="w3_agile_header"><%: Title %></h3>
 			<div class="about-agileinfo w3layouts">
