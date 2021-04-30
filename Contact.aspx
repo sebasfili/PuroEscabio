@@ -1,4 +1,6 @@
-﻿<%@ Page Title="Contacto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="PuroEscabio.Contact" %>
+﻿
+
+<%@ Page Title="Contacto" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contact.aspx.cs" Inherits="PuroEscabio.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="breadcrumbs">
@@ -41,3 +43,4 @@
 		</div>
 	</div>
 </asp:Content>
+
