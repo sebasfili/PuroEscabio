@@ -1,4 +1,5 @@
 ﻿using BE;
+using BE.Composite;
 using BE.Interface;
 using System.Collections.Generic;
 
@@ -42,6 +43,11 @@ namespace BLL
         }
 
         public List<string> ObtenerBackUps()
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public List<PermisoComponent> ObtenerPermisosDeUsuario(Usuario user)
         {
             throw new System.NotImplementedException();
         }

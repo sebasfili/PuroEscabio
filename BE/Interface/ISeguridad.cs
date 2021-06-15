@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using BE.Composite;
+using System.Collections.Generic;
 
 namespace BE.Interface
 {
@@ -15,5 +16,7 @@ namespace BE.Interface
         bool RestoreBD(string BDName);
         List<string> ObtenerBackUps();
         string EncriptarClaveDeUsuario(string password);
+
+       List<PermisoComponent> ObtenerPermisosDeUsuario(Usuario user);
     }
 }

@@ -12,9 +12,7 @@ namespace PuroEscabio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //descomentar para probar el singleton de sql server
-            //var a = new LogIn();
-
+           
         }
     }
 }
