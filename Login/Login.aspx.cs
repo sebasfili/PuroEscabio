@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using BE;
+using BLL;
+using System;
 
 namespace PuroEscabio.Login
 {
@@ -12,6 +9,16 @@ namespace PuroEscabio.Login
         protected void Page_Load(object sender, EventArgs e)
         {
 
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            var logIn = new LogIn();
+            var usuario = new Usuario();
+            usuario.Password = txtPassword.Text;
+            usuario.NombreDeUsuario = txtUsuario.Text;
+
+            Usuario usuarioActual = logIn.ObtenerLoginIn(usuario);
         }
     }
 }

@@ -25,7 +25,9 @@ namespace BLL
 
         public Usuario ObtenerLoginIn(Usuario user)
         {
-            throw new NotImplementedException();
+            var logIn = new DAL.LogIn();
+            return logIn.ObtenerLogIn(user);
+
         }
 
         public Usuario RegistrarUsuario(Usuario user)

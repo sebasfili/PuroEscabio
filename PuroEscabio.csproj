@@ -280,6 +280,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="BE\BE.csproj">
+      <Project>{3a0c046a-02d3-433e-9b95-2564d124aa97}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
     <ProjectReference Include="BLL\BLL.csproj">
       <Project>{969f48e2-3fd6-4273-94ac-605cac67ecef}</Project>
       <Name>BLL</Name>

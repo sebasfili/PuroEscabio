@@ -15,12 +15,14 @@
 		
 			<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
 				<form>
-					<input type="email" placeholder="Email" required=" " >
-					<input type="password" placeholder="Contraseña" required=" " >
+                    <asp:TextBox runat="server" Id="txtUsuario" AutoCompleteType="Email" placeholder="e-mail"/>
+					<asp:TextBox runat="server" Id="txtPassword" placeholder="contraseña"/>
+					
 					<div class="forgot">
 						<a href="#">¿Olvido la contraseña?</a>
 					</div>
-					<input type="submit" value="Ingresar">
+                    <asp:Button Text="Ingresar" runat="server" OnClick="Unnamed1_Click" />
+					
 				</form>
 			</div>
 			<h4>¿Todavía no esta registrado?</h4>
