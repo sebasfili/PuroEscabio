@@ -13,29 +13,29 @@ namespace BLL
             //var a = DBRepository.Instance;
             
         }
-        public bool BorrarUsuario(Usuario user)
+        public bool BorrarUsuario(UsuarioBE user)
         {
             throw new NotImplementedException();
         }
 
-        public Usuario ModificarUsuario(Usuario user)
+        public UsuarioBE ModificarUsuario(UsuarioBE user)
         {
             throw new NotImplementedException();
         }
 
-        public Usuario ObtenerLoginIn(Usuario user)
+        public UsuarioBE ObtenerLoginIn(UsuarioBE user)
         {
             var logIn = new DAL.LogIn();
             return logIn.ObtenerLogIn(user);
 
         }
 
-        public Usuario RegistrarUsuario(Usuario user)
+        public UsuarioBE RegistrarUsuario(UsuarioBE user)
         {
             throw new NotImplementedException();
         }
 
-        public bool ValidarSesion(Usuario user)
+        public bool ValidarSesion(UsuarioBE user)
         {
             throw new NotImplementedException();
         }

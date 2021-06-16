@@ -4,11 +4,11 @@ namespace BE.Interface
 {
     public interface IProducto
     {
-        Bebidas CrearProducto(Bebidas product);
-        List<Bebidas> ObtenerProductos(Bebidas product);
-        bool BorrarProductos(List<Bebidas> products);
-        Bebidas ModificarProducto(Bebidas product);
-        List<Bebidas> ObtenerListaDePackDeProductos();
-        List<Bebidas> ObtenerPackDeProductos(Bebidas product);
+        BebidasBE CrearProducto(BebidasBE product);
+        List<BebidasBE> ObtenerProductos(BebidasBE product);
+        bool BorrarProductos(List<BebidasBE> products);
+        BebidasBE ModificarProducto(BebidasBE product);
+        List<BebidasBE> ObtenerListaDePackDeProductos();
+        List<BebidasBE> ObtenerPackDeProductos(BebidasBE product);
     }
 }

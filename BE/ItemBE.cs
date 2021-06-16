@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Usuario
+    public class ItemBE
     {
         public int Id { get; set; }
-        public string NombreDeUsuario { get; set; }
-        public string Password { get; set; }
-        public Perfil PerfilDeUsuario { get; set; }
+        public DateTime Fecha { get; set; }
+        public List<BebidasBE> Producto { get; set; }
+
     }
 }

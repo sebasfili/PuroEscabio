@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Persona
+    public class PersonaBE
     {
         public int Id { get; set; }
         public string Nombre { get; set; }

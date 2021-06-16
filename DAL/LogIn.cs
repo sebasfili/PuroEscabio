@@ -1,20 +1,43 @@
 ﻿using BE;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
     public class LogIn
     {
-        public Usuario ObtenerLogIn(Usuario user)
+        public UsuarioBE ObtenerLogIn(UsuarioBE user)
         {
             /*generar un linq a la base para obtener el usuario con rol y cargarlo en la sesion
              Obtener las patentes
             */
-            return null;
+            using (var dbContext = new PuroEscabioDataContext())
+            {
+                var resultado = (from usuario in dbContext.Usuarios
+                                 where usuario.Usuario1.ToLower().Trim() == user.NombreDeUsuario.ToLower().Trim()
+                                  && string.Compare(usuario.Contraseña, user.Password) == 0
+                                 select usuario).FirstOrDefault();
+                if (resultado != null)
+                {
+                    var usuarioActual = new UsuarioBE()
+                    {
+                        Id = resultado.Id,
+                        NombreDeUsuario = resultado.Usuario1,
+                        Password = resultado.Contraseña
+                    };
+
+                    return usuarioActual;
+                }
+                else
+                {
+                    return new UsuarioBE()
+                    {
+                        Id = -1,
+                        NombreDeUsuario = "test",
+                        Password = "test-password"
+                    };
+                }
+            }
+
         }
     }
 }

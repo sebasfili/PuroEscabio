@@ -48,12 +48,12 @@
     <Compile Include="Interface\ILogIn.cs" />
     <Compile Include="Interface\IProducto.cs" />
     <Compile Include="Interface\ISeguridad.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Perfil.cs" />
-    <Compile Include="Persona.cs" />
-    <Compile Include="Bebidas.cs" />
-    <Compile Include="Bitacora.cs" />
-    <Compile Include="Usuario.cs" />
+    <Compile Include="ItemBE.cs" />
+    <Compile Include="PerfilBE.cs" />
+    <Compile Include="PersonaBE.cs" />
+    <Compile Include="BebidasBE.cs" />
+    <Compile Include="BitacoraBE.cs" />
+    <Compile Include="UsuarioBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

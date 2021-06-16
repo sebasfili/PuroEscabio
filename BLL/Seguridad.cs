@@ -7,7 +7,7 @@ namespace BLL
 {
     public class Seguridad : ISeguridad
     {
-        public bool BorrarTokenDeSesion(Usuario user)
+        public bool BorrarTokenDeSesion(UsuarioBE user)
         {
             throw new System.NotImplementedException();
         }
@@ -17,7 +17,7 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public void CrearBitacora(Usuario user)
+        public void CrearBitacora(UsuarioBE user)
         {
             throw new System.NotImplementedException();
         }
@@ -37,7 +37,7 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public string GenerarTokenDeSesion(Usuario user)
+        public string GenerarTokenDeSesion(UsuarioBE user)
         {
             throw new System.NotImplementedException();
         }
@@ -47,12 +47,12 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public List<PermisoComponent> ObtenerPermisosDeUsuario(Usuario user)
+        public List<PermisoComponent> ObtenerPermisosDeUsuario(UsuarioBE user)
         {
             throw new System.NotImplementedException();
         }
 
-        public string RenovarTokenDeSesion(Usuario user)
+        public string RenovarTokenDeSesion(UsuarioBE user)
         {
             throw new System.NotImplementedException();
         }
@@ -62,7 +62,7 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public bool ValidarIntegridadDeAplicacion(Usuario user)
+        public bool ValidarIntegridadDeAplicacion(UsuarioBE user)
         {
             throw new System.NotImplementedException();
         }

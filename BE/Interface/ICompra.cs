@@ -4,10 +4,10 @@ namespace BE.Interface
 {
     public interface ICompra
     {
-        bool AgregarAlCarritoDeCompra(Item item);
-        bool BorrarDelCarritoDeCompra(Item item);
-        bool ModificarCarritoDeCompra(Item item);
-        bool GuardarCarritoDeCompra(Item item);
-        List<Item> ObtenerCarritoDeCompra(Usuario user);//listado de compras realizadas pero no pagas.
+        bool AgregarAlCarritoDeCompra(ItemBE item);
+        bool BorrarDelCarritoDeCompra(ItemBE item);
+        bool ModificarCarritoDeCompra(ItemBE item);
+        bool GuardarCarritoDeCompra(ItemBE item);
+        List<ItemBE> ObtenerCarritoDeCompra(UsuarioBE user);//listado de compras realizadas pero no pagas.
     }
 }

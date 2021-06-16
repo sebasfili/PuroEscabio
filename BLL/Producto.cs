@@ -6,32 +6,32 @@ namespace BLL
 {
     public class Producto : IProducto
     {
-        public bool BorrarProductos(List<Bebidas> products)
+        public bool BorrarProductos(List<BebidasBE> products)
         {
             throw new System.NotImplementedException();
         }
 
-        public Bebidas CrearProducto(Bebidas product)
+        public BebidasBE CrearProducto(BebidasBE product)
         {
             throw new System.NotImplementedException();
         }
 
-        public Bebidas ModificarProducto(Bebidas product)
+        public BebidasBE ModificarProducto(BebidasBE product)
         {
             throw new System.NotImplementedException();
         }
 
-        public List<Bebidas> ObtenerListaDePackDeProductos()
+        public List<BebidasBE> ObtenerListaDePackDeProductos()
         {
             throw new System.NotImplementedException();
         }
 
-        public List<Bebidas> ObtenerPackDeProductos(Bebidas product)
+        public List<BebidasBE> ObtenerPackDeProductos(BebidasBE product)
         {
             throw new System.NotImplementedException();
         }
 
-        public List<Bebidas> ObtenerProductos(Bebidas product)
+        public List<BebidasBE> ObtenerProductos(BebidasBE product)
         {
             throw new System.NotImplementedException();
         }

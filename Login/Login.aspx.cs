@@ -11,14 +11,17 @@ namespace PuroEscabio.Login
 
         }
 
-        protected void Unnamed1_Click(object sender, EventArgs e)
+        protected void btnIngresar_Click(object sender, EventArgs e)
         {
             var logIn = new LogIn();
-            var usuario = new Usuario();
+            var usuario = new UsuarioBE();
             usuario.Password = txtPassword.Text;
             usuario.NombreDeUsuario = txtUsuario.Text;
 
-            Usuario usuarioActual = logIn.ObtenerLoginIn(usuario);
+            UsuarioBE usuarioActual = logIn.ObtenerLoginIn(usuario);
+            Session["UsuarioLogueado"] = usuarioActual;
+
+            Response.Redirect("/Default.aspx");
         }
     }
 }

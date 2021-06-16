@@ -2,10 +2,10 @@
 {
     public interface ILogIn
     {
-        Usuario ObtenerLoginIn(Usuario user);
-        Usuario RegistrarUsuario(Usuario user);
-        bool ValidarSesion(Usuario user);        
-        bool BorrarUsuario(Usuario user);
-        Usuario ModificarUsuario(Usuario user);
+        UsuarioBE ObtenerLoginIn(UsuarioBE user);
+        UsuarioBE RegistrarUsuario(UsuarioBE user);
+        bool ValidarSesion(UsuarioBE user);        
+        bool BorrarUsuario(UsuarioBE user);
+        UsuarioBE ModificarUsuario(UsuarioBE user);
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Bebidas
+    public class BebidasBE
     {
         /// <summary>
         /// Id de la bebida

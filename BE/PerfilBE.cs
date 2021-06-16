@@ -1,6 +1,6 @@
 ﻿namespace BE
 {
-    public class Perfil
+    public class PerfilBE
     {
         public int Id { get; set; }
         public string Descripcion {get;set;}

@@ -14,14 +14,14 @@
 			<h2>Inicio de Sesión</h2>
 		
 			<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
-				<form>
-                    <asp:TextBox runat="server" Id="txtUsuario" AutoCompleteType="Email" placeholder="e-mail"/>
-					<asp:TextBox runat="server" Id="txtPassword" placeholder="contraseña"/>
+				<form runat="server">
+                    <asp:TextBox runat="server" ID="txtUsuario"  TextMode="Email" placeholder="e-mail"/>
+					<asp:TextBox runat="server" ID="txtPassword" TextMode="Password" placeholder="contraseña"/>
 					
 					<div class="forgot">
 						<a href="#">¿Olvido la contraseña?</a>
 					</div>
-                    <asp:Button Text="Ingresar" runat="server" OnClick="Unnamed1_Click" />
+                    <asp:Button Text="Ingresar" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click"/>
 					
 				</form>
 			</div>

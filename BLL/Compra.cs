@@ -10,27 +10,27 @@ namespace BLL
     /// </summary>
     public class Compra : ICompra
     {
-        public bool AgregarAlCarritoDeCompra(Item item)
+        public bool AgregarAlCarritoDeCompra(ItemBE item)
         {
             throw new NotImplementedException();
         }
 
-        public bool BorrarDelCarritoDeCompra(Item item)
+        public bool BorrarDelCarritoDeCompra(ItemBE item)
         {
             throw new NotImplementedException();
         }
 
-        public bool GuardarCarritoDeCompra(Item item)
+        public bool GuardarCarritoDeCompra(ItemBE item)
         {
             throw new NotImplementedException();
         }
 
-        public bool ModificarCarritoDeCompra(Item item)
+        public bool ModificarCarritoDeCompra(ItemBE item)
         {
             throw new NotImplementedException();
         }
 
-        public List<Item> ObtenerCarritoDeCompra(Usuario user)
+        public List<ItemBE> ObtenerCarritoDeCompra(UsuarioBE user)
         {
             throw new NotImplementedException();
         }
