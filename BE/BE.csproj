@@ -53,6 +53,7 @@
     <Compile Include="PersonaBE.cs" />
     <Compile Include="BebidasBE.cs" />
     <Compile Include="BitacoraBE.cs" />
+    <Compile Include="RolPatenteBE.cs" />
     <Compile Include="UsuarioBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

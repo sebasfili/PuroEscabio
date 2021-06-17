@@ -49,7 +49,12 @@ namespace BLL
 
         public List<PermisoComponent> ObtenerPermisosDeUsuario(UsuarioBE user)
         {
-            throw new System.NotImplementedException();
+            var permisos = new DAL.Seguridad();
+            var rolPatenteResultado = permisos.ObtenerPermisosDeUsuario(user);
+
+
+
+            return null;
         }
 
         public string RenovarTokenDeSesion(UsuarioBE user)
