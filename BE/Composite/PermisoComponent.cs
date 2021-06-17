@@ -8,10 +8,17 @@ namespace BE.Composite
 {
     public abstract class PermisoComponent
     {
-        public abstract void Agregar(PatenteLeaf elemento);
-        public abstract void Borrar(PatenteLeaf elemento);
-        public abstract void Modificar(PatenteLeaf elemento);
-        public abstract void Mostrar(PatenteLeaf elemento);
+        private string _name;
+
+        // Constructor
+
+        public PermisoComponent(string name)
+        {
+            this._name = name;
+        }
+        public abstract void Agregar(PermisoComponent elemento);
+        public abstract void Borrar(PermisoComponent elemento);
+       
 
     }
 }

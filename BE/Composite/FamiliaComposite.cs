@@ -8,24 +8,23 @@ namespace BE.Composite
 {
     public class FamiliaComposite : PermisoComponent
     {
-        public override void Agregar(PatenteLeaf elemento)
+        private List<PermisoComponent> _hoja = new List<PermisoComponent>();
+
+        public FamiliaComposite(string nombre)
+            : base(nombre)
         {
-            throw new NotImplementedException();
+
+        }
+        public override void Agregar(PermisoComponent elemento)
+        {
+            _hoja.Add(elemento);
         }
 
-        public override void Borrar(PatenteLeaf elemento)
+        public override void Borrar(PermisoComponent elemento)
         {
-            throw new NotImplementedException();
+            _hoja.Remove(elemento);
         }
 
-        public override void Modificar(PatenteLeaf elemento)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Mostrar(PatenteLeaf elemento)
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

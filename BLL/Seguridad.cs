@@ -50,9 +50,15 @@ namespace BLL
         public List<PermisoComponent> ObtenerPermisosDeUsuario(UsuarioBE user)
         {
             var permisos = new DAL.Seguridad();
-            var rolPatenteResultado = permisos.ObtenerPermisosDeUsuario(user);
+            var rolPatenteResultados = permisos.ObtenerPermisosDeUsuario(user);
+            var flia = new FamiliaComposite(rolPatenteResultados[0].Rol);
 
+            foreach (var rolPatente in rolPatenteResultados)
+            {
+                var patente = new PatenteLeaf(rolPatente.DescripcionPatente);
+                flia.Agregar(patente);
 
+            }
 
             return null;
         }

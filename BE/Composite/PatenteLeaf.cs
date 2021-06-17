@@ -8,24 +8,19 @@ namespace BE.Composite
 {
     public class PatenteLeaf : PermisoComponent
     {
-        public override void Agregar(PatenteLeaf elemento)
+        public PatenteLeaf(string nombre)
+            : base(nombre)
+        { }
+
+        public override void Agregar(PermisoComponent elemento)
         {
             throw new NotImplementedException();
         }
 
-        public override void Borrar(PatenteLeaf elemento)
+        public override void Borrar(PermisoComponent elemento)
         {
             throw new NotImplementedException();
         }
 
-        public override void Modificar(PatenteLeaf elemento)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Mostrar(PatenteLeaf elemento)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
