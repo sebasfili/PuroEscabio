@@ -46,8 +46,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li>
                             <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
                         </li>
-                        <li>
-                            <asp:LinkButton Text="Cerrar Sesión" PostBackUrl="Login/Login.aspx" runat="server" ID="linkCerrarSesion"  /></li>
+                        
 
                     </ul>
                 </div>
