@@ -22,5 +22,12 @@ namespace BE.Composite
             throw new NotImplementedException();
         }
 
+        public override List<PermisoComponent> PermisoComponents()
+        {
+            var hojaActual = new List<PermisoComponent>();
+            hojaActual.Add(this);
+
+            return hojaActual;
+        }
     }
 }

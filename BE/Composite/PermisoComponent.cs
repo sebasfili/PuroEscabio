@@ -18,7 +18,7 @@ namespace BE.Composite
         }
         public abstract void Agregar(PermisoComponent elemento);
         public abstract void Borrar(PermisoComponent elemento);
-       
+        public abstract List<PermisoComponent> PermisoComponents();
 
     }
 }

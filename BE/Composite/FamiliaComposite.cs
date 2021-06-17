@@ -8,7 +8,7 @@ namespace BE.Composite
 {
     public class FamiliaComposite : PermisoComponent
     {
-        private List<PermisoComponent> _hoja = new List<PermisoComponent>();
+        private List<PermisoComponent> _hojas = new List<PermisoComponent>();
 
         public FamiliaComposite(string nombre)
             : base(nombre)
@@ -17,14 +17,17 @@ namespace BE.Composite
         }
         public override void Agregar(PermisoComponent elemento)
         {
-            _hoja.Add(elemento);
+            _hojas.Add(elemento);
         }
 
         public override void Borrar(PermisoComponent elemento)
         {
-            _hoja.Remove(elemento);
+            _hojas.Remove(elemento);
         }
 
-        
+        public override List<PermisoComponent> PermisoComponents()
+        {
+            return _hojas;
+        }
     }
 }

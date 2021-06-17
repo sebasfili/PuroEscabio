@@ -50,6 +50,7 @@ namespace BLL
         public List<PermisoComponent> ObtenerPermisosDeUsuario(UsuarioBE user)
         {
             var permisos = new DAL.Seguridad();
+
             var rolPatenteResultados = permisos.ObtenerPermisosDeUsuario(user);
             var flia = new FamiliaComposite(rolPatenteResultados[0].Rol);
 
@@ -60,7 +61,7 @@ namespace BLL
 
             }
 
-            return null;
+            return flia.PermisoComponents();
         }
 
         public string RenovarTokenDeSesion(UsuarioBE user)
