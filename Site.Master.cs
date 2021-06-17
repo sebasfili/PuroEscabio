@@ -17,10 +17,7 @@ namespace PuroEscabio
                                           string.Format("Usuario Actual: {0}", (a as UsuarioBE).NombreDeUsuario) : string.Empty;
             }
         }
+       
 
-        protected void CerrarSesion_onClick(object sender, EventArgs e)
-        {
-            FormsAuthentication.SignOut();
-        }
     }
 }

@@ -47,21 +47,14 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public List<PermisoComponent> ObtenerPermisosDeUsuario(UsuarioBE user)
+        public List<RolPatenteBE> ObtenerPermisosDeUsuario(UsuarioBE user)
         {
             var permisos = new DAL.Seguridad();
 
             var rolPatenteResultados = permisos.ObtenerPermisosDeUsuario(user);
-            var flia = new FamiliaComposite(rolPatenteResultados[0].Rol);
 
-            foreach (var rolPatente in rolPatenteResultados)
-            {
-                var patente = new PatenteLeaf(rolPatente.DescripcionPatente);
-                flia.Agregar(patente);
 
-            }
-
-            return flia.PermisoComponents();
+            return rolPatenteResultados;
         }
 
         public string RenovarTokenDeSesion(UsuarioBE user)

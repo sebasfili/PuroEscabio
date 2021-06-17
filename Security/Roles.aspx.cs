@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BE;
+using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,15 @@ namespace PuroEscabio.Security
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var permisos = new Seguridad();
+            var usuario = Session["UsuarioLogueado"] as UsuarioBE;
 
+            var resultado = permisos.ObtenerPermisosDeUsuario(usuario);
+
+            gvPermisos.DataSource = resultado;
+            
+            gvPermisos.AutoGenerateColumns = true;
+            gvPermisos.DataBind();
         }
     }
 }

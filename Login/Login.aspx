@@ -14,7 +14,7 @@
 			<h2>Inicio de Sesión</h2>
 		
 			<div class="login-form-grids animated wow slideInUp" data-wow-delay=".5s">
-				<form runat="server">
+				
                     <asp:TextBox runat="server" ID="txtUsuario"  TextMode="Email" placeholder="e-mail"/>
 					<asp:TextBox runat="server" ID="txtPassword" TextMode="Password" placeholder="contraseña"/>
 					
@@ -23,7 +23,7 @@
 					</div>
                     <asp:Button Text="Ingresar" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click"/>
 					
-				</form>
+			
 			</div>
 			<h4>¿Todavía no esta registrado?</h4>
 			<p><a runat="server" href="#">Registrarse aquí</a> o vaya al <a runat="server" href="~/">Inicio<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>

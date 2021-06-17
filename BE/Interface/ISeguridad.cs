@@ -17,6 +17,6 @@ namespace BE.Interface
         List<string> ObtenerBackUps();
         string EncriptarClaveDeUsuario(string password);
 
-       List<PermisoComponent> ObtenerPermisosDeUsuario(UsuarioBE user);
+       List<RolPatenteBE> ObtenerPermisosDeUsuario(UsuarioBE user);
     }
 }

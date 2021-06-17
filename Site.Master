@@ -34,83 +34,82 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-    <div class="agileits_header">
-        <div class="container">
-            <div class="w3l_offers">
-            </div>
-            <div class="agile-login">
-                <ul>
-                    <li><a runat="server" href="~/Login/Register">Nuevo Usuario </a></li>
-                    <li><a runat="server" href="~/Login/Login">Login</a></li>
-                    <li>
-                        <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
-                    </li>
-                    <li>
-                        <asp:HyperLink NavigateUrl="navigateurl" runat="server" Text="Cerrar Sesi&oacute;n" OnClick="CerrarSesion_onClick"/>
-                        <%--<asp:LinkButton Text="Cerrar Sesi&oacute;n" ID="linkCerrarSesion" runat="server" OnClick="CerrarSesion_onClick" />--%>
-                        
-                    </li>
-                </ul>
-            </div>
-            <div class="product_list_header">
-                <form action="#" method="post" class="last">
+    <form runat="server" id="formPrincipal">
+        <div class="agileits_header">
+            <div class="container">
+                <div class="w3l_offers">
+                </div>
+                <div class="agile-login">
+                    <ul>
+                        <li><a runat="server" href="~/Login/Register">Nuevo Usuario </a></li>
+                        <li><a runat="server" href="~/Login/Login">Login</a></li>
+                        <li>
+                            <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
+                        </li>
+                        <li>
+                            <asp:LinkButton Text="Cerrar Sesión" PostBackUrl="Login/Login.aspx" runat="server" ID="linkCerrarSesion"  /></li>
+
+                    </ul>
+                </div>
+                <div class="product_list_header">
                     <input type="hidden" name="cmd" value="_cart">
                     <input type="hidden" name="display" value="1">
                     <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-                </form>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="logo_products">
-        <div class="container">
-            <div class="w3ls_logo_products_left1">
-                <ul class="phone_email">
-                </ul>
-            </div>
-            <div class="w3ls_logo_products_left">
-                <h1><a runat="server" href="~/">Puro Escabio</a></h1>
-            </div>
-            <div class="w3l_search">
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <!-- //header -->
-    <!-- navigation -->
-    <div class="navigation-agileits">
-        <div class="container">
-            <nav class="navbar navbar-default">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header nav_2">
-                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                 </div>
-                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a runat="server" href="~/" class="act">Inicio</a></li>
-                        <li class="active"><a runat="server" href="~/About" class="act">Sobre Nosotros</a></li>
-                        <li class="active"><a runat="server" href="~/Contact" class="act">Contacto</a></li>
-                        <li class="active"><a runat="server" href="~/Security/Roles" class="act">Role de Seguridad</a></li>
-                        <li class="active"><a runat="server" href="~/Security/Users" class="act">Usuarios</a></li>
-                        <li class="active"><a runat="server" href="~/Products/ProductsList" class="act">Lista de Productos</a></li>
-                        <li class="active"><a runat="server" href="~/Products/PackList" class="act">Lista de Packs</a></li>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="logo_products">
+            <div class="container">
+                <div class="w3ls_logo_products_left1">
+                    <ul class="phone_email">
                     </ul>
                 </div>
-            </nav>
+                <div class="w3ls_logo_products_left">
+                    <h1><a runat="server" href="~/">Puro Escabio</a></h1>
+                </div>
+                <div class="w3l_search">
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
         </div>
-    </div>
-    <!-- //main-slider -->
-    <!-- //top-header and slider -->
-    <!-- top-brands -->
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
+        <!-- //header -->
+        <!-- navigation -->
+        <div class="navigation-agileits">
+            <div class="container">
+                <nav class="navbar navbar-default">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header nav_2">
+                        <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a runat="server" href="~/" class="act">Inicio</a></li>
+                            <li class="active"><a runat="server" href="~/About" class="act">Sobre Nosotros</a></li>
+                            <li class="active"><a runat="server" href="~/Contact" class="act">Contacto</a></li>
+                            <li class="active"><a runat="server" href="~/Security/Roles" class="act">Role de Seguridad</a></li>
+                            <li class="active"><a runat="server" href="~/Security/Users" class="act">Usuarios</a></li>
+                            <li class="active"><a runat="server" href="~/Products/ProductsList" class="act">Lista de Productos</a></li>
+                            <li class="active"><a runat="server" href="~/Products/PackList" class="act">Lista de Packs</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <!-- //main-slider -->
+        <!-- //top-header and slider -->
+        <!-- top-brands -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
     <!-- //new -->
     <!-- //footer -->
     <div class="footer">
