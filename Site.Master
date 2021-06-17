@@ -34,7 +34,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-    <form runat="server" id="formPrincipal">
+   
         <div class="agileits_header">
             <div class="container">
                 <div class="w3l_offers">
@@ -42,12 +42,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="agile-login">
                     <ul>
                         <li><a runat="server" href="~/Login/Register">Nuevo Usuario </a></li>
-                        <li><a runat="server" href="~/Login/Login">Login</a></li>
+                        <li><a runat="server" href="~/Login/Login" visible="true" id="aIngresar">Login</a></li>
                         <li>
                             <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
                         </li>
-                        
-
+                         <li><a runat="server" id="aCerrarSesion" visible="false">Cerrar Sesi&oacute;n</a></li>
                     </ul>
                 </div>
                 <div class="product_list_header">
@@ -102,7 +101,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </nav>
             </div>
         </div>
-
+     <form runat="server" id="formPrincipal">
         <!-- //main-slider -->
         <!-- //top-header and slider -->
         <!-- top-brands -->

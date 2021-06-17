@@ -2,6 +2,7 @@
 using System;
 using System.Web.Security;
 using System.Web.UI;
+using System.Web.UI.HtmlControls;
 
 namespace PuroEscabio
 {
@@ -9,15 +10,26 @@ namespace PuroEscabio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var a = Session["UsuarioLogueado"];
+            aCerrarSesion.ServerClick += new EventHandler(this.aCerrarSesion_Click);
+            var usuarioActual = Session["UsuarioLogueado"];
 
-            if (a != null)
+            if (usuarioActual != null)
             {
-                lblUsuarioLogueado.Text = (a as UsuarioBE).NombreDeUsuario != null ?
-                                          string.Format("Usuario Actual: {0}", (a as UsuarioBE).NombreDeUsuario) : string.Empty;
+                aCerrarSesion.Visible = true;
+                aIngresar.Visible = false;
+                lblUsuarioLogueado.Text = (usuarioActual as UsuarioBE).NombreDeUsuario != null ?
+                                          string.Format("Usuario Actual: {0}", (usuarioActual as UsuarioBE).NombreDeUsuario) : string.Empty;
             }
         }
-       
+
+        protected void aCerrarSesion_Click(Object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+            Session.Clear();
+            Session.Abandon();
+
+        }
 
     }
 }
