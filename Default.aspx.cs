@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,12 @@ namespace PuroEscabio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            var usuarioLogueado = Session["UsuarioLogueado"] as UsuarioBE;
+
+            lblRolUsuario.Text = usuarioLogueado?.PerfilDeUsuario?.Descripcion;
+
         }
+
+      
     }
 }
