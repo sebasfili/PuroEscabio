@@ -1,10 +1,7 @@
 ﻿using BE;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace PuroEscabio
 {
@@ -19,6 +16,11 @@ namespace PuroEscabio
                 lblUsuarioLogueado.Text = (a as UsuarioBE).NombreDeUsuario != null ?
                                           string.Format("Usuario Actual: {0}", (a as UsuarioBE).NombreDeUsuario) : string.Empty;
             }
+        }
+
+        protected void CerrarSesion_onClick(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
         }
     }
 }

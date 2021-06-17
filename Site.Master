@@ -43,7 +43,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <li><a runat="server" href="~/Login/Register">Nuevo Usuario </a></li>
                     <li><a runat="server" href="~/Login/Login">Login</a></li>
                     <li>
-                        <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" /></li>
+                        <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
+                    </li>
+                    <li>
+                        <asp:HyperLink NavigateUrl="navigateurl" runat="server" Text="Cerrar Sesi&oacute;n" OnClick="CerrarSesion_onClick"/>
+                        <%--<asp:LinkButton Text="Cerrar Sesi&oacute;n" ID="linkCerrarSesion" runat="server" OnClick="CerrarSesion_onClick" />--%>
+                        
+                    </li>
                 </ul>
             </div>
             <div class="product_list_header">

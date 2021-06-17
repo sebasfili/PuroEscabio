@@ -39,12 +39,7 @@ namespace DAL
                 }
                 else
                 {
-                    return new UsuarioBE()
-                    {
-                        Id = -1,
-                        NombreDeUsuario = "test",
-                        Password = "test-password"
-                    };
+                    return null;
                 }
             }
 

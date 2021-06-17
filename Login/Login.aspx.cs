@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using System;
+using System.Web.Security;
 
 namespace PuroEscabio.Login
 {
@@ -19,9 +20,18 @@ namespace PuroEscabio.Login
             usuario.NombreDeUsuario = txtUsuario.Text;
 
             UsuarioBE usuarioActual = logIn.ObtenerLoginIn(usuario);
-            Session["UsuarioLogueado"] = usuarioActual;
 
-            Response.Redirect("/Default.aspx");
+            if (usuarioActual != null)
+            {                
+                FormsAuthentication.RedirectFromLoginPage(txtUsuario.Text,false);
+                Session["UsuarioLogueado"] = usuarioActual;
+
+             
+            }
+            else
+            {
+
+            }
         }
     }
 }
