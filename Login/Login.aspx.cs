@@ -26,6 +26,7 @@ namespace PuroEscabio.Login
 
             if (usuarioActual != null)
             {
+                Session["UsuarioLogueado"] = usuarioActual;
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, txtUsuario.Text, DateTime.Now, DateTime.Now.AddMinutes(2880), false, usuarioActual.PerfilDeUsuario.Descripcion, FormsAuthentication.FormsCookiePath);
                 string hash = FormsAuthentication.Encrypt(ticket);
                 HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, hash);
@@ -37,11 +38,11 @@ namespace PuroEscabio.Login
                 Response.Cookies.Add(cookie);
                 Response.Redirect(FormsAuthentication.GetRedirectUrl(txtUsuario.Text, false));
                 
-                Session["UsuarioLogueado"] = usuarioActual;
+                
             }
             else
-            { //mostrar un error
-
+            {
+                lblErrorLogin.Text = "El usuario y/o contraseña ingresado es incorrecto";
             }
         }
     }
