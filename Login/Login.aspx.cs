@@ -27,7 +27,10 @@ namespace PuroEscabio.Login
 
             if (usuarioActual != null)
             {
+                var seguridad = new Seguridad();
+                seguridad.CrearBitacora(usuarioActual, "Ingresó");
                 Session["UsuarioLogueado"] = usuarioActual;
+
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, txtUsuario.Text, DateTime.Now, DateTime.Now.AddMinutes(2880), false, usuarioActual.PerfilDeUsuario.Descripcion, FormsAuthentication.FormsCookiePath);
                 string hash = FormsAuthentication.Encrypt(ticket);
                 HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, hash);

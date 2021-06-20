@@ -1,8 +1,8 @@
 ﻿using BE;
+using BLL;
 using System;
 using System.Web.Security;
 using System.Web.UI;
-using System.Web.UI.HtmlControls;
 
 namespace PuroEscabio
 {
@@ -12,23 +12,22 @@ namespace PuroEscabio
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+
+            aCerrarSesion.ServerClick += new EventHandler(this.aCerrarSesion_Click);
+            usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
+
+            if (usuarioActual != null)
             {
-                aCerrarSesion.ServerClick += new EventHandler(this.aCerrarSesion_Click);
-                usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
-
-                if (usuarioActual != null)
-                {
-                    aCerrarSesion.Visible = true;
-                    aIngresar.Visible = false;
-                    lblUsuarioLogueado.Text = (usuarioActual as UsuarioBE).NombreDeUsuario != null ?
-                                              string.Format("Usuario Actual: {0}", (usuarioActual as UsuarioBE).NombreDeUsuario) : string.Empty;
+                aCerrarSesion.Visible = true;
+                aIngresar.Visible = false;
+                lblUsuarioLogueado.Text = (usuarioActual as UsuarioBE).NombreDeUsuario != null ?
+                                          string.Format("Usuario Actual: {0}", usuarioActual.NombreDeUsuario) : string.Empty;
 
 
-                }
-
-                ValidarMenu(); 
             }
+
+            ValidarMenu();
+
         }
 
         private void ValidarMenu()
@@ -61,6 +60,9 @@ namespace PuroEscabio
 
         protected void aCerrarSesion_Click(Object sender, EventArgs e)
         {
+            var seguridad = new Seguridad();
+            seguridad.CrearBitacora(usuarioActual, "Cerró sesión");
+
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();
             Session.Clear();

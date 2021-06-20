@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace DAL
 {
-    public class LogIn
+    public class LogInDAL
     {
         public UsuarioBE ObtenerLogIn(UsuarioBE user)
         {

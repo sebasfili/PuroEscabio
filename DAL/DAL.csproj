@@ -43,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Producto.cs" />
+    <Compile Include="ProductoDAL.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -54,8 +54,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PuroEscabio.dbml</DependentUpon>
     </Compile>
-    <Compile Include="Seguridad.cs" />
-    <Compile Include="LogIn.cs" />
+    <Compile Include="SeguridadDAL.cs" />
+    <Compile Include="LogInDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

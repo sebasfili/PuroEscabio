@@ -1,6 +1,7 @@
 ﻿using BE;
-using BE.Composite;
 using BE.Interface;
+using DAL;
+using System;
 using System.Collections.Generic;
 
 namespace BLL
@@ -17,9 +18,17 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public void CrearBitacora(UsuarioBE user)
+        public List<BitacoraBE> ObtenerBitacoraCompleta()
         {
-            throw new System.NotImplementedException();
+            var seguridad = new SeguridadDAL();
+            return seguridad.ObtenerBitacoraCompleta();
+        }
+
+        public void CrearBitacora(UsuarioBE user, string action)
+        {
+            var seguridad = new SeguridadDAL();
+            seguridad.CrearBitacora(user, action);
+
         }
 
         public string EncriptarClaveDeUsuario(string password)
@@ -49,7 +58,7 @@ namespace BLL
 
         public List<RolPatenteBE> ObtenerPermisosDeUsuario(UsuarioBE user)
         {
-            var permisos = new DAL.Seguridad();
+            var permisos = new DAL.SeguridadDAL();
 
             var rolPatenteResultados = permisos.ObtenerPermisosDeUsuario(user);
 

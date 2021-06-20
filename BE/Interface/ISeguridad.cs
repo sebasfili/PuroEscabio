@@ -11,12 +11,12 @@ namespace BE.Interface
         bool ValidarIntegridadDeAplicacion(UsuarioBE user);
         bool GenerarDigitoVerificadorVertical();//podría ser sobre precio de producto.
         bool GenerarDigitoVerificadorHorizontal();//podría ser sobre usuario
-        void CrearBitacora(UsuarioBE user);//registrar ingreso y egreso de usuario. BackUp y Restore
+        void CrearBitacora(UsuarioBE user, string action);//registrar ingreso y egreso de usuario. BackUp y Restore
         bool CrearBackUpBD(string BDName);
         bool RestoreBD(string BDName);
         List<string> ObtenerBackUps();
         string EncriptarClaveDeUsuario(string password);
-
-       List<RolPatenteBE> ObtenerPermisosDeUsuario(UsuarioBE user);
+        List<BitacoraBE> ObtenerBitacoraCompleta();
+        List<RolPatenteBE> ObtenerPermisosDeUsuario(UsuarioBE user);
     }
 }

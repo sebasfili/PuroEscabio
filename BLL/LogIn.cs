@@ -25,7 +25,7 @@ namespace BLL
 
         public UsuarioBE ObtenerLoginIn(UsuarioBE user)
         {
-            var logIn = new DAL.LogIn();
+            var logIn = new DAL.LogInDAL();
             return logIn.ObtenerLogIn(user);
 
         }
