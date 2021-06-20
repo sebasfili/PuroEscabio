@@ -46,6 +46,7 @@ namespace PuroEscabio.Login
             }
             else
             {
+                lblErrorLogin.Visible = true;
                 lblErrorLogin.Text = "El usuario y/o contraseña ingresado es incorrecto";
             }
         }
