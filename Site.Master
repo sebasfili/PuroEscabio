@@ -34,81 +34,81 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
-   
-        <div class="agileits_header">
-            <div class="container">
-                <div class="w3l_offers">
+
+    <div class="agileits_header">
+        <div class="container">
+            <div class="w3l_offers">
+            </div>
+            <div class="agile-login">
+                <ul>
+                    <li><a runat="server" href="~/Login/Register">Nuevo Usuario </a></li>
+                    <li><a runat="server" href="~/Login/Login" visible="true" id="aIngresar">Login</a></li>
+                    <li>
+                        <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
+                    </li>
+                    <li><a runat="server" id="aCerrarSesion" visible="false">Cerrar Sesi&oacute;n</a></li>
+                </ul>
+            </div>
+            <div class="product_list_header">
+                <input type="hidden" name="cmd" value="_cart">
+                <input type="hidden" name="display" value="1">
+                <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="logo_products">
+        <div class="container">
+            <div class="w3ls_logo_products_left1">
+                <ul class="phone_email">
+                </ul>
+            </div>
+            <div class="w3ls_logo_products_left">
+                <h1><a runat="server" href="~/">Puro Escabio</a></h1>
+            </div>
+            <div class="w3l_search">
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //header -->
+    <!-- navigation -->
+    <div class="navigation-agileits">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header nav_2">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
                 </div>
-                <div class="agile-login">
-                    <ul>
-                        <li><a runat="server" href="~/Login/Register">Nuevo Usuario </a></li>
-                        <li><a runat="server" href="~/Login/Login" visible="true" id="aIngresar">Login</a></li>
-                        <li>
-                            <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
-                        </li>
-                         <li><a runat="server" id="aCerrarSesion" visible="false">Cerrar Sesi&oacute;n</a></li>
+                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a runat="server" id="aInicio" href="~/" class="act">Inicio</a></li>
+                        <li class="active"><a runat="server" id="aAbout" href="~/About" class="act">Sobre Nosotros</a></li>
+                        <li class="active"><a runat="server" id="aContact" href="~/Contact" class="act">Contacto</a></li>
+                        <li class="active"><a runat="server" id="aRoles" href="~/Security/Roles" class="act">Role de Seguridad</a></li>
+                        <li class="active"><a runat="server" id="aUsers" href="~/Security/Users" class="act">Usuarios</a></li>
+                        <li class="active"><a runat="server" id="aBitacora" href="~/Security/Bitacora.aspx" class="act">Bitacora</a></li>
+                        <li class="active"><a runat="server" id="aProductsList" href="~/Products/ProductsList" class="act">Lista de Productos</a></li>
+                        <li class="active"><a runat="server" id="aPackList" href="~/Products/PackList" class="act">Lista de Packs</a></li>
                     </ul>
                 </div>
-                <div class="product_list_header">
-                    <input type="hidden" name="cmd" value="_cart">
-                    <input type="hidden" name="display" value="1">
-                    <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+            </nav>
         </div>
+    </div>
 
-        <div class="logo_products">
-            <div class="container">
-                <div class="w3ls_logo_products_left1">
-                    <ul class="phone_email">
-                    </ul>
-                </div>
-                <div class="w3ls_logo_products_left">
-                    <h1><a runat="server" href="~/">Puro Escabio</a></h1>
-                </div>
-                <div class="w3l_search">
-                </div>
+    <!-- //main-slider -->
+    <!-- //top-header and slider -->
+    <!-- top-brands -->
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
 
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <!-- //header -->
-        <!-- navigation -->
-        <div class="navigation-agileits">
-            <div class="container">
-                <nav class="navbar navbar-default">
-                    <!-- Brand and toggle get grouped for better mobile display -->
-                    <div class="navbar-header nav_2">
-                        <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                    </div>
-                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a runat="server" id="aInicio" href="~/" class="act">Inicio</a></li>
-                            <li class="active"><a runat="server" id="aAbout" href="~/About" class="act">Sobre Nosotros</a></li>
-                            <li class="active"><a runat="server" id="aContact" href="~/Contact" class="act">Contacto</a></li>
-                            <li class="active"><a runat="server" id="aRoles" href="~/Security/Roles" class="act">Role de Seguridad</a></li>
-                            <li class="active"><a runat="server" id="aUsers" href="~/Security/Users" class="act">Usuarios</a></li>
-                            <li class="active"><a runat="server" id="aBitacora" href="~/Security/Bitacora.aspx" class="act">Bitacora</a></li>
-                            <li class="active"><a runat="server" id="aProductsList" href="~/Products/ProductsList" class="act">Lista de Productos</a></li>
-                            <li class="active"><a runat="server" id="aPackList" href="~/Products/PackList" class="act">Lista de Packs</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
-     <form runat="server" id="formPrincipal">
-        <!-- //main-slider -->
-        <!-- //top-header and slider -->
-        <!-- top-brands -->
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
-    </form>
     <!-- //new -->
     <!-- //footer -->
     <div class="footer">

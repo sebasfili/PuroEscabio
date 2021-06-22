@@ -13,5 +13,10 @@ namespace PuroEscabio.Login
         {
 
         }
+
+        protected void btnRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
