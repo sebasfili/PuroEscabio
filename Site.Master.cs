@@ -8,20 +8,18 @@ namespace PuroEscabio
 {
     public partial class SiteMaster : MasterPage
     {
-        UsuarioBE usuarioActual = null;
+
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            aCerrarSesion.ServerClick += new EventHandler(this.aCerrarSesion_Click);
-            usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
+            var usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
 
             if (usuarioActual != null)
             {
-                aCerrarSesion.Visible = true;
+                btnCerrarSesion.Visible = true;
                 aIngresar.Visible = false;
-                lblUsuarioLogueado.Text = (usuarioActual as UsuarioBE).NombreDeUsuario != null ?
-                                          string.Format("Usuario Actual: {0}", usuarioActual.NombreDeUsuario) : string.Empty;
+                //lblUsuarioLogueado.Text = (usuarioActual as UsuarioBE).NombreDeUsuario != null ?
+                //                          string.Format("Usuario Actual: {0}", usuarioActual.NombreDeUsuario) : string.Empty;
 
 
             }
@@ -32,6 +30,8 @@ namespace PuroEscabio
 
         private void ValidarMenu()
         {
+            var usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
+
             switch (usuarioActual?.PerfilDeUsuario?.Descripcion)
             {
                 case "Administrador":
@@ -61,7 +61,8 @@ namespace PuroEscabio
         protected void aCerrarSesion_Click(Object sender, EventArgs e)
         {
             var seguridad = new Seguridad();
-            seguridad.CrearBitacora(usuarioActual, "Cerró sesión");
+            UsuarioBE usuario = Session["UsuarioLogueado"] as UsuarioBE;
+            seguridad.CrearBitacora(usuario, "Cerró sesión");
 
             FormsAuthentication.SignOut();
             FormsAuthentication.RedirectToLoginPage();

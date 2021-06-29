@@ -9,27 +9,39 @@
             </ol>
         </div>
     </div>
-    <form id="frmLogin" runat="server">
-        <div class="login">
-            <div class="container">
+    <div class="container">
+
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-5">
                 <h2>Inicio de Sesión</h2>
-
-                <div class="login-form-grids">
-                    <asp:TextBox runat="server" AutoCompleteType="Email" ID="txtUsuario" TextMode="Email" placeholder="e-mail" CssClass="form-control form-control-lg" />
-                    <asp:RequiredFieldValidator ID="reqEmail" runat="server" CssClass="alert alert-danger" role="alert" ControlToValidate="txtUsuario" ErrorMessage="El campo es requerido"></asp:RequiredFieldValidator>
-                    <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" placeholder="contraseña" class="form-control form-control-lg" />
-                    <asp:RequiredFieldValidator ID="reqPassword" runat="server" CssClass="alert alert-danger" role="alert" ControlToValidate="txtPassword" ErrorMessage="El campo es requerido"></asp:RequiredFieldValidator>
-
-                    <div class="forgot">
-                        <a href="#">¿Olvido la contraseña?</a>
-                    </div>
-                    <asp:Button Text="Ingresar" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
-
-                    <asp:Label ID="lblErrorLogin" runat="server" ForeColor="Red" Font-Size="Medium" Visible="false" />
+                <div class="form-floating mb-3">
+                    <asp:TextBox runat="server" AutoCompleteType="Email" ID="txtUsuario" TextMode="Email" placeholder="e-mail" CssClass="form-control" />
+                    <asp:Label Text="E-mail" runat="server" AssociatedControlID="txtUsuario"></asp:Label>
                 </div>
-                <h4>¿Todavía no esta registrado?</h4>
-                <p><a runat="server" href="#">Registrarse aquí</a> o vaya al <a runat="server" href="~/">Inicio<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span></a></p>
+                <asp:RequiredFieldValidator ID="reqEmail" runat="server" CssClass="alert alert-danger" role="alert" ControlToValidate="txtUsuario" ErrorMessage="El campo es requerido"></asp:RequiredFieldValidator>
+
+                <div class="form-floating mb-3">
+                    <asp:TextBox runat="server" ID="txtPassword" TextMode="Password" placeholder="Contraseña" class="form-control form-control-lg" />
+                    <asp:Label Text="Contraseña" runat="server" AssociatedControlID="txtPassword" />
+                </div>
+
+                <asp:RequiredFieldValidator ID="reqPassword" runat="server" CssClass="alert alert-danger" role="alert" ControlToValidate="txtPassword" ErrorMessage="El campo es requerido"></asp:RequiredFieldValidator>
+
+                <div>
+                    <a href="#" class="link-secondary">¿Olvido la contraseña?</a>
+                </div>
+                <asp:Button CssClass="btn btn-warning" Text="Ingresar" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
+
+                <asp:Label ID="lblErrorLogin" runat="server" ForeColor="Red" Font-Size="Medium" Visible="false" />
             </div>
         </div>
-    </form>
+        <div class="row justify-content-md-center">
+            <div class="col col-lg-5">
+                <h5>¿Todavía no esta registrado?</h5>
+                <p><a class="link-success" runat="server" href="#">Registrarse aquí</a></p>
+            </div>
+        </div>
+
+
+    </div>
 </asp:Content>

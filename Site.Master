@@ -10,131 +10,113 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Super Market Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <%--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>--%>
 
-    <link href="Content/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="Content/css/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="Content/css/font-awesome.css" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <%-- <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Content/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="Content/font-awesome.css" rel="stylesheet">--%>
 
-    <script src="Content/js/jquery-1.11.1.min.js"></script>
+    <%--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">--%>
+
+    <script src="../Scripts/jquery-3.6.0.min.js"></script>
+    <script src="../Scripts/bootstrap.js">    </script>
+
+
     <link href='//fonts.googleapis.com/css?family=Raleway:400,100,100italic,200,200italic,300,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="Content/js/move-top.js"></script>
-    <script type="text/javascript" src="Content/js/easing.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
-            });
-        });
-    </script>
 </head>
 
 <body>
-
-    <div class="agileits_header">
-        <div class="container">
-            <div class="w3l_offers">
-            </div>
-            <div class="agile-login">
-                <ul>
-                    <li><a runat="server" href="~/Login/Register">Nuevo Usuario </a></li>
-                    <li><a runat="server" href="~/Login/Login" visible="true" id="aIngresar">Login</a></li>
-                    <li>
-                        <asp:Label runat="server" ID="lblUsuarioLogueado" ForeColor="White" Font-Bold="true" />
-                    </li>
-                    <li><a runat="server" id="aCerrarSesion" visible="false">Cerrar Sesi&oacute;n</a></li>
-                </ul>
-            </div>
-            <div class="product_list_header">
-                <input type="hidden" name="cmd" value="_cart">
-                <input type="hidden" name="display" value="1">
-                <button class="w3view-cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="logo_products">
-        <div class="container">
-            <div class="w3ls_logo_products_left1">
-                <ul class="phone_email">
-                </ul>
-            </div>
-            <div class="w3ls_logo_products_left">
-                <h1><a runat="server" href="~/">Puro Escabio</a></h1>
-            </div>
-            <div class="w3l_search">
-            </div>
-
-            <div class="clearfix"></div>
-        </div>
-    </div>
-    <!-- //header -->
-    <!-- navigation -->
-    <div class="navigation-agileits">
-        <div class="container">
-            <nav class="navbar navbar-default">
-                <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header nav_2">
-                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a runat="server" id="aInicio" href="~/" class="act">Inicio</a></li>
-                        <li class="active"><a runat="server" id="aAbout" href="~/About" class="act">Sobre Nosotros</a></li>
-                        <li class="active"><a runat="server" id="aContact" href="~/Contact" class="act">Contacto</a></li>
-                        <li class="active"><a runat="server" id="aRoles" href="~/Security/Roles" class="act">Role de Seguridad</a></li>
-                        <li class="active"><a runat="server" id="aUsers" href="~/Security/Users" class="act">Usuarios</a></li>
-                        <li class="active"><a runat="server" id="aBitacora" href="~/Security/Bitacora.aspx" class="act">Bitacora</a></li>
-                        <li class="active"><a runat="server" id="aProductsList" href="~/Products/ProductsList" class="act">Lista de Productos</a></li>
-                        <li class="active"><a runat="server" id="aPackList" href="~/Products/PackList" class="act">Lista de Packs</a></li>
+    <form runat="server" id="masterForm">
+        <!-- //header -->
+        <!-- navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Puro Escabio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" runat="server" id="aAbout" aria-current="page" href="~/About.aspx">Sobre Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a runat="server" class="nav-link active" id="aContact" href="~/Contact">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a runat="server" class="nav-link active" id="aRoles" href="~/Security/Roles">Role de Seguridad</a>
+                        </li>
+                        <li class="nav-item"><a runat="server" class="nav-link active" id="aUsers" href="~/Security/Users">Usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a runat="server" class="nav-link active" id="aBitacora" href="~/Security/Bitacora.aspx">Bitacora</a>
+                        </li>
+                        <li class="nav-item">
+                            <a runat="server" class="nav-link active" id="aProductsList" href="~/Products/ProductsList">Lista de Productos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a runat="server" class="nav-link active" id="aPackList" href="~/Products/PackList">Lista de Packs</a>
+                        </li>
                     </ul>
+                    <div class="d-flex">
+
+                        <ul class="nav nav-pills">
+                            <li class="nav-pills">
+                                <a class="btn btn-outline-warning" runat="server" href="~/Login/Register">Registrarse </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link link-warning " runat="server" href="~/Login/Login" visible="true" id="aIngresar">Login</a>
+                            </li>
+                            <li>
+                                <asp:Button Text="Cerrar Sesión" Visible="false" runat="server" ID="btnCerrarSesion" CssClass="btn btn-warning" OnClick="aCerrarSesion_Click" />
+                            </li>
+                        </ul>
+
+                    </div>
                 </div>
-            </nav>
-        </div>
-    </div>
+            </div>
+        </nav>
 
-    <!-- //main-slider -->
-    <!-- //top-header and slider -->
-    <!-- top-brands -->
-    <asp:ContentPlaceHolder ID="MainContent" runat="server">
-    </asp:ContentPlaceHolder>
-
+        <!-- //main-slider -->
+        <!-- //top-header and slider -->
+        <!-- top-brands -->
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
     <!-- //new -->
     <!-- //footer -->
-    <div class="footer">
-        <div class="container">
-            <div class="w3_footer_grids">
-                <div class="col-md-3 w3_footer_grid">
+    <nav class="navbar fixed-bottom navbar-light bg-light">
+        <div class="container px-4">
+
+            <div class="row gx-lg-5">
+                <div class="col col-lg">
+                    <h5>© 2021 Puro Escabio
+                    </h5>
+                </div>
+                <div class="col col-lg">
                     <h3>Contacto</h3>
 
-                    <ul class="address">
+                    <ul class="nav flex-column address">
                         <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Av. Dorrgo N° 100, <span>CABA.</span></li>
                         <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:puroescabio@gmail.com">puroescabio@gmail.com</a></li>
                         <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1145637895</li>
                     </ul>
                 </div>
-                <div class="col-md-3 w3_footer_grid">
+                <div class="col col-lg">
                     <h3>Información</h3>
-                    <ul class="info">
+                    <ul class="nav flex-column">
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/About">Sobre Nosotros</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Contact">Contacto</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/FrequentQuestions">Preguntas Frecuentes</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Return">Devoluciones</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 w3_footer_grid">
+                <div class="col col-lg">
                     <h3>Categoría</h3>
-                    <ul class="info">
+                    <ul class="nav flex-column">
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Beer">Cerveza</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Wine">Vino</a></li>
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Champagne">Champagne</a></li>
@@ -142,19 +124,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Whiskey">Whisky</a></li>
                     </ul>
                 </div>
-                <div class="clearfix"></div>
             </div>
         </div>
-
-        <div class="footer-copy">
-
-            <div class="container">
-                <p>© 2021 Puro Escabio</p>
-            </div>
-        </div>
-
-    </div>
-    <div class="footer-botm">
+    </nav>
+    <%--<div class="footer-botm">
         <div class="container">
             <div class="w3layouts-foot">
                 <ul>
@@ -166,54 +139,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="clearfix"></div>
         </div>
-    </div>
-    <!-- //footer -->
-    <!-- Bootstrap Core JavaScript -->
-    <script src="Content/js/bootstrap.min.js"></script>
-
-    <!-- top-header and slider -->
-    <!-- here stars scrolling icon -->
-    <script type="text/javascript">
-        $(document).ready(function () {
-            /*
-                var defaults = {
-                containerID: 'toTop', // fading element id
-                containerHoverID: 'toTopHover', // fading element hover id
-                scrollSpeed: 1200,
-                easingType: 'linear' 
-                };
-            */
-
-            $().UItoTop({ easingType: 'easeOutQuart' });
-
-        });
-    </script>
-    <!-- //here ends scrolling icon -->
-    <script src="Content/js/minicart.min.js"></script>
-    <script>
-        // Mini Cart
-        paypal.minicart.render({
-            action: '#'
-        });
-
-        if (~window.location.search.indexOf('reset=true')) {
-            paypal.minicart.reset();
-        }
-    </script>
-    <!-- main slider-banner -->
-    <script src="Content/js/skdslider.min.js"></script>
-    <link href="Content/css/skdslider.css" rel="stylesheet">
-    <script type="text/javascript">
-        jQuery(document).ready(function () {
-            jQuery('#demo1').skdslider({ 'delay': 5000, 'animationSpeed': 2000, 'showNextPrev': true, 'showPlayButton': true, 'autoSlide': true, 'animationType': 'fading' });
-
-            jQuery('#responsive').change(function () {
-                $('#responsive_wrapper').width(jQuery(this).val());
-            });
-
-        });
-    </script>
-    <!-- //main slider-banner -->
+    </div>--%>
 </body>
 </html>
 
