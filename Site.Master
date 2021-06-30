@@ -32,7 +32,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <form runat="server" id="masterForm">
         <!-- //header -->
         <!-- navigation -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar sticky-lg-top navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Puro Escabio</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -65,10 +65,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
                         <ul class="nav nav-pills">
                             <li class="nav-pills">
-                                <a class="btn btn-outline-warning" runat="server" href="~/Login/Register">Registrarse </a>
+                                <a class="btn btn-outline-warning" runat="server" id="aRegistrar" visible="true" href="~/Login/Register">Registrarse </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link link-warning " runat="server" href="~/Login/Login" visible="true" id="aIngresar">Login</a>
+                            </li>
+                            <li>
+                                <asp:Label Visible="false" ID="lblUsuarioActual" runat="server" class="nav-link link-warning " />
                             </li>
                             <li>
                                 <asp:Button Text="Cerrar Sesión" Visible="false" runat="server" ID="btnCerrarSesion" CssClass="btn btn-warning" OnClick="aCerrarSesion_Click" />
@@ -83,63 +86,57 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //main-slider -->
         <!-- //top-header and slider -->
         <!-- top-brands -->
-        <asp:ContentPlaceHolder ID="MainContent" runat="server">
-        </asp:ContentPlaceHolder>
+        <div class="container-fluid">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
     </form>
     <!-- //new -->
     <!-- //footer -->
     <nav class="navbar fixed-bottom navbar-light bg-light">
-        <div class="container px-4">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFooter" aria-controls="navBarFooter" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse container" id="navBarFooter">                
+                    <div class="row">
+                        <div class="col col-lg">
+                            <h5>© 2021 Puro Escabio
+                            </h5>
+                        </div>
+                        <div class="col col-lg">
+                            <h3>Contacto</h3>
 
-            <div class="row gx-lg-5">
-                <div class="col col-lg">
-                    <h5>© 2021 Puro Escabio
-                    </h5>
+                            <ul class="nav flex-column address">
+                                <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Av. Dorrgo N° 100, <span>CABA.</span></li>
+                                <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:puroescabio@gmail.com">puroescabio@gmail.com</a></li>
+                                <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1145637895</li>
+                            </ul>
+                        </div>
+                        <div class="col col-lg">
+                            <h3>Información</h3>
+                            <ul class="nav flex-column">
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/About">Sobre Nosotros</a></li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Contact">Contacto</a></li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/FrequentQuestions">Preguntas Frecuentes</a></li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Return">Devoluciones</a></li>
+                            </ul>
+                        </div>
+                        <div class="col col-lg">
+                            <h3>Categoría</h3>
+                            <ul class="nav flex-column">
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Beer">Cerveza</a></li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Wine">Vino</a></li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Champagne">Champagne</a></li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Appetizer">Aperitivo</a></li>
+                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Whiskey">Whisky</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col col-lg">
-                    <h3>Contacto</h3>
-
-                    <ul class="nav flex-column address">
-                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Av. Dorrgo N° 100, <span>CABA.</span></li>
-                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:puroescabio@gmail.com">puroescabio@gmail.com</a></li>
-                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1145637895</li>
-                    </ul>
-                </div>
-                <div class="col col-lg">
-                    <h3>Información</h3>
-                    <ul class="nav flex-column">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/About">Sobre Nosotros</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Contact">Contacto</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/FrequentQuestions">Preguntas Frecuentes</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Return">Devoluciones</a></li>
-                    </ul>
-                </div>
-                <div class="col col-lg">
-                    <h3>Categoría</h3>
-                    <ul class="nav flex-column">
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Beer">Cerveza</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Wine">Vino</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Champagne">Champagne</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Appetizer">Aperitivo</a></li>
-                        <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Whiskey">Whisky</a></li>
-                    </ul>
-                </div>
-            </div>
+            
         </div>
     </nav>
-    <%--<div class="footer-botm">
-        <div class="container">
-            <div class="w3layouts-foot">
-                <ul>
-                    <li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-                    <li><a href="#" class="w3_agile_vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>--%>
 </body>
 </html>
 

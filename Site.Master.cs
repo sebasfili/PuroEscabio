@@ -8,8 +8,6 @@ namespace PuroEscabio
 {
     public partial class SiteMaster : MasterPage
     {
-
-
         protected void Page_Load(object sender, EventArgs e)
         {
             var usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
@@ -18,10 +16,9 @@ namespace PuroEscabio
             {
                 btnCerrarSesion.Visible = true;
                 aIngresar.Visible = false;
-                //lblUsuarioLogueado.Text = (usuarioActual as UsuarioBE).NombreDeUsuario != null ?
-                //                          string.Format("Usuario Actual: {0}", usuarioActual.NombreDeUsuario) : string.Empty;
-
-
+                aRegistrar.Visible = false;
+                lblUsuarioActual.Text = string.Format("Usuario: {0}-Rol: {1}", usuarioActual.NombreDeUsuario, usuarioActual.PerfilDeUsuario.Descripcion);
+                lblUsuarioActual.Visible = true;
             }
 
             ValidarMenu();

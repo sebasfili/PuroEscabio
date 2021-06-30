@@ -87,6 +87,15 @@ namespace PuroEscabio
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aPackList;
 
         /// <summary>
+        /// aRegistrar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor aRegistrar;
+
+        /// <summary>
         /// aIngresar control.
         /// </summary>
         /// <remarks>
@@ -94,6 +103,15 @@ namespace PuroEscabio
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aIngresar;
+
+        /// <summary>
+        /// lblUsuarioActual control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblUsuarioActual;
 
         /// <summary>
         /// btnCerrarSesion control.

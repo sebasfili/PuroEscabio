@@ -10,32 +10,58 @@
         </div>
     </div>
     <div class="container">
-        <form class="row g-3">
-            <div class="col-md-6">
-                <label for="inputEmail4" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail4">
+        <div class="row g-3">
+            <div class="col-lg-4 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" AutoCompleteType="FirstName" ID="txtNombre" placeholder="Apellido" />
+                <asp:Label Text="Nombre" runat="server" CssClass="form-label" AssociatedControlID="txtNombre" />
             </div>
-            <div class="col-md-6">
-                <label for="inputPassword4" class="form-label">Password</label>
-                <input type="password" class="form-control" id="inputPassword4">
+            <div class="col-lg-4 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" AutoCompleteType="LastName" ID="txtApellido" placeholder="Apellido" />
+                <asp:Label Text="Apellido" runat="server" CssClass="form-label" AssociatedControlID="txtNombre" />
             </div>
-            <div class="col-12">
-                <label for="inputAddress" class="form-label">Address</label>
-                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+            <div class="col-lg-4 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" AutoCompleteType="None" ID="txtDNI" placeholder="DNI" />
+                <asp:Label Text="DNI" runat="server" CssClass="form-label" AssociatedControlID="txtDNI" />
             </div>
-            <div class="col-12">
-                <label for="inputAddress2" class="form-label">Address 2</label>
-                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+            <div class="col-lg-3 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" AutoCompleteType="HomeStreetAddress" ID="txtDireccion" placeholder="Dirección" />
+                <asp:Label Text="Dirección" runat="server" CssClass="form-label" AssociatedControlID="txtDireccion" />
             </div>
-            <div class="col-md-6">
-                <label for="inputCity" class="form-label">City</label>
-                <input type="text" class="form-control" id="inputCity">
+            <div class="col-lg-3 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" AutoCompleteType="Email" ID="txtCiudad" placeholder="Ciudad" />
+                <asp:Label Text="Ciudad" runat="server" CssClass="form-label" AssociatedControlID="txtCiudad" />
             </div>
-         
+             <div class="col-lg-3 form-floating">
+                 <asp:DropDownList runat="server" ID="dpPais" CssClass="form-select">
+                     <asp:ListItem Text="Argentina" />
+                     <asp:ListItem Text="Colombia" />
+                 </asp:DropDownList>                
+                <asp:Label Text="País" runat="server" CssClass="form-label" AssociatedControlID="dpPais" />
+            </div>
+            <div class="col-lg-6 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" AutoCompleteType="Email" ID="txtEmail" placeholder="E-mail" />
+                <asp:Label Text="E-mail" runat="server" CssClass="form-label" AssociatedControlID="txtEmail" />
+            </div>
+            <div class="col-lg-6 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" TextMode="Password" ID="txtPassword" placeholder="Contraseña" />
+                <asp:Label Text="Contraseña" runat="server" CssClass="form-label" AssociatedControlID="txtPassword" />
+            </div>
+             <div class="col-lg-6 form-floating">
+                <asp:TextBox runat="server" CssClass="form-control" TextMode="Password" ID="txtRePassword" placeholder="Repetir Contraseña" />
+                <asp:Label Text="Repetir Contraseña" runat="server" CssClass="form-label" AssociatedControlID="txtRePassword" />
+            </div>
+            
+            <%--<div class="col-md-4">
+                <label for="inputState" class="form-label">State</label>
+                <select id="inputState" class="form-select">
+                    <option selected>Choose...</option>
+                    <option>...</option>
+                </select>
+            </div>
             <div class="col-md-2">
                 <label for="inputZip" class="form-label">Zip</label>
                 <input type="text" class="form-control" id="inputZip">
-            </div>
+            </div>--%>
             <div class="col-12">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -47,7 +73,7 @@
             <div class="col-12">
                 <button type="submit" class="btn btn-primary">Sign in</button>
             </div>
-        </form>
+        </div>
     </div>
     <%-- <div class="register">
         <div class="container">
