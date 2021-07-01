@@ -24,14 +24,13 @@ namespace PuroEscabio.Login
                 ProvinciaEstado = txtCiudad.Text,
                 PaisID = int.Parse(dpPais.SelectedValue)
             };
-
-            var ASCIIPassword = Encoding.ASCII.GetBytes(txtRePassword.Text);
-            var hashedPassword = System.Security.Cryptography.SHA256.Create().ComputeHash(ASCIIPassword);
+            
+            var seguridad = new SeguridadBLL();
 
             var usuario = new UsuarioBE()
             {
                 NombreDeUsuario = txtEmail.Text,
-                Password = Encoding.ASCII.GetString(hashedPassword),
+                Password = seguridad.EncriptarClaveDeUsuario(txtPassword.Text),
                 PerfilDeUsuario = new PerfilBE() { Descripcion = "Usuario", Id = 5 }
             };
 

@@ -11,19 +11,18 @@ namespace PuroEscabio.Login
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             var logIn = new LogInBLL();
-            var ASCIIPassword = Encoding.ASCII.GetBytes(txtPassword.Text);
-            var hashedPassword = System.Security.Cryptography.SHA256.Create().ComputeHash(ASCIIPassword);
+            var seguridad = new SeguridadBLL();
 
             var usuario = new UsuarioBE()
             {
-                Password = Encoding.ASCII.GetString(hashedPassword),
+                Password = seguridad.EncriptarClaveDeUsuario(txtPassword.Text),
                 NombreDeUsuario = txtUsuario.Text
             };
 
@@ -31,7 +30,7 @@ namespace PuroEscabio.Login
 
             if (usuarioActual != null)
             {
-                var seguridad = new SeguridadBLL();
+
                 seguridad.CrearBitacora(usuarioActual, "Ingresó");
                 Session["UsuarioLogueado"] = usuarioActual;
 
@@ -45,8 +44,8 @@ namespace PuroEscabio.Login
                 }
                 Response.Cookies.Add(cookie);
                 Response.Redirect(FormsAuthentication.GetRedirectUrl(txtUsuario.Text, false));
-                
-                
+
+
             }
             else
             {

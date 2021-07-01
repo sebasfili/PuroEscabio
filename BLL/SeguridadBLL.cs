@@ -3,6 +3,7 @@ using BE.Interface;
 using DAL;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace BLL
 {
@@ -33,7 +34,10 @@ namespace BLL
 
         public string EncriptarClaveDeUsuario(string password)
         {
-            throw new System.NotImplementedException();
+            var ASCIIPassword = Encoding.ASCII.GetBytes(password);
+            var hashedPassword = System.Security.Cryptography.SHA256.Create().ComputeHash(ASCIIPassword);
+            
+            return Encoding.ASCII.GetString(hashedPassword);
         }
 
         public bool GenerarDigitoVerificadorHorizontal()
