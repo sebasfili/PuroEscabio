@@ -362,6 +362,10 @@
       <Project>{969f48e2-3fd6-4273-94ac-605cac67ecef}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="DAL\DAL.csproj">
+      <Project>{82B0C243-B2E7-45D5-935A-116C09D74C2E}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

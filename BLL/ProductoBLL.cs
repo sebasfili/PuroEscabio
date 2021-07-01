@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    public class Producto : IProducto
+    public class ProductoBLL : IProducto
     {
         public bool BorrarProductos(List<BebidasBE> products)
         {

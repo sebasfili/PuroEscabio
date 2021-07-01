@@ -8,7 +8,7 @@ namespace BLL
     /// <summary>
     /// Clase para carrito de compras
     /// </summary>
-    public class Compra : ICompra
+    public class CompraBLL : ICompra
     {
         public bool AgregarAlCarritoDeCompra(ItemBE item)
         {

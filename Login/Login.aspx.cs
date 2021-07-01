@@ -16,7 +16,7 @@ namespace PuroEscabio.Login
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            var logIn = new LogIn();
+            var logIn = new LogInBLL();
             var usuario = new UsuarioBE()
             {
                 Password = txtPassword.Text,
@@ -27,7 +27,7 @@ namespace PuroEscabio.Login
 
             if (usuarioActual != null)
             {
-                var seguridad = new Seguridad();
+                var seguridad = new SeguridadBLL();
                 seguridad.CrearBitacora(usuarioActual, "Ingresó");
                 Session["UsuarioLogueado"] = usuarioActual;
 

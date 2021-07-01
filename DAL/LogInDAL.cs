@@ -1,5 +1,8 @@
 ﻿using BE;
+using System.Data.Common;
+using System.Data.Linq;
 using System.Linq;
+using System.Transactions;
 
 namespace DAL
 {
@@ -40,6 +43,46 @@ namespace DAL
                 else
                 {
                     return null;
+                }
+            }
+
+        }
+
+        public UsuarioBE RegistrarUsuario(UsuarioBE user, PersonaBE person)
+        {
+            using (var transaction = new TransactionScope())
+            {
+                using (var dbContext = new PuroEscabioDataContext())
+                {
+
+                    var usuario = new Usuario()
+                    {
+                        Contraseña = user.Password,
+                        Id_rol = user.PerfilDeUsuario.Id,
+                        Usuario1 = user.NombreDeUsuario
+                    };
+
+                    var persona = new Persona()
+                    {
+                        Apellido = person.Apellido,
+                        Nombre = person.Nombre,
+                        Direccion = person.Direccion,
+                        DNI = person.DNI,
+                        Provincia_estado = person.ProvinciaEstado,
+                        Pais_id = person.PaisID
+                    };
+
+                    dbContext.Personas.InsertOnSubmit(persona);
+                    
+                    dbContext.SubmitChanges();
+                    usuario.Persona_id = persona.Id;
+                    dbContext.Usuarios.InsertOnSubmit(usuario);
+
+                    dbContext.SubmitChanges();
+                    transaction.Complete();
+
+                    user.Id = usuario.Id;
+                    return user;
                 }
             }
 

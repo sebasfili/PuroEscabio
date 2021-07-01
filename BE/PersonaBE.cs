@@ -14,7 +14,7 @@ namespace BE
         public int DNI { get; set; }
         public string Direccion { get; set; }
         public string ProvinciaEstado { get; set; }
-        public string Pais { get; set; }
+        public int PaisID { get; set; }
 
     }
 }

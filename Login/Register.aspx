@@ -31,11 +31,11 @@
                 <asp:TextBox runat="server" CssClass="form-control" AutoCompleteType="Email" ID="txtCiudad" placeholder="Ciudad" />
                 <asp:Label Text="Ciudad" runat="server" CssClass="form-label" AssociatedControlID="txtCiudad" />
             </div>
-             <div class="col-lg-3 form-floating">
-                 <asp:DropDownList runat="server" ID="dpPais" CssClass="form-select">
-                     <asp:ListItem Text="Argentina" />
-                     <asp:ListItem Text="Colombia" />
-                 </asp:DropDownList>                
+            <div class="col-lg-3 form-floating">
+                <asp:DropDownList runat="server" ID="dpPais" CssClass="form-select">
+                    <asp:ListItem Text="Argentina" Value="1" />
+                    <asp:ListItem Text="Colombia" Value="2" />
+                </asp:DropDownList>
                 <asp:Label Text="País" runat="server" CssClass="form-label" AssociatedControlID="dpPais" />
             </div>
             <div class="col-lg-6 form-floating">
@@ -46,22 +46,10 @@
                 <asp:TextBox runat="server" CssClass="form-control" TextMode="Password" ID="txtPassword" placeholder="Contraseña" />
                 <asp:Label Text="Contraseña" runat="server" CssClass="form-label" AssociatedControlID="txtPassword" />
             </div>
-             <div class="col-lg-6 form-floating">
+            <div class="col-lg-6 form-floating">
                 <asp:TextBox runat="server" CssClass="form-control" TextMode="Password" ID="txtRePassword" placeholder="Repetir Contraseña" />
                 <asp:Label Text="Repetir Contraseña" runat="server" CssClass="form-label" AssociatedControlID="txtRePassword" />
             </div>
-            
-            <%--<div class="col-md-4">
-                <label for="inputState" class="form-label">State</label>
-                <select id="inputState" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>...</option>
-                </select>
-            </div>
-            <div class="col-md-2">
-                <label for="inputZip" class="form-label">Zip</label>
-                <input type="text" class="form-control" id="inputZip">
-            </div>--%>
             <div class="col-12">
                 <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck">
@@ -71,38 +59,9 @@
                 </div>
             </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <asp:Button Text="Registrar" runat="server" CssClass="btn btn-warning" OnClick="btnRegistrar_Click" />
+                <asp:Label Text="Ocurrió un Error, intente más tarde" ID="lblError" Visible="false" CssClass="alert alert-danger" role="alert" runat="server" />
             </div>
         </div>
     </div>
-    <%-- <div class="register">
-        <div class="container">
-            <h2>Registro Usuario</h2>
-            <div class="login-form-grids">                
-                <h5>Información del Perfil</h5>       
-                <asp:TextBox runat="server" placeholder="Nombre" CssClass="form-control form-control-xl"/>
-                <asp:TextBox runat="server" placeholder="Apellido" class="form-control form-control-xl"/>
-                <asp:TextBox runat="server" placeholder="DNI" class="form-control form-control-xl"/>
-                <asp:TextBox runat="server" placeholder="Dirección" class="form-control form-control-xl"/>
-                <h6>Información de Login</h6>
-
-                <input type="email" placeholder="Email" runat="server" class="form-control form-control-lg">
-                <input type="password" id="txtPassword" runat="server" placeholder="Contraseña" class="form-control form-control-lg">
-                <asp:RequiredFieldValidator ErrorMessage="Debe ingresar una contraseña" ControlToValidate="txtPassword" runat="server" />
-                <input type="password" runat="server" id="txtRePassword" placeholder="Confirmación de Contraseña" class="form-control form-control-lg">
-                <asp:RequiredFieldValidator ErrorMessage="Debe reingresar la contraseña" ControlToValidate="txtRePassword" runat="server" />
-                <asp:RegularExpressionValidator ErrorMessage="Error de password" ControlToValidate="txtPassword" runat="server" ValidationExpression="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" />
-                <div class="register-check-box">
-                    <div class="check">
-                        <label class="checkbox">
-                            <input type="checkbox" name="checkbox"><i> </i>Acepto los términos y condiciones</label>
-                    </div>
-                </div>
-                <asp:Button Text="Registrar" runat="server"  ID="btnRegistrar" ClientIDMode="Static" OnClick="btnRegistrar_Click"/>
-            </div>
-            <div class="register-home">
-                <a runat="server" href="~/">Inicio</a>
-            </div>
-        </div>
-    </div>--%>
 </asp:Content>

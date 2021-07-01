@@ -57,7 +57,7 @@ namespace PuroEscabio
 
         protected void aCerrarSesion_Click(Object sender, EventArgs e)
         {
-            var seguridad = new Seguridad();
+            var seguridad = new SeguridadBLL();
             UsuarioBE usuario = Session["UsuarioLogueado"] as UsuarioBE;
             seguridad.CrearBitacora(usuario, "Cerró sesión");
 

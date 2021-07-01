@@ -5,13 +5,13 @@ using System;
 
 namespace BLL
 {
-    public class LogIn : ILogIn
+    public class LogInBLL : ILogIn
     {
-        public LogIn()
+        public LogInBLL()
         {
             //descomentar para probar el singleton de sql connection
             //var a = DBRepository.Instance;
-            
+
         }
         public bool BorrarUsuario(UsuarioBE user)
         {
@@ -30,9 +30,10 @@ namespace BLL
 
         }
 
-        public UsuarioBE RegistrarUsuario(UsuarioBE user)
+        public UsuarioBE RegistrarUsuario(UsuarioBE user, PersonaBE person)
         {
-            throw new NotImplementedException();
+            var registrarDAL = new LogInDAL();
+            return registrarDAL.RegistrarUsuario(user, person);            
         }
 
         public bool ValidarSesion(UsuarioBE user)

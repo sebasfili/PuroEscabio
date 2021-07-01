@@ -8,7 +8,7 @@ namespace PuroEscabio.Security
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var permisos = new Seguridad();
+            var permisos = new SeguridadBLL();
             var usuario = Session["UsuarioLogueado"] as UsuarioBE;
 
             var resultado = permisos.ObtenerBitacoraCompleta();

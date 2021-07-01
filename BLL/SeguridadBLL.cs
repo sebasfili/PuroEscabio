@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    public class Seguridad : ISeguridad
+    public class SeguridadBLL : ISeguridad
     {
         public bool BorrarTokenDeSesion(UsuarioBE user)
         {
