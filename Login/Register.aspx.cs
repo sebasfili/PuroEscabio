@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using System;
+using System.Text;
 using System.Web.Security;
 
 namespace PuroEscabio.Login
@@ -24,12 +25,14 @@ namespace PuroEscabio.Login
                 PaisID = int.Parse(dpPais.SelectedValue)
             };
 
+            var ASCIIPassword = Encoding.ASCII.GetBytes(txtRePassword.Text);
+            var hashedPassword = System.Security.Cryptography.SHA256.Create().ComputeHash(ASCIIPassword);
+
             var usuario = new UsuarioBE()
             {
                 NombreDeUsuario = txtEmail.Text,
-                Password = txtPassword.Text,
+                Password = Encoding.ASCII.GetString(hashedPassword),
                 PerfilDeUsuario = new PerfilBE() { Descripcion = "Usuario", Id = 5 }
-
             };
 
             var registrarBll = new LogInBLL();

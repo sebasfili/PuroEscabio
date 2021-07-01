@@ -1,6 +1,7 @@
 ﻿using BE;
 using BLL;
 using System;
+using System.Text;
 using System.Web;
 using System.Web.Security;
 
@@ -17,9 +18,12 @@ namespace PuroEscabio.Login
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             var logIn = new LogInBLL();
+            var ASCIIPassword = Encoding.ASCII.GetBytes(txtPassword.Text);
+            var hashedPassword = System.Security.Cryptography.SHA256.Create().ComputeHash(ASCIIPassword);
+
             var usuario = new UsuarioBE()
             {
-                Password = txtPassword.Text,
+                Password = Encoding.ASCII.GetString(hashedPassword),
                 NombreDeUsuario = txtUsuario.Text
             };
 
