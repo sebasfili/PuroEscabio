@@ -14,11 +14,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>--%>
 
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    <%-- <link href="Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="Content/style.css" rel="stylesheet" type="text/css" media="all" />
-    <link href="Content/font-awesome.css" rel="stylesheet">--%>
-
-    <%--<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">--%>
+    
 
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script src="../Scripts/bootstrap.js">    </script>

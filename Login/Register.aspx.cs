@@ -47,5 +47,10 @@ namespace PuroEscabio.Login
                 lblError.Visible = true;
             }
         }
+
+        protected void CheckboxValidator_ServerValidate(object source, System.Web.UI.WebControls.ServerValidateEventArgs args)
+        {
+
+        }
     }
 }
