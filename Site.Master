@@ -82,14 +82,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //main-slider -->
         <!-- //top-header and slider -->
         <!-- top-brands -->
-        <div class="container-fluid">
+        <div class="container ">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
     <!-- //new -->
     <!-- //footer -->
-    <nav class="navbar fixed-bottom navbar-light bg-light">
+    <nav class="navbar position-sticky fixed-bottom navbar-light bg-light">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFooter" aria-controls="navBarFooter" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
