@@ -3,6 +3,7 @@ using BE.Interface;
 using DAL;
 using System;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace BLL
@@ -35,19 +36,25 @@ namespace BLL
         public string EncriptarClaveDeUsuario(string password)
         {
             var ASCIIPassword = Encoding.ASCII.GetBytes(password);
-            var hashedPassword = System.Security.Cryptography.SHA256.Create().ComputeHash(ASCIIPassword);
-            
+            var hashedPassword = SHA256.Create().ComputeHash(ASCIIPassword);
+
             return Encoding.ASCII.GetString(hashedPassword);
         }
 
-        public bool GenerarDigitoVerificadorHorizontal()
+        public string GenerarDigitoVerificadorHorizontal(string dataToHash)
         {
-            throw new System.NotImplementedException();
+            var ASCIIHash = Encoding.ASCII.GetBytes(dataToHash);
+            var hashedData = SHA256.Create().ComputeHash(ASCIIHash);
+
+            return Encoding.ASCII.GetString(hashedData);
         }
 
-        public bool GenerarDigitoVerificadorVertical()
+        public string GenerarDigitoVerificadorVertical(string dataToHash)
         {
-            throw new System.NotImplementedException();
+            var ASCIIHash = Encoding.ASCII.GetBytes(dataToHash);
+            var hashedData = SHA256.Create().ComputeHash(ASCIIHash);
+
+            return Encoding.ASCII.GetString(hashedData);
         }
 
         public string GenerarTokenDeSesion(UsuarioBE user)
