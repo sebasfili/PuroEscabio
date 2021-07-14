@@ -19,7 +19,7 @@ namespace PuroEscabio.Login
             {
                 Apellido = txtApellido.Text,
                 Direccion = txtDireccion.Text,
-                DNI = int.Parse(txtDNI.Text),
+                DNI = uint.Parse(txtDNI.Text),
                 Nombre = txtNombre.Text,
                 ProvinciaEstado = txtCiudad.Text,
                 PaisID = int.Parse(dpPais.SelectedValue)

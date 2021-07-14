@@ -2,6 +2,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace DAL
 {
@@ -30,6 +32,7 @@ namespace DAL
             }
         }
 
+
         public List<BitacoraBE> ObtenerBitacoraCompleta()
         {
             using (var dbContext = new PuroEscabioDataContext())
@@ -46,6 +49,26 @@ namespace DAL
 
                 return bitacora;
 
+            }
+        }
+
+        public void RecalcularDigitoVerificadorHorizontalTodos()
+        {
+            using (var dbContext = new PuroEscabioDataContext())
+            {                
+                var rowsToHash = (from hash in dbContext.Usuarios select hash).ToList();
+
+                foreach (var row in rowsToHash)
+                {
+                    string fila = string.Format("{0}{1}{0}", row.Usuario1, row.Contraseña, row.Id_rol);
+                    var hashedData = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(fila));
+                    var hash = BitConverter.ToString(hashedData).Replace("-", "").ToLower();
+
+                    row.Dig_ver_h = hash;
+
+                }
+
+                dbContext.SubmitChanges();
             }
         }
 

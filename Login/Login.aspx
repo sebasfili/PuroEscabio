@@ -36,7 +36,7 @@
         <div class="row justify-content-md-center">
             <div class="col col-lg-5">
                 <h5>¿Todavía no esta registrado?</h5>
-                <p><a class="link-success" runat="server" href="#">Registrarse aquí</a></p>
+                <p><a class="link-success" runat="server" href="Register.aspx">Registrarse aquí</a></p>
             </div>
         </div>
 

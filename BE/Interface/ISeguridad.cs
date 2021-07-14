@@ -9,9 +9,9 @@ namespace BE.Interface
         bool BorrarTokenDeSesion(UsuarioBE user);
         string RenovarTokenDeSesion(UsuarioBE user);
         bool ValidarIntegridadDeAplicacion(UsuarioBE user);
-        bool GenerarDigitoVerificadorVertical();//podría ser sobre precio de producto.
-        bool GenerarDigitoVerificadorHorizontal();//podría ser sobre usuario
-        void CrearBitacora(UsuarioBE user, string action);//registrar ingreso y egreso de usuario. BackUp y Restore
+        void RecalcularDigitoVerificadorVerticalTodos();
+        void RecalcularDigitoVerificadorHorizontalTodos();
+        void CrearBitacora(UsuarioBE user, string action);
         bool CrearBackUpBD(string BDName);
         bool RestoreBD(string BDName);
         List<string> ObtenerBackUps();

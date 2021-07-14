@@ -367,6 +367,8 @@ namespace DAL
 		
 		private System.Nullable<int> _Id_rol;
 		
+		private string _Dig_ver_h;
+		
 		private EntitySet<Bitacora> _Bitacoras;
 		
 		private EntitySet<Factura> _Facturas;
@@ -389,6 +391,8 @@ namespace DAL
     partial void OnPersona_idChanged();
     partial void OnId_rolChanging(System.Nullable<int> value);
     partial void OnId_rolChanged();
+    partial void OnDig_ver_hChanging(string value);
+    partial void OnDig_ver_hChanged();
     #endregion
 		
 		public Usuario()
@@ -504,6 +508,26 @@ namespace DAL
 					this._Id_rol = value;
 					this.SendPropertyChanged("Id_rol");
 					this.OnId_rolChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dig_ver_h", DbType="VarChar(64)")]
+		public string Dig_ver_h
+		{
+			get
+			{
+				return this._Dig_ver_h;
+			}
+			set
+			{
+				if ((this._Dig_ver_h != value))
+				{
+					this.OnDig_ver_hChanging(value);
+					this.SendPropertyChanging();
+					this._Dig_ver_h = value;
+					this.SendPropertyChanged("Dig_ver_h");
+					this.OnDig_ver_hChanged();
 				}
 			}
 		}
@@ -1797,7 +1821,7 @@ namespace DAL
 		
 		private string _Apellido;
 		
-		private System.Nullable<int> _DNI;
+		private System.Nullable<decimal> _DNI;
 		
 		private string _Direccion;
 		
@@ -1819,7 +1843,7 @@ namespace DAL
     partial void OnNombreChanged();
     partial void OnApellidoChanging(string value);
     partial void OnApellidoChanged();
-    partial void OnDNIChanging(System.Nullable<int> value);
+    partial void OnDNIChanging(System.Nullable<decimal> value);
     partial void OnDNIChanged();
     partial void OnDireccionChanging(string value);
     partial void OnDireccionChanged();
@@ -1896,8 +1920,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DNI", DbType="Int")]
-		public System.Nullable<int> DNI
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DNI", DbType="Decimal(18,0)")]
+		public System.Nullable<decimal> DNI
 		{
 			get
 			{
@@ -2108,7 +2132,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="NChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(50)")]
 		public string Descripcion
 		{
 			get

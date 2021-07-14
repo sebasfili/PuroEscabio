@@ -16,6 +16,7 @@
       <Column Name="Contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Persona_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Id_rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dig_ver_h" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
       <Association Name="Usuario_Bitacora" Member="Bitacoras" ThisKey="Id" OtherKey="Usuario_id" Type="Bitacora" />
       <Association Name="Usuario_Factura" Member="Facturas" ThisKey="Id" OtherKey="Usuario_id" Type="Factura" />
       <Association Name="Persona_Usuario" Member="Persona" ThisKey="Persona_id" OtherKey="Id" Type="Persona" IsForeignKey="true" />
@@ -94,7 +95,7 @@
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DNI" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DNI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="Provincia_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Pais_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -105,7 +106,7 @@
   <Table Name="dbo.Rol" Member="Rols">
     <Type Name="Rol">
       <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="Rol_Usuario" Member="Usuarios" ThisKey="Id" OtherKey="Id_rol" Type="Usuario" />
       <Association Name="Rol_RolPatente" Member="RolPatentes" ThisKey="Id" OtherKey="Id_rol" Type="RolPatente" />
     </Type>

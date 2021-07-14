@@ -37,6 +37,7 @@ namespace PuroEscabio
                     aBitacora.Visible = true;
                     aProductsList.Visible = false;
                     aPackList.Visible = false;
+                    aDigiVerificador.Visible = true;
                     break;
                 case "Usuario":
                     aRoles.Visible = false;
@@ -44,6 +45,7 @@ namespace PuroEscabio
                     aBitacora.Visible = false;
                     aProductsList.Visible = true;
                     aPackList.Visible = true;
+                    aDigiVerificador.Visible = false;
                     break;
                 default:
                     aRoles.Visible = false;
@@ -51,6 +53,7 @@ namespace PuroEscabio
                     aBitacora.Visible = false;
                     aProductsList.Visible = false;
                     aPackList.Visible = false;
+                    aDigiVerificador.Visible = false;
                     break;
             }
         }

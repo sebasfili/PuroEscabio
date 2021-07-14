@@ -41,20 +41,15 @@ namespace BLL
             return Encoding.ASCII.GetString(hashedPassword);
         }
 
-        public string GenerarDigitoVerificadorHorizontal(string dataToHash)
+        public void RecalcularDigitoVerificadorHorizontalTodos()
         {
-            var ASCIIHash = Encoding.ASCII.GetBytes(dataToHash);
-            var hashedData = SHA256.Create().ComputeHash(ASCIIHash);
-
-            return Encoding.ASCII.GetString(hashedData);
+            var seguridad = new SeguridadDAL();
+            seguridad.RecalcularDigitoVerificadorHorizontalTodos();
         }
 
-        public string GenerarDigitoVerificadorVertical(string dataToHash)
+        public void RecalcularDigitoVerificadorVerticalTodos()
         {
-            var ASCIIHash = Encoding.ASCII.GetBytes(dataToHash);
-            var hashedData = SHA256.Create().ComputeHash(ASCIIHash);
-
-            return Encoding.ASCII.GetString(hashedData);
+            throw new NotImplementedException();
         }
 
         public string GenerarTokenDeSesion(UsuarioBE user)

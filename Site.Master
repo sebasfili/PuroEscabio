@@ -50,6 +50,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="nav-item">
                             <a runat="server" class="nav-link active" id="aBitacora" href="~/Security/Bitacora.aspx">Bitacora</a>
                         </li>
+                         <li class="nav-item">
+                            <a runat="server" class="nav-link active" id="aDigiVerificador" href="~/Security/DataBaseIntegrity.aspx">Dígito Verificador</a>
+                        </li>
                         <li class="nav-item">
                             <a runat="server" class="nav-link active" id="aProductsList" href="~/Products/ProductsList">Lista de Productos</a>
                         </li>
