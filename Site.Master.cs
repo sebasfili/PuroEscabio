@@ -40,7 +40,7 @@ namespace PuroEscabio
             switch (usuarioActual?.PerfilDeUsuario?.Descripcion)
             {
                 case "Administrador":
-                    aRoles.Visible = true;
+                    //aRoles.Visible = true;
                     aUsers.Visible = true;
                     aBitacora.Visible = true;
                     aProductsList.Visible = false;
@@ -48,7 +48,7 @@ namespace PuroEscabio
                     aDigiVerificador.Visible = true;
                     break;
                 case "Usuario":
-                    aRoles.Visible = false;
+                    //aRoles.Visible = false;
                     aUsers.Visible = false;
                     aBitacora.Visible = false;
                     aProductsList.Visible = true;
@@ -56,7 +56,7 @@ namespace PuroEscabio
                     aDigiVerificador.Visible = false;
                     break;
                 default:
-                    aRoles.Visible = false;
+                    //aRoles.Visible = false;
                     aUsers.Visible = false;
                     aBitacora.Visible = false;
                     aProductsList.Visible = false;

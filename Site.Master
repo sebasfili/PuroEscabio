@@ -42,10 +42,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="nav-item">
                             <a runat="server" class="nav-link active" id="aContact" href="~/Contact">Contacto</a>
                         </li>
-                        <li class="nav-item">
+                        <%--<li class="nav-item">
                             <a runat="server" class="nav-link active" id="aRoles" href="~/Security/Roles">Role de Seguridad</a>
-                        </li>
-                        <li class="nav-item"><a runat="server" class="nav-link active" id="aUsers" href="~/Security/Users">Usuarios</a>
+                        </li>--%>
+                        <li class="nav-item"><a runat="server" class="nav-link active" id="aUsers" href="~/Security/BackUp.aspx">Back-Up</a>
                         </li>
                         <li class="nav-item">
                             <a runat="server" class="nav-link active" id="aBitacora" href="~/Security/Bitacora.aspx">Bitacora</a>

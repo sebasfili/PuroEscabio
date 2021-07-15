@@ -1,9 +1,12 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace PuroEscabio.Security
 {
@@ -13,5 +16,16 @@ namespace PuroEscabio.Security
         {
 
         }
+
+       
+
+        protected void btnExecBackup_Click(object sender, EventArgs e)
+        {
+            var seguridad = new SeguridadBLL();
+            var path = Server.MapPath("~/BackUps");
+            seguridad.CrearBackUpBD(dpDB.SelectedValue, path);
+        }
+
+      
     }
 }

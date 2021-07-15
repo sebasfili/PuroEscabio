@@ -15,9 +15,11 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public bool CrearBackUpBD(string BDName)
+        public bool CrearBackUpBD(string DBName, string targetPath)
         {
-            throw new System.NotImplementedException();
+            var seguridad = new SeguridadDAL();
+           return seguridad.BackupDatabase(DBName, targetPath);
+
         }
 
         public List<BitacoraBE> ObtenerBitacoraCompleta()

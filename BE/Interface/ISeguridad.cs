@@ -12,7 +12,7 @@ namespace BE.Interface
         void RecalcularDigitoVerificadorVerticalTodos();
         void RecalcularDigitoVerificadorHorizontalTodos();
         void CrearBitacora(UsuarioBE user, string action);
-        bool CrearBackUpBD(string BDName);
+        bool CrearBackUpBD(string BDName, string targetPath);
         bool RestoreBD(string BDName);
         List<string> ObtenerBackUps();
         string EncriptarClaveDeUsuario(string password);
