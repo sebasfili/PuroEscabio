@@ -41,30 +41,46 @@
                     <asp:Label Text="Ocurrió un Error, intente más tarde" ID="lblError" Visible="false" CssClass="alert alert-danger" role="alert" runat="server" />
                 </div>
             </div>
+            <div class="alert alert-success alert-dismissible fade show" role="alert" runat="server" id="divBackupExito" visible="false">
+                <h3 class="alert-heading">Back Up Exitoso</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <p>La Base de Datos se respaldó con éxito.</p>
+                <hr>
+                <p class="mb-0">Puede continuar trabajando...</p>
+            </div>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" runat="server" id="divBackupError" visible="false">
+                <h3 class="alert-heading">Error de Copia de Seguridad</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                <p>Ocurrió un error durante el proceso de respaldo, no se pudo realizar de forma automática.</p>
+                <hr>
+                <p class="mb-0">Contacte al Administrador de Base de Datos.</p>
+            </div>
         </div>
         <div class="tab-pane fade" id="restore" role="tabpanel" aria-labelledby="restore-tab">
             <div class="container m-3">
-                <div class="row justify-content-lg-center">
+                <div class="row justify-content-lg-center">           
                     <div class="col-lg-4 form-floating">
                         <asp:DropDownList runat="server" ID="dpBackUps" CssClass="form-select">
-                        </asp:DropDownList>
-                        <asp:RequiredFieldValidator ErrorMessage="El campo es requerido" ControlToValidate="dpDB" SetFocusOnError="true" runat="server" CssClass="alert-danger" />
-                        <asp:Label Text="Base de Datos" runat="server" CssClass="form-label" AssociatedControlID="dpDB" />
+                            
+                        </asp:DropDownList>                        
+                        <asp:Label Text="Base de Datos" runat="server" CssClass="form-label" AssociatedControlID="dpBackUps" />
                     </div>
                 </div>
                 <div class="row">
-                    <asp:Button Text="Ejecutar Back-Up" runat="server" CssClass="btn btn-warning btn-lg" ID="btnRestoreBD" OnClick="btnRestoreBD_Click" />
+                    <asp:Button Text="Ejecutar Restore" runat="server" CssClass="btn btn-warning btn-lg" ID="btnRestoreBD" OnClick="btnRestoreBD_Click" />
                     <asp:Label Text="Ocurrió un Error, intente más tarde" ID="Label1" Visible="false" CssClass="alert alert-danger" role="alert" runat="server" />
                 </div>
             </div>
-            <div class="alert alert-success" role="alert" runat="server" id="divExito" visible="false">
+            <div class="alert alert-success alert-dismissible fade show" role="alert" runat="server" id="divExito" visible="false">
                 <h3 class="alert-heading">Restauración Exitosa</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 <p>La Base de Datos se restauró con éxito</p>
                 <hr>
                 <p class="mb-0">Cierre la ventana del navegador y vuelva a iniciar sesión</p>
             </div>
-            <div class="alert alert-success" role="alert" runat="server" id="divError" visible="false">
+            <div class="alert alert-danger alert-dismissible fade show" role="alert" runat="server" id="divError" visible="false">
                 <h3 class="alert-heading">Error en la restauración</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 <p>Ocurrió un error durante el proceso de restauración, no se pudo realizar de forma automática.</p>
                 <hr>
                 <p class="mb-0">Contacte al Administrador de Base de Datos.</p>

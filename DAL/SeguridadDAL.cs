@@ -50,7 +50,7 @@ namespace DAL
                                     FechaInicio = bt.Fecha_inicio,
                                     Id = bt.Id,
                                     Usuario_id = bt.Usuario_id
-                                }).ToList();
+                                }).OrderByDescending(x=>x.FechaInicio).ToList();
 
                 return bitacora;
 

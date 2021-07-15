@@ -21,10 +21,21 @@ namespace PuroEscabio.Security
         {
             if (!Page.IsPostBack)
             {
-                dpBackUps.DataSource = CargarBackUps();
-                dpBackUps.DataValueField = "BackUpPath";
-                dpBackUps.DataTextField = "NombreBD";
+                dpBackUps.DataSource = null;
+
+                foreach (BackUp item in CargarBackUps())
+                {
+                    var listItem = new ListItem()
+                    {
+                        Text = item.NombreBD,
+                        Value = item.BackUpPath
+                    };
+                    dpBackUps.Items.Add(listItem);
+                }
+
+                
                 dpBackUps.DataBind();
+               
             }
 
         }
@@ -40,7 +51,9 @@ namespace PuroEscabio.Security
         {
             var seguridad = new SeguridadBLL();
             var path = Server.MapPath("~/BackUps/");
-            seguridad.CrearBackUpBD(dpDB.SelectedValue, path);
+            bool res = seguridad.CrearBackUpBD(dpDB.SelectedValue, path);
+            divBackupError.Visible = !res;
+            divBackupExito.Visible = res;
         }
 
         protected void btnRestoreBD_Click(object sender, EventArgs e)
@@ -52,9 +65,22 @@ namespace PuroEscabio.Security
                 NombreBD = dpBackUps.SelectedItem.Text
             };
 
+
             bool res = seguridad.RestoreBD(bk);
             divError.Visible = !res;
             divExito.Visible = res;
+        }
+
+       
+
+        protected void dpBackUps_SelectedIndexChanged1(object sender, EventArgs e)
+        {
+            var a = 9;
+        }
+
+        protected void dpBackUps_TextChanged(object sender, EventArgs e)
+        {
+            var a = 9;
         }
     }
 }

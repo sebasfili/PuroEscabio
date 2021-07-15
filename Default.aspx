@@ -4,7 +4,7 @@
 
     <div class="jumbotron">
         <h1>Usted ingres&oacute; como <asp:Label Text="text" runat="server"  ID="lblRolUsuario"/> </h1>
-        <p class="lead">En construcción</p>      
+        <p class="lead">Bienvenido</p>      
     </div>   
 </asp:Content>
 

@@ -19,6 +19,14 @@ namespace PuroEscabio
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
+        void Application_End(object sender, EventArgs e)
+        {
+            FormsAuthentication.SignOut();
+            FormsAuthentication.RedirectToLoginPage();
+            Session.Clear();
+            Session.Abandon();
+        }
+
         protected void Application_BeginRequest(object sender, EventArgs e)
         {
             string a = "";
@@ -28,17 +36,7 @@ namespace PuroEscabio
 
         protected void Application_EndRequest(object sender, EventArgs e)
         {
-            using (var stream = new MemoryStream())
-            {
-                HttpContext.Current.Request.InputStream.Seek(0, SeekOrigin.Begin);
-                HttpContext.Current.Request.InputStream.CopyTo(stream);
-                string requestBody = Encoding.UTF8.GetString(stream.ToArray());
-                if (requestBody != string.Empty)
-                {
-                    //JObject inputReqObj = JObject.Parse(requestBody);
-                    //var UserID = (string)inputReqObj["eUserID"];
-                }
-            }
+          
 
         }
 
@@ -49,7 +47,8 @@ namespace PuroEscabio
         }
         protected void Session_End(object sender, EventArgs e)
         {
-            string a = "";
+            string a = "a";
+            ;
 
         }
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
