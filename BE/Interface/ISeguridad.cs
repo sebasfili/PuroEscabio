@@ -14,7 +14,7 @@ namespace BE.Interface
         void CrearBitacora(UsuarioBE user, string action);
         bool CrearBackUpBD(string BDName, string targetPath);
         bool RestoreBD(string BDName);
-        List<string> ObtenerBackUps();
+        List<BackUp> ObtenerBackUps(string path);
         string EncriptarClaveDeUsuario(string password);
         List<BitacoraBE> ObtenerBitacoraCompleta();
         List<RolPatenteBE> ObtenerPermisosDeUsuario(UsuarioBE user);

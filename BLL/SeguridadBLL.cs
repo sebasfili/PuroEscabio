@@ -18,7 +18,7 @@ namespace BLL
         public bool CrearBackUpBD(string DBName, string targetPath)
         {
             var seguridad = new SeguridadDAL();
-           return seguridad.BackupDatabase(DBName, targetPath);
+            return seguridad.BackupDatabase(DBName, targetPath);
 
         }
 
@@ -59,9 +59,10 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public List<string> ObtenerBackUps()
+        public List<BackUp> ObtenerBackUps(string path)
         {
-            throw new System.NotImplementedException();
+            var seguridad = new SeguridadDAL();
+            return seguridad.ObtenerBackUps(path);
         }
 
         public List<RolPatenteBE> ObtenerPermisosDeUsuario(UsuarioBE user)
@@ -108,7 +109,7 @@ namespace BLL
 
             foreach (Bebida producto in bebidaHash)
             {
-                var reHash = seguridad.GenerarHash(producto.Descripcion,producto.SKU, producto.Precio.ToString());
+                var reHash = seguridad.GenerarHash(producto.Descripcion, producto.SKU, producto.Precio.ToString());
 
                 if (!(string.Compare(reHash, producto.Dig_ver_h) == 0))
                 {

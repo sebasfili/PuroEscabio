@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -54,6 +55,28 @@ namespace DAL
                 return bitacora;
 
             }
+        }
+
+        public List<BackUp> ObtenerBackUps(string path)
+        {
+            string[] fileEntries = Directory.GetFiles(path);
+            List<BackUp> backups = new List<BackUp>();
+
+
+            foreach (string item in fileEntries)
+            {
+                if (!item.Contains(".ini"))
+                {
+                    backups.Add(new BackUp()
+                    {
+                        NombreBD = item.Substring(item.LastIndexOf('\\') + 1),
+                        BackUpPath = item.Substring(0, item.LastIndexOf('\\'))
+                    });
+
+                }
+            }
+
+            return backups;
         }
 
         public void RecalcularDigitoVerificadorHorizontalTodos()
@@ -129,7 +152,7 @@ namespace DAL
         }
 
         //Method, pass your databaseName, username, password, server name and destination path to save backup file
-        public bool BackupDatabase(string databaseName,  string destinationPath)
+        public bool BackupDatabase(string databaseName, string destinationPath)
         {
             try
             {
@@ -140,14 +163,15 @@ namespace DAL
 
                 sqlBackup.Action = BackupActionType.Database;
 
-                sqlBackup.BackupSetDescription = string.Format("BackUp_{0}_", databaseName, DateTime.Now.ToShortDateString());
+                sqlBackup.BackupSetDescription = string.Format("BackUp_{0}_{1}.bak", databaseName, DateTime.Now.ToString("yyyyMMddHHmmss"));
 
-                sqlBackup.BackupSetName = "FullBackUp";
+                sqlBackup.BackupSetName = string.Format("BackUp_{0}_{1}.bak", databaseName, DateTime.Now.ToString("yyyyMMddHHmmss"));
 
                 sqlBackup.Database = databaseName;
                 //Declare a BackupDeviceItem
 
-                BackupDeviceItem deviceItem = new BackupDeviceItem(destinationPath + "FullBackUp.bak", DeviceType.File);
+                //Nombre de la Base de Datos.
+                BackupDeviceItem deviceItem = new BackupDeviceItem(string.Format("{0}BackUp_{1}_{2}.bak", destinationPath, databaseName, DateTime.Now.ToString("yyyyMMddHHmmss")), DeviceType.File);
 
                 ////Define Server connection if diferent to LOCAL               
                 //var connectionString = new SqlConnection(@"Data Source =.\sebas; Initial Catalog = PuroEscabio; Integrated Security = True");
@@ -180,10 +204,10 @@ namespace DAL
 
                 //Remove the backup device from the Backup object.           
                 sqlBackup.Devices.Remove(deviceItem);
-                
+
                 return true;
             }
-           catch (Exception ex)
+            catch (Exception ex)
             {
 
                 return false;
@@ -191,5 +215,77 @@ namespace DAL
 
         }
 
+        public bool RestoreDataBase(string rootPath, string databaseName, string databaseBackupName)
+        {
+
+            try
+            {
+                // Define a Restore object variable.  
+                Restore rs = new Restore();
+
+                BackupDeviceItem bdi = new BackupDeviceItem(string.Format("{0}{1}", rootPath, databaseBackupName), DeviceType.File);
+
+                // Set the NoRecovery property to true, so the transactions are not recovered.   
+                rs.NoRecovery = true;
+
+                // Add the device that contains the full database backup to the Restore object.   
+                rs.Devices.Add(bdi);
+
+                // Specify the database name.   
+                rs.Database = databaseName;
+
+                // Restore the full database backup with no recovery.   
+                Server srv = new Server();
+                srv.LoginMode = ServerLoginMode.Integrated;
+                srv.ConnectionContext.StatementTimeout = 60 * 60;
+                rs.SqlRestore(srv);
+
+                // Inform the user that the Full Database Restore is complete.   
+                Console.WriteLine("Full Database Restore complete.");
+
+                // reacquire a reference to the database  
+                Database db = srv.Databases[databaseName];
+
+                // Remove the device from the Restore object.  
+                rs.Devices.Remove(bdi);
+
+                // Set the NoRecovery property to False.   
+                rs.NoRecovery = false;
+
+                // Add the device that contains the differential backup to the Restore object.   
+                BackupDeviceItem bdid = default(BackupDeviceItem);
+                rs.Devices.Add(bdid);
+
+                // Restore the differential database backup with recovery.   
+                rs.SqlRestore(srv);
+
+                // Inform the user that the differential database restore is complete.   
+                System.Console.WriteLine("Differential Database Restore complete.");
+
+                // Remove the device.   
+                rs.Devices.Remove(bdid);
+
+                // Set the database recovery mode back to its original value.  
+                int recoverymod;
+                recoverymod = (int)db.DatabaseOptions.RecoveryModel;
+                db.RecoveryModel = (RecoveryModel)recoverymod;
+
+                // Drop the table that was added.   
+                db.Tables["test_table"].Drop();
+                db.Alter();
+
+                // Remove the backup files from the hard disk.  
+                // This location is dependent on the installation of SQL Server  
+                System.IO.File.Delete("C:\\Program Files\\Microsoft SQL Server\\MSSQL12.MSSQLSERVER\\MSSQL\\Backup\\Test_Full_Backup1");
+                System.IO.File.Delete("C:\\Program Files\\Microsoft SQL Server\\MSSQL12.MSSQLSERVER\\MSSQL\\Backup\\Test_Differential_Backup1");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
     }
 }

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackUp.cs" />
     <Compile Include="Composite\FamiliaComposite.cs" />
     <Compile Include="Composite\PatenteLeaf.cs" />
     <Compile Include="Composite\PermisoComponent.cs" />
