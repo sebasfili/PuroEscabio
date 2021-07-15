@@ -18,6 +18,7 @@
       <Column Name="Persona_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Id_rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Dig_ver_h" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Habilitado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
       <Association Name="Usuario_Bitacora" Member="Bitacoras" ThisKey="Id" OtherKey="Usuario_id" Type="Bitacora" />
       <Association Name="Usuario_Factura" Member="Facturas" ThisKey="Id" OtherKey="Usuario_id" Type="Factura" />
       <Association Name="Persona_Usuario" Member="Persona" ThisKey="Persona_id" OtherKey="Id" Type="Persona" IsForeignKey="true" />

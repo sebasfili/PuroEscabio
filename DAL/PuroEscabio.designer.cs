@@ -393,6 +393,8 @@ namespace DAL
 		
 		private string _Dig_ver_h;
 		
+		private System.Nullable<bool> _Habilitado;
+		
 		private EntitySet<Bitacora> _Bitacoras;
 		
 		private EntitySet<Factura> _Facturas;
@@ -417,6 +419,8 @@ namespace DAL
     partial void OnId_rolChanged();
     partial void OnDig_ver_hChanging(string value);
     partial void OnDig_ver_hChanged();
+    partial void OnHabilitadoChanging(System.Nullable<bool> value);
+    partial void OnHabilitadoChanged();
     #endregion
 		
 		public Usuario()
@@ -552,6 +556,26 @@ namespace DAL
 					this._Dig_ver_h = value;
 					this.SendPropertyChanged("Dig_ver_h");
 					this.OnDig_ver_hChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Habilitado", DbType="Bit")]
+		public System.Nullable<bool> Habilitado
+		{
+			get
+			{
+				return this._Habilitado;
+			}
+			set
+			{
+				if ((this._Habilitado != value))
+				{
+					this.OnHabilitadoChanging(value);
+					this.SendPropertyChanging();
+					this._Habilitado = value;
+					this.SendPropertyChanged("Habilitado");
+					this.OnHabilitadoChanged();
 				}
 			}
 		}
