@@ -26,6 +26,7 @@ namespace PuroEscabio.Security
                 dpBackUps.DataTextField = "NombreBD";
                 dpBackUps.DataBind();
             }
+
         }
 
         private List<BackUp> CargarBackUps()
@@ -44,7 +45,16 @@ namespace PuroEscabio.Security
 
         protected void btnRestoreBD_Click(object sender, EventArgs e)
         {
+            var seguridad = new SeguridadBLL();
+            var bk = new BackUp()
+            {
+                BackUpPath = string.Format("{0}\\", dpBackUps.SelectedItem.Value),
+                NombreBD = dpBackUps.SelectedItem.Text
+            };
 
+            bool res = seguridad.RestoreBD(bk);
+            divError.Visible = !res;
+            divExito.Visible = res;
         }
     }
 }

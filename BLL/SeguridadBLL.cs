@@ -80,9 +80,10 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public bool RestoreBD(string BDName)
+        public bool RestoreBD(BackUp backUpSelected)
         {
-            throw new System.NotImplementedException();
+            var seguridad = new SeguridadDAL();
+            return seguridad.RestoreDataBase(backUpSelected.BackUpPath, "PuroEscabio", backUpSelected.NombreBD);
         }
 
         public bool ValidarIntegridadDeAplicacion()

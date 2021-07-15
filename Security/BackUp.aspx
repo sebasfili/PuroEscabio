@@ -57,6 +57,18 @@
                     <asp:Label Text="Ocurrió un Error, intente más tarde" ID="Label1" Visible="false" CssClass="alert alert-danger" role="alert" runat="server" />
                 </div>
             </div>
+            <div class="alert alert-success" role="alert" runat="server" id="divExito" visible="false">
+                <h3 class="alert-heading">Restauración Exitosa</h3>
+                <p>La Base de Datos se restauró con éxito</p>
+                <hr>
+                <p class="mb-0">Cierre la ventana del navegador y vuelva a iniciar sesión</p>
+            </div>
+            <div class="alert alert-success" role="alert" runat="server" id="divError" visible="false">
+                <h3 class="alert-heading">Error en la restauración</h3>
+                <p>Ocurrió un error durante el proceso de restauración, no se pudo realizar de forma automática.</p>
+                <hr>
+                <p class="mb-0">Contacte al Administrador de Base de Datos.</p>
+            </div>
         </div>
     </div>
 

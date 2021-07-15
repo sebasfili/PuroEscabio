@@ -226,58 +226,34 @@ namespace DAL
                 BackupDeviceItem bdi = new BackupDeviceItem(string.Format("{0}{1}", rootPath, databaseBackupName), DeviceType.File);
 
                 // Set the NoRecovery property to true, so the transactions are not recovered.   
-                rs.NoRecovery = true;
-
+                rs.NoRecovery = false;
+                rs.Action = RestoreActionType.Database;
+                rs.ReplaceDatabase = true;
                 // Add the device that contains the full database backup to the Restore object.   
                 rs.Devices.Add(bdi);
 
                 // Specify the database name.   
-                rs.Database = databaseName;
+                rs.Database = databaseName;                
+                
+                
+
 
                 // Restore the full database backup with no recovery.   
                 Server srv = new Server();
-                srv.LoginMode = ServerLoginMode.Integrated;
+                srv.LoginMode = ServerLoginMode.Integrated;                
                 srv.ConnectionContext.StatementTimeout = 60 * 60;
+                srv.KillDatabase(databaseName);
+                rs.Wait();
                 rs.SqlRestore(srv);
+                
 
                 // Inform the user that the Full Database Restore is complete.   
                 Console.WriteLine("Full Database Restore complete.");
 
-                // reacquire a reference to the database  
-                Database db = srv.Databases[databaseName];
-
-                // Remove the device from the Restore object.  
-                rs.Devices.Remove(bdi);
-
-                // Set the NoRecovery property to False.   
-                rs.NoRecovery = false;
-
-                // Add the device that contains the differential backup to the Restore object.   
-                BackupDeviceItem bdid = default(BackupDeviceItem);
-                rs.Devices.Add(bdid);
-
-                // Restore the differential database backup with recovery.   
-                rs.SqlRestore(srv);
-
-                // Inform the user that the differential database restore is complete.   
-                System.Console.WriteLine("Differential Database Restore complete.");
-
-                // Remove the device.   
-                rs.Devices.Remove(bdid);
-
-                // Set the database recovery mode back to its original value.  
-                int recoverymod;
-                recoverymod = (int)db.DatabaseOptions.RecoveryModel;
-                db.RecoveryModel = (RecoveryModel)recoverymod;
-
-                // Drop the table that was added.   
-                db.Tables["test_table"].Drop();
-                db.Alter();
-
                 // Remove the backup files from the hard disk.  
                 // This location is dependent on the installation of SQL Server  
-                System.IO.File.Delete("C:\\Program Files\\Microsoft SQL Server\\MSSQL12.MSSQLSERVER\\MSSQL\\Backup\\Test_Full_Backup1");
-                System.IO.File.Delete("C:\\Program Files\\Microsoft SQL Server\\MSSQL12.MSSQLSERVER\\MSSQL\\Backup\\Test_Differential_Backup1");
+                //System.IO.File.Delete("C:\\Program Files\\Microsoft SQL Server\\MSSQL12.MSSQLSERVER\\MSSQL\\Backup\\Test_Full_Backup1");
+                //System.IO.File.Delete("C:\\Program Files\\Microsoft SQL Server\\MSSQL12.MSSQLSERVER\\MSSQL\\Backup\\Test_Differential_Backup1");
 
                 return true;
             }
