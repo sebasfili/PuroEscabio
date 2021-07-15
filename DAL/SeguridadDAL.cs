@@ -55,17 +55,22 @@ namespace DAL
         public void RecalcularDigitoVerificadorHorizontalTodos()
         {
             using (var dbContext = new PuroEscabioDataContext())
-            {                
+            {
                 var rowsToHash = (from hash in dbContext.Usuarios select hash).ToList();
 
                 foreach (var row in rowsToHash)
                 {
-                    string fila = string.Format("{0}{1}{0}", row.Usuario1, row.Contraseña, row.Id_rol);
-                    var hashedData = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(fila));
-                    var hash = BitConverter.ToString(hashedData).Replace("-", "").ToLower();
-
+                    var hash = GenerarHash(row.Usuario1, row.Contraseña, row.Id_rol.ToString());
                     row.Dig_ver_h = hash;
 
+                }
+
+                var bebidaRows = (from hash in dbContext.Bebidas select hash).ToList();
+
+                foreach (var row in bebidaRows)
+                {
+                    var hash = GenerarHash(row.Descripcion, row.SKU, row.Precio.ToString());
+                    row.Dig_ver_h = hash;
                 }
 
                 dbContext.SubmitChanges();
@@ -88,6 +93,35 @@ namespace DAL
                 dbContext.Bitacoras.InsertOnSubmit(bitacora);
                 dbContext.SubmitChanges();
             }
+        }
+
+        public List<Bebida> ObtenerHashProductoParaValidarIntegridad()
+        {
+            using (var dbContext = new PuroEscabioDataContext())
+            {
+                var rows = (from hash in dbContext.Bebidas select hash).ToList();
+
+                return rows;
+            }
+        }
+
+        public List<Usuario> ObtenerHashUsuarioParaValidarIntegridad()
+        {
+            using (var dbContext = new PuroEscabioDataContext())
+            {
+                var usuarioRows = (from hash in dbContext.Usuarios select hash).ToList();
+
+                return usuarioRows;
+            }
+        }
+
+        public string GenerarHash(params string[] param)
+        {
+            string fila = string.Join("5", param);
+            var hashedData = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(fila));
+            var hash = BitConverter.ToString(hashedData).Replace("-", "").ToLower();
+
+            return hash;
         }
     }
 }

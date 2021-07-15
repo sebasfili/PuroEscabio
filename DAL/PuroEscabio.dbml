@@ -6,6 +6,7 @@
       <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="SKU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Dig_ver_h" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
       <Association Name="Bebida_Factura_Detalle" Member="Factura_Detalles" ThisKey="Id" OtherKey="Bebida_id" Type="Factura_Detalle" />
     </Type>
   </Table>

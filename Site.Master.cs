@@ -22,7 +22,15 @@ namespace PuroEscabio
             }
 
             ValidarMenu();
+            ValidarIntegridadDeBaseDeDatos();
+        }
 
+        private void ValidarIntegridadDeBaseDeDatos()
+        {
+            var seguridad = new SeguridadBLL();
+
+            divIntegridad.Visible = !seguridad.ValidarIntegridadDeAplicacion();
+            MainContent.Visible = !divIntegridad.Visible;
         }
 
         private void ValidarMenu()

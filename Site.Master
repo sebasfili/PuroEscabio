@@ -14,7 +14,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		function hideURLbar(){ window.scrollTo(0,1); } </script>--%>
 
     <link href="Content/bootstrap.css" rel="stylesheet" />
-    
+
 
     <script src="../Scripts/jquery-3.6.0.min.js"></script>
     <script src="../Scripts/bootstrap.js">    </script>
@@ -50,7 +50,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="nav-item">
                             <a runat="server" class="nav-link active" id="aBitacora" href="~/Security/Bitacora.aspx">Bitacora</a>
                         </li>
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a runat="server" class="nav-link active" id="aDigiVerificador" href="~/Security/DataBaseIntegrity.aspx">Dígito Verificador</a>
                         </li>
                         <li class="nav-item">
@@ -85,7 +85,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //main-slider -->
         <!-- //top-header and slider -->
         <!-- top-brands -->
-        <div class="container ">
+        <div class="container">
+            <div class="alert alert-danger" role="alert" runat="server" id="divIntegridad" visible="false">
+                <h3 class="alert-heading">Error de Integridad de Datos</h3>
+                <p>La integridad de la Base de Datos ha sido violada. Se requiere recuperar la misma para poder continuar.</p>
+                <hr>
+                <p class="mb-0">Reporte el error al Webmaster y reintente más tarde.</p>
+            </div>
+
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
@@ -97,43 +104,43 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBarFooter" aria-controls="navBarFooter" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse container" id="navBarFooter">                
-                    <div class="row">
-                        <div class="col col-lg">
-                            <h5>© 2021 Puro Escabio
-                            </h5>
-                        </div>
-                        <div class="col col-lg">
-                            <h3>Contacto</h3>
+            <div class="collapse container" id="navBarFooter">
+                <div class="row">
+                    <div class="col col-lg">
+                        <h5>© 2021 Puro Escabio
+                        </h5>
+                    </div>
+                    <div class="col col-lg">
+                        <h3>Contacto</h3>
 
-                            <ul class="nav flex-column address">
-                                <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Av. Dorrgo N° 100, <span>CABA.</span></li>
-                                <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:puroescabio@gmail.com">puroescabio@gmail.com</a></li>
-                                <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1145637895</li>
-                            </ul>
-                        </div>
-                        <div class="col col-lg">
-                            <h3>Información</h3>
-                            <ul class="nav flex-column">
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/About">Sobre Nosotros</a></li>
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Contact">Contacto</a></li>
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/FrequentQuestions">Preguntas Frecuentes</a></li>
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Return">Devoluciones</a></li>
-                            </ul>
-                        </div>
-                        <div class="col col-lg">
-                            <h3>Categoría</h3>
-                            <ul class="nav flex-column">
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Beer">Cerveza</a></li>
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Wine">Vino</a></li>
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Champagne">Champagne</a></li>
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Appetizer">Aperitivo</a></li>
-                                <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Whiskey">Whisky</a></li>
-                            </ul>
-                        </div>
+                        <ul class="nav flex-column address">
+                            <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>Av. Dorrgo N° 100, <span>CABA.</span></li>
+                            <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:puroescabio@gmail.com">puroescabio@gmail.com</a></li>
+                            <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>1145637895</li>
+                        </ul>
+                    </div>
+                    <div class="col col-lg">
+                        <h3>Información</h3>
+                        <ul class="nav flex-column">
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/About">Sobre Nosotros</a></li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Contact">Contacto</a></li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/FrequentQuestions">Preguntas Frecuentes</a></li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Return">Devoluciones</a></li>
+                        </ul>
+                    </div>
+                    <div class="col col-lg">
+                        <h3>Categoría</h3>
+                        <ul class="nav flex-column">
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Beer">Cerveza</a></li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Wine">Vino</a></li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Champagne">Champagne</a></li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Appetizer">Aperitivo</a></li>
+                            <li><i class="fa fa-arrow-right" aria-hidden="true"></i><a runat="server" href="~/Products/Whiskey">Whisky</a></li>
+                        </ul>
                     </div>
                 </div>
-            
+            </div>
+
         </div>
     </nav>
 </body>

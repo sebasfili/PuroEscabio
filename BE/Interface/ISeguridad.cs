@@ -8,7 +8,7 @@ namespace BE.Interface
         string GenerarTokenDeSesion(UsuarioBE user);
         bool BorrarTokenDeSesion(UsuarioBE user);
         string RenovarTokenDeSesion(UsuarioBE user);
-        bool ValidarIntegridadDeAplicacion(UsuarioBE user);
+        bool ValidarIntegridadDeAplicacion();
         void RecalcularDigitoVerificadorVerticalTodos();
         void RecalcularDigitoVerificadorHorizontalTodos();
         void CrearBitacora(UsuarioBE user, string action);

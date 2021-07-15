@@ -82,9 +82,40 @@ namespace BLL
             throw new System.NotImplementedException();
         }
 
-        public bool ValidarIntegridadDeAplicacion(UsuarioBE user)
+        public bool ValidarIntegridadDeAplicacion()
         {
-            throw new System.NotImplementedException();
+            var seguridad = new SeguridadDAL();
+
+            #region Validación Hash Usuario
+            var usuarioHash = seguridad.ObtenerHashUsuarioParaValidarIntegridad();
+
+            foreach (Usuario usuario in usuarioHash)
+            {
+                var reHash = seguridad.GenerarHash(usuario.Usuario1, usuario.Contraseña, usuario.Id_rol.ToString());
+
+                if (!(string.Compare(reHash, usuario.Dig_ver_h) == 0))
+                {
+                    return false;
+                }
+            }
+            #endregion
+
+            #region Validación Hash Producto
+
+            var bebidaHash = seguridad.ObtenerHashProductoParaValidarIntegridad();
+
+            foreach (Bebida producto in bebidaHash)
+            {
+                var reHash = seguridad.GenerarHash(producto.Descripcion,producto.SKU, producto.Precio.ToString());
+
+                if (!(string.Compare(reHash, producto.Dig_ver_h) == 0))
+                {
+                    return false;
+                }
+            }
+            #endregion
+
+            return true;
         }
     }
 }

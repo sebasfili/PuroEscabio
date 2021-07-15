@@ -203,6 +203,8 @@ namespace DAL
 		
 		private System.Nullable<decimal> _Precio;
 		
+		private string _Dig_ver_h;
+		
 		private EntitySet<Factura_Detalle> _Factura_Detalles;
 		
     #region Extensibility Method Definitions
@@ -217,6 +219,8 @@ namespace DAL
     partial void OnSKUChanged();
     partial void OnPrecioChanging(System.Nullable<decimal> value);
     partial void OnPrecioChanged();
+    partial void OnDig_ver_hChanging(string value);
+    partial void OnDig_ver_hChanged();
     #endregion
 		
 		public Bebida()
@@ -301,6 +305,26 @@ namespace DAL
 					this._Precio = value;
 					this.SendPropertyChanged("Precio");
 					this.OnPrecioChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Dig_ver_h", DbType="VarChar(64)")]
+		public string Dig_ver_h
+		{
+			get
+			{
+				return this._Dig_ver_h;
+			}
+			set
+			{
+				if ((this._Dig_ver_h != value))
+				{
+					this.OnDig_ver_hChanging(value);
+					this.SendPropertyChanging();
+					this._Dig_ver_h = value;
+					this.SendPropertyChanged("Dig_ver_h");
+					this.OnDig_ver_hChanged();
 				}
 			}
 		}
