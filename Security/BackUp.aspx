@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="Respaldo y Restauración de la Base de Datos" MasterPageFile="~/Site.Master" Language="C#" AutoEventWireup="true" CodeBehind="BackUp.aspx.cs" Inherits="PuroEscabio.Security.Security" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:DropDownList runat="server" OnSelectedIndexChanged="Unnamed_SelectedIndexChanged" OnTextChanged="Unnamed_TextChanged" ID="dptest">
+        <asp:ListItem Text="text1" Value="1" />
+        <asp:ListItem Text="text2" Value="2" />
+    </asp:DropDownList>
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Inicio</a></li>
@@ -60,7 +64,7 @@
             <div class="container m-3">
                 <div class="row justify-content-lg-center">           
                     <div class="col-lg-4 form-floating">
-                        <asp:DropDownList runat="server" ID="dpBackUps" CssClass="form-select">
+                        <asp:DropDownList runat="server" ID="dpBackUps" CssClass="form-select" OnSelectedIndexChanged="Unnamed_SelectedIndexChanged" OnTextChanged="Unnamed_TextChanged">
                             
                         </asp:DropDownList>                        
                         <asp:Label Text="Base de Datos" runat="server" CssClass="form-label" AssociatedControlID="dpBackUps" />

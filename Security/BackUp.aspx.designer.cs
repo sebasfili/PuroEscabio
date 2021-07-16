@@ -15,6 +15,15 @@ namespace PuroEscabio.Security
     {
 
         /// <summary>
+        /// dptest control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dptest;
+
+        /// <summary>
         /// dpDB control.
         /// </summary>
         /// <remarks>

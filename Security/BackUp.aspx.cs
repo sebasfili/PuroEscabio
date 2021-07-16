@@ -28,14 +28,14 @@ namespace PuroEscabio.Security
                     var listItem = new ListItem()
                     {
                         Text = item.NombreBD,
-                        Value = item.BackUpPath
+
                     };
                     dpBackUps.Items.Add(listItem);
                 }
 
-                
+
                 dpBackUps.DataBind();
-               
+
             }
 
         }
@@ -61,7 +61,7 @@ namespace PuroEscabio.Security
             var seguridad = new SeguridadBLL();
             var bk = new BackUp()
             {
-                BackUpPath = string.Format("{0}\\", dpBackUps.SelectedItem.Value),
+                BackUpPath = Server.MapPath("~/BackUps/"),
                 NombreBD = dpBackUps.SelectedItem.Text
             };
 
@@ -71,16 +71,14 @@ namespace PuroEscabio.Security
             divExito.Visible = res;
         }
 
-       
-
-        protected void dpBackUps_SelectedIndexChanged1(object sender, EventArgs e)
+        protected void Unnamed_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var a = 9;
+            var a = 0;
         }
 
-        protected void dpBackUps_TextChanged(object sender, EventArgs e)
+        protected void Unnamed_TextChanged(object sender, EventArgs e)
         {
-            var a = 9;
+            var a = 0;
         }
     }
 }
