@@ -37,11 +37,8 @@ namespace PuroEscabio.Login
                 FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(1, txtUsuario.Text, DateTime.Now, DateTime.Now.AddMinutes(2880), false, usuarioActual.PerfilDeUsuario.Descripcion, FormsAuthentication.FormsCookiePath);
                 string hash = FormsAuthentication.Encrypt(ticket);
                 HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, hash);
-
-                if (ticket.IsPersistent)
-                {
-                    cookie.Expires = ticket.Expiration;
-                }
+                //cookie.Expires = DateTime.Now.AddDays(-1);
+                
                 Response.Cookies.Add(cookie);
                 Response.Redirect(FormsAuthentication.GetRedirectUrl(txtUsuario.Text, false));
 

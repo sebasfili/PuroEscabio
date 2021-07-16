@@ -12,7 +12,7 @@ namespace PuroEscabio
 {
     public class Global : HttpApplication
     {
-        void Application_Start(object sender, EventArgs e)
+        protected void Application_Start(object sender, EventArgs e)
         {
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
@@ -26,29 +26,16 @@ namespace PuroEscabio
             Session.Clear();
             Session.Abandon();
         }
-
-        protected void Application_BeginRequest(object sender, EventArgs e)
+        void Application_Disposed(object sender, EventArgs e)
         {
-            string a = "";
-
-
         }
-
-        protected void Application_EndRequest(object sender, EventArgs e)
+        protected void Session_Start()
         {
-          
-
-        }
-
-        protected void Session_Start(object sender, EventArgs e)
-        {
-            string a = "";
-
-        }
-        protected void Session_End(object sender, EventArgs e)
-        {
-            string a = "a";
-            ;
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
+            {
+                FormsAuthentication.SignOut();
+                Response.Redirect(Request.RawUrl);
+            }
 
         }
         protected void Application_AuthenticateRequest(object sender, EventArgs e)

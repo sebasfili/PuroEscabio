@@ -1,7 +1,9 @@
 ﻿using BE;
 using BLL;
 using System;
+using System.Web;
 using System.Web.Security;
+using System.Web.Services;
 using System.Web.UI;
 
 namespace PuroEscabio
@@ -20,7 +22,7 @@ namespace PuroEscabio
                 lblUsuarioActual.Text = string.Format("Usuario: {0}-Rol: {1}", usuarioActual.NombreDeUsuario, usuarioActual.PerfilDeUsuario.Descripcion);
                 lblUsuarioActual.Visible = true;
             }
-
+           
             ValidarMenu();
             ValidarIntegridadDeBaseDeDatos();
         }
@@ -77,5 +79,6 @@ namespace PuroEscabio
             Session.Clear();
             Session.Abandon();
         }
+
     }
 }
