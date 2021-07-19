@@ -11,6 +11,7 @@ namespace BE
         public int Id { get; set; }
         public string NombreDeUsuario { get; set; }
         public string Password { get; set; }
+        public string DigVerificador { get; set; }
         public PerfilBE PerfilDeUsuario { get; set; }
     }
 }

@@ -86,20 +86,21 @@ namespace BLL
             return seguridad.RestoreDataBase(backUpSelected.BackUpPath, "PuroEscabio", backUpSelected.NombreBD);
         }
 
-        public bool ValidarIntegridadDeAplicacion()
+        public Integridad ValidarIntegridadDeAplicacion()
         {
             var seguridad = new SeguridadDAL();
+            var integridad = new Integridad();
 
             #region Validación Hash Usuario
             var usuarioHash = seguridad.ObtenerHashUsuarioParaValidarIntegridad();
 
-            foreach (Usuario usuario in usuarioHash)
+            foreach (UsuarioBE usuario in usuarioHash)
             {
-                var reHash = seguridad.GenerarHash(usuario.Usuario1, usuario.Contraseña, usuario.Id_rol.ToString());
+                var reHash = seguridad.GenerarHash(usuario.NombreDeUsuario, usuario.Password, usuario.PerfilDeUsuario.Id.ToString());
 
-                if (!(string.Compare(reHash, usuario.Dig_ver_h) == 0))
+                if (!(string.Compare(reHash, usuario.DigVerificador) == 0))
                 {
-                    return false;
+                    integridad.Usuarios.Add(usuario);
                 }
             }
             #endregion
@@ -108,18 +109,18 @@ namespace BLL
 
             var bebidaHash = seguridad.ObtenerHashProductoParaValidarIntegridad();
 
-            foreach (Bebida producto in bebidaHash)
+            foreach (BebidasBE producto in bebidaHash)
             {
                 var reHash = seguridad.GenerarHash(producto.Descripcion, producto.SKU, producto.Precio.ToString());
 
-                if (!(string.Compare(reHash, producto.Dig_ver_h) == 0))
+                if (!(string.Compare(reHash, producto.DigVerificador) == 0))
                 {
-                    return false;
+                    integridad.Bebidas.Add(producto);
                 }
             }
             #endregion
 
-            return true;
+            return integridad;
         }
     }
 }

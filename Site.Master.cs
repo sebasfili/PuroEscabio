@@ -22,7 +22,7 @@ namespace PuroEscabio
                 lblUsuarioActual.Text = string.Format("Usuario: {0}-Rol: {1}", usuarioActual.NombreDeUsuario, usuarioActual.PerfilDeUsuario.Descripcion);
                 lblUsuarioActual.Visible = true;
             }
-           
+
             ValidarMenu();
             ValidarIntegridadDeBaseDeDatos();
         }
@@ -31,8 +31,19 @@ namespace PuroEscabio
         {
             var seguridad = new SeguridadBLL();
 
-            divIntegridad.Visible = !seguridad.ValidarIntegridadDeAplicacion();
-            MainContent.Visible = !divIntegridad.Visible;
+            var resultado = seguridad.ValidarIntegridadDeAplicacion();
+
+            if (resultado.Bebidas.Count > 0 || resultado.Usuarios.Count > 0)
+            {
+                divIntegridad.Visible = true;
+                MainContent.Visible = false;
+            }
+            else
+            {
+                divIntegridad.Visible = false;
+                MainContent.Visible = true;
+            }
+
         }
 
         private void ValidarMenu()

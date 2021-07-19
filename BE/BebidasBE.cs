@@ -14,7 +14,7 @@ namespace BE
         public int Id { get; set; }
         public string SKU { get; set; }
         public string Descripcion { get; set; }
-        public decimal Precio { get; set; }
-        
+        public decimal? Precio { get; set; }
+        public string DigVerificador { get; set; }
     }
 }

@@ -50,7 +50,7 @@ namespace DAL
                                     FechaInicio = bt.Fecha_inicio,
                                     Id = bt.Id,
                                     Usuario_id = bt.Usuario_id
-                                }).OrderByDescending(x=>x.FechaInicio).ToList();
+                                }).OrderByDescending(x => x.FechaInicio).ToList();
 
                 return bitacora;
 
@@ -122,21 +122,41 @@ namespace DAL
             }
         }
 
-        public List<Bebida> ObtenerHashProductoParaValidarIntegridad()
+        public List<BebidasBE> ObtenerHashProductoParaValidarIntegridad()
         {
             using (var dbContext = new PuroEscabioDataContext())
             {
-                var rows = (from hash in dbContext.Bebidas select hash).ToList();
+                var rows = (from hash in dbContext.Bebidas
+                            select new BebidasBE
+                            {
+                                Descripcion = hash.Descripcion,
+                                Id = hash.Id,
+                                Precio = hash.Precio,
+                                SKU = hash.SKU,
+                                DigVerificador = hash.Dig_ver_h
+                            }).ToList();
 
                 return rows;
             }
         }
 
-        public List<Usuario> ObtenerHashUsuarioParaValidarIntegridad()
+        public List<UsuarioBE> ObtenerHashUsuarioParaValidarIntegridad()
         {
             using (var dbContext = new PuroEscabioDataContext())
             {
-                var usuarioRows = (from hash in dbContext.Usuarios select hash).ToList();
+                var usuarioRows = (from hash in dbContext.Usuarios
+                                   select new UsuarioBE
+                                   {
+                                       Id = hash.Id,
+                                       NombreDeUsuario = hash.Usuario1,
+                                       Password = hash.Contraseña,
+                                       DigVerificador = hash.Dig_ver_h,
+                                       PerfilDeUsuario = new PerfilBE
+                                       {
+                                           Descripcion = hash.Rol.Descripcion,
+                                           Id = hash.Rol.Id
+                                       }
+                                   }).ToList();
 
                 return usuarioRows;
             }
@@ -233,19 +253,19 @@ namespace DAL
                 rs.Devices.Add(bdi);
 
                 // Specify the database name.   
-                rs.Database = databaseName;                
-                
-                
+                rs.Database = databaseName;
+
+
 
 
                 // Restore the full database backup with no recovery.   
                 Server srv = new Server();
-                srv.LoginMode = ServerLoginMode.Integrated;                
+                srv.LoginMode = ServerLoginMode.Integrated;
                 srv.ConnectionContext.StatementTimeout = 60 * 60;
                 srv.KillDatabase(databaseName);
                 rs.Wait();
                 rs.SqlRestore(srv);
-                
+
 
                 // Inform the user that the Full Database Restore is complete.   
                 Console.WriteLine("Full Database Restore complete.");

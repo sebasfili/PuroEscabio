@@ -46,6 +46,7 @@
     <Compile Include="Composite\FamiliaComposite.cs" />
     <Compile Include="Composite\PatenteLeaf.cs" />
     <Compile Include="Composite\PermisoComponent.cs" />
+    <Compile Include="Integridad.cs" />
     <Compile Include="Interface\ICompra.cs" />
     <Compile Include="Interface\ILogIn.cs" />
     <Compile Include="Interface\IProducto.cs" />
