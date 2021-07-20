@@ -123,6 +123,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\descarga.gif" />
     <Content Include="Login\Web.config" />
     <Content Include="Products\Web.config" />
     <Content Include="Login\Login.aspx" />
