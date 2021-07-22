@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BE;
+using BLL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,10 @@ namespace PuroEscabio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
+            
         }
+
+      
     }
 }

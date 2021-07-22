@@ -24,7 +24,7 @@ namespace PuroEscabio.Login
                 ProvinciaEstado = txtCiudad.Text,
                 PaisID = int.Parse(dpPais.SelectedValue)
             };
-            
+
             var seguridad = new SeguridadBLL();
 
             var usuario = new UsuarioBE()
@@ -33,6 +33,8 @@ namespace PuroEscabio.Login
                 Password = seguridad.EncriptarClaveDeUsuario(txtPassword.Text),
                 PerfilDeUsuario = new PerfilBE() { Descripcion = "Usuario", Id = 5 }
             };
+
+            usuario.DigVerificador = seguridad.GenerarDigitoVerificadorDeUsuario(usuario);
 
             var registrarBll = new LogInBLL();
             UsuarioBE newUser = registrarBll.RegistrarUsuario(usuario, persona);

@@ -1,6 +1,8 @@
 ﻿using BE;
 using BLL;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Web;
 using System.Web.Security;
@@ -28,6 +30,8 @@ namespace PuroEscabio.Login
 
             UsuarioBE usuarioActual = logIn.ObtenerLoginIn(usuario);
 
+           
+
             if (usuarioActual != null)
             {
 
@@ -38,7 +42,7 @@ namespace PuroEscabio.Login
                 string hash = FormsAuthentication.Encrypt(ticket);
                 HttpCookie cookie = new HttpCookie(FormsAuthentication.FormsCookieName, hash);
                 //cookie.Expires = DateTime.Now.AddDays(-1);
-                
+
                 Response.Cookies.Add(cookie);
                 Response.Redirect(FormsAuthentication.GetRedirectUrl(txtUsuario.Text, false));
 
@@ -50,5 +54,7 @@ namespace PuroEscabio.Login
                 lblErrorLogin.Text = "El usuario y/o contraseña ingresado es incorrecto";
             }
         }
+
+      
     }
 }

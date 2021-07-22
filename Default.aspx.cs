@@ -24,9 +24,48 @@ namespace PuroEscabio
             else
             {
                 lblRolUsuario.Text = usuarioLogueado?.PerfilDeUsuario?.Descripcion;
+                ValidarIntegridadDeBaseDeDatos();
             }
         }
 
-      
+        private bool ValidarIntegridadDeBaseDeDatos()
+        {
+            var seguridad = new SeguridadBLL();
+            var erroresIntegridad = new List<GrillaIntegridadBE>();
+            var resultado = seguridad.ValidarIntegridadDeAplicacion();
+
+            if (resultado.Bebidas.Count > 0 || resultado.Usuarios.Count > 0)
+            {
+                erroresIntegridad.AddRange(resultado.Bebidas.Select(x => new GrillaIntegridadBE()
+                {
+                    Tabla = "Bebidas",
+                    IdRegistro = x.Id,
+                    ValoresActuales = string.Format("Descripcion: {0}; Precio: ${1}, SKU: {2}", x.Descripcion, x.Precio, x.SKU)
+                }).ToList());
+
+                erroresIntegridad.AddRange(resultado.Usuarios.Select(x => new GrillaIntegridadBE()
+                {
+                    Tabla = "Usuarios",
+                    IdRegistro = x.Id,
+                    ValoresActuales = string.Format("Usuario: {0}; Perfil: {1}", x.NombreDeUsuario, x.PerfilDeUsuario)
+                }));
+
+
+                gvErroresIntegridad.DataSource = erroresIntegridad;
+                gvErroresIntegridad.DataBind();
+
+                divIntegridad.Visible = true;
+                
+
+                return true;
+            }
+            else
+            {
+                divIntegridad.Visible = false;
+
+                return false;
+            }
+
+        }
     }
 }

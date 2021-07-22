@@ -86,6 +86,12 @@ namespace BLL
             return seguridad.RestoreDataBase(backUpSelected.BackUpPath, "PuroEscabio", backUpSelected.NombreBD);
         }
 
+        public string GenerarDigitoVerificadorDeUsuario(UsuarioBE usuario)
+        {
+            var seguridad = new SeguridadDAL();
+            return seguridad.GenerarHash(usuario.NombreDeUsuario, usuario.Password, usuario.PerfilDeUsuario.Id.ToString());
+        }
+
         public Integridad ValidarIntegridadDeAplicacion()
         {
             var seguridad = new SeguridadDAL();

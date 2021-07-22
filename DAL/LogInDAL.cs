@@ -18,7 +18,7 @@ namespace DAL
                 var resultado = (from usuario in dbContext.Usuarios
                                  where usuario.Usuario1.ToLower().Trim() == user.NombreDeUsuario.ToLower().Trim()
                                   && string.Compare(usuario.Contraseña, user.Password) == 0
-                                 select usuario).FirstOrDefault();            
+                                 select usuario).FirstOrDefault();
 
                 if (resultado != null)
                 {
@@ -29,7 +29,7 @@ namespace DAL
                         Password = resultado.Contraseña,
                         PerfilDeUsuario = new PerfilBE()
                         {
-                            Descripcion =resultado.Rol.Descripcion,
+                            Descripcion = resultado.Rol.Descripcion,
                             Id = resultado.Rol.Id
                         }
                     };
@@ -55,7 +55,9 @@ namespace DAL
                     {
                         Contraseña = user.Password,
                         Id_rol = user.PerfilDeUsuario.Id,
-                        Usuario1 = user.NombreDeUsuario
+                        Usuario1 = user.NombreDeUsuario,
+                        Dig_ver_h = user.DigVerificador,
+                        Habilitado = true
                     };
 
                     var persona = new Persona()
@@ -69,7 +71,7 @@ namespace DAL
                     };
 
                     dbContext.Personas.InsertOnSubmit(persona);
-                    
+
                     dbContext.SubmitChanges();
                     usuario.Persona_id = persona.Id;
                     dbContext.Usuarios.InsertOnSubmit(usuario);
