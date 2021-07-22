@@ -22,8 +22,19 @@ namespace PuroEscabio.Security
 
         protected void btnDigHorizontal_Click(object sender, EventArgs e)
         {
-            var seguridadBLL = new SeguridadBLL();
-            seguridadBLL.RecalcularDigitoVerificadorHorizontalTodos();
+            try
+            {
+                var seguridadBLL = new SeguridadBLL();
+                seguridadBLL.RecalcularDigitoVerificadorHorizontalTodos();
+
+                divExito.Visible = true;
+                divError.Visible = false;
+            }
+            catch (Exception)
+            {
+                divExito.Visible = false;
+                divError.Visible = true;
+            }
         }
     }
 }
