@@ -3,8 +3,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Packs</li>
+            <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><%: Title %></li>
         </ol>
     </nav>
 

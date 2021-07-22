@@ -44,7 +44,7 @@ namespace PuroEscabio.Login
                 //cookie.Expires = DateTime.Now.AddDays(-1);
 
                 Response.Cookies.Add(cookie);
-                Response.Redirect(FormsAuthentication.GetRedirectUrl(txtUsuario.Text, false));
+                Response.Redirect("~/Default.aspx");
 
 
             }

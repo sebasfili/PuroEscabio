@@ -24,6 +24,24 @@ namespace PuroEscabio
         protected global::System.Web.UI.HtmlControls.HtmlForm masterForm;
 
         /// <summary>
+        /// navbarSupportedContent control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl navbarSupportedContent;
+
+        /// <summary>
+        /// aStart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor aStart;
+
+        /// <summary>
         /// aAbout control.
         /// </summary>
         /// <remarks>
@@ -40,6 +58,15 @@ namespace PuroEscabio
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor aContact;
+
+        /// <summary>
+        /// aOurProducts control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor aOurProducts;
 
         /// <summary>
         /// aUsers control.

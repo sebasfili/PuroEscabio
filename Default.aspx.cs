@@ -14,6 +14,7 @@ namespace PuroEscabio
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             var usuarioLogueado = Session["UsuarioLogueado"] as UsuarioBE;
 
             if (usuarioLogueado == null)
@@ -47,7 +48,7 @@ namespace PuroEscabio
                 {
                     Tabla = "Usuarios",
                     IdRegistro = x.Id,
-                    ValoresActuales = string.Format("Usuario: {0}; Perfil: {1}", x.NombreDeUsuario, x.PerfilDeUsuario)
+                    ValoresActuales = string.Format("Usuario: {0}; Perfil: {1}", x.NombreDeUsuario, x.PerfilDeUsuario.Descripcion)
                 }));
 
 
@@ -55,14 +56,30 @@ namespace PuroEscabio
                 gvErroresIntegridad.DataBind();
 
                 divIntegridad.Visible = true;
-                
+                var usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
 
+                if (string.Compare(usuarioActual.NombreDeUsuario, "sebastianfilippelli@gmail.com", false) == 0)
+                {
+                    Master.EnableMenu();
+                }
+                else
+                {
+                    Master.DisableMenu();
+
+
+                    seguridad.CrearBitacora(usuarioActual, "Cerró sesión");
+
+                    FormsAuthentication.SignOut();
+
+                    Session.Clear();
+                    Session.Abandon();
+                }
                 return true;
             }
             else
             {
                 divIntegridad.Visible = false;
-
+                Master.EnableMenu();
                 return false;
             }
 

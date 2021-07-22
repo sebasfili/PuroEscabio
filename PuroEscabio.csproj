@@ -123,8 +123,29 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\brahama-lata.jfif" />
+    <Content Include="Images\brahama-litro.jfif" />
+    <Content Include="Images\campari.jfif" />
+    <Content Include="Images\champagne-chandon.jfif" />
+    <Content Include="Images\champagne-navarrocorrea.jfif" />
+    <Content Include="Images\champagne-varonb.jfif" />
+    <Content Include="Images\corona-lata.jfif" />
+    <Content Include="Images\corona-personal.jfif" />
     <Content Include="Images\descarga.gif" />
+    <Content Include="Images\fernet-1982.jfif" />
+    <Content Include="Images\fernet-branca.jfif" />
+    <Content Include="Images\gancia.jfif" />
+    <Content Include="Images\patagonia-lata.jfif" />
+    <Content Include="Images\patagonia-litro.jfif" />
+    <Content Include="Images\vino-calia.jfif" />
+    <Content Include="Images\vino-donvalentin.jfif" />
+    <Content Include="Images\vino-lopez.jfif" />
+    <Content Include="Images\vodka-smirnoff.jfif" />
+    <Content Include="Images\wisky-jackdaniels.jfif" />
+    <Content Include="Images\wisky-singleton.jfif" />
+    <Content Include="Images\wisky-smuggler.jfif" />
     <Content Include="Login\Web.config" />
+    <Content Include="OurProducts.aspx" />
     <Content Include="Products\Web.config" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\Register.aspx" />
@@ -248,6 +269,13 @@
     </Compile>
     <Compile Include="Login\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OurProducts.aspx.cs">
+      <DependentUpon>OurProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OurProducts.aspx.designer.cs">
+      <DependentUpon>OurProducts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Products\Appetizer.aspx.cs">
       <DependentUpon>Appetizer.aspx</DependentUpon>

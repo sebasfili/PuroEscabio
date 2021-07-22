@@ -21,15 +21,18 @@ namespace PuroEscabio
                 btnCerrarSesion.Visible = true;
                 aIngresar.Visible = false;
                 aRegistrar.Visible = false;
-                lblUsuarioActual.Text = string.Format("Usuario: {0}-Rol: {1}", usuarioActual.NombreDeUsuario, usuarioActual.PerfilDeUsuario.Descripcion);
+                lblUsuarioActual.Text = string.Format("Usuario: {0} - Rol: {1}", usuarioActual.NombreDeUsuario, usuarioActual.PerfilDeUsuario.Descripcion);
                 lblUsuarioActual.Visible = true;
             }
 
             ValidarMenu();
-            
+
         }
 
-     
+        public void DisableMenu()
+        {
+            navbarSupportedContent.Visible = false;
+        }
 
         private void ValidarMenu()
         {
@@ -43,14 +46,18 @@ namespace PuroEscabio
                     aBitacora.Visible = true;
                     aProductsList.Visible = false;
                     aPackList.Visible = false;
+                    aOurProducts.Visible = false;
                     aDigiVerificador.Visible = true;
+                    aStart.Visible = true;
                     break;
                 case "Usuario":
                     //aRoles.Visible = false;
                     aUsers.Visible = false;
+                    aOurProducts.Visible = false;
                     aBitacora.Visible = false;
                     aProductsList.Visible = true;
                     aPackList.Visible = true;
+                    aStart.Visible = true;
                     aDigiVerificador.Visible = false;
                     break;
                 default:
@@ -62,6 +69,11 @@ namespace PuroEscabio
                     aDigiVerificador.Visible = false;
                     break;
             }
+        }
+
+        internal void EnableMenu()
+        {
+            navbarSupportedContent.Visible = true;
         }
 
         protected void aCerrarSesion_Click(Object sender, EventArgs e)

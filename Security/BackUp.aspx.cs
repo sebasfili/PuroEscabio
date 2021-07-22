@@ -16,27 +16,35 @@ namespace PuroEscabio.Security
     {
         SqlConnection con = new SqlConnection();
         SqlCommand sqlcmd = new SqlCommand();
-
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            ViewState["CheckRefresh"] = Session["CheckRefresh"];
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
+            if (!IsPostBack)
             {
-                dpBackUps.DataSource = null;
-
-                foreach (BackUp item in CargarBackUps())
-                {
-                    var listItem = new ListItem()
-                    {
-                        Text = item.NombreBD,
-
-                    };
-                    dpBackUps.Items.Add(listItem);
-                }
-
-
-                dpBackUps.DataBind();
-
+                Session["CheckRefresh"] =
+                Server.UrlDecode(System.DateTime.Now.ToString());
             }
+
+            dpBackUps.DataSource = null;
+            dpBackUps.Items.Clear();
+
+            foreach (BackUp item in CargarBackUps())
+            {
+                var listItem = new ListItem()
+                {
+                    Text = item.NombreBD,
+
+                };
+                dpBackUps.Items.Add(listItem);
+            }
+
+
+            dpBackUps.DataBind();
+
+
 
         }
 
@@ -49,26 +57,53 @@ namespace PuroEscabio.Security
 
         protected void btnExecBackup_Click(object sender, EventArgs e)
         {
-            var seguridad = new SeguridadBLL();
-            var path = Server.MapPath("~/BackUps/");
-            bool res = seguridad.CrearBackUpBD(dpDB.SelectedValue, path);
-            divBackupError.Visible = !res;
-            divBackupExito.Visible = res;
+            if (Session["CheckRefresh"].ToString() == ViewState["CheckRefresh"].ToString())
+            {
+                var seguridad = new SeguridadBLL();
+                var path = Server.MapPath("~/BackUps/");
+                bool res = seguridad.CrearBackUpBD(dpDB.SelectedValue, path);
+                divBackupError.Visible = !res;
+                divBackupExito.Visible = res;
+                Session["CheckRefresh"] =
+                Server.UrlDecode(System.DateTime.Now.ToString());
+            }
+            else
+            {
+                //Label1.Text = "Page Refreshed";
+            }
+
+           
+
         }
 
         protected void btnRestoreBD_Click(object sender, EventArgs e)
         {
-            var seguridad = new SeguridadBLL();
-            var bk = new BackUp()
+            try
             {
-                BackUpPath = Server.MapPath("~/BackUps/"),
-                NombreBD = dpBackUps.SelectedItem.Text
-            };
+                sinBackup.Visible = false;
+                if (dpBackUps.Items == null || dpBackUps.Items.Count <= 0)
+                {
+                    sinBackup.Visible = true;
+                    return;
+                }
+
+                var seguridad = new SeguridadBLL();
+                var bk = new BackUp()
+                {
+                    BackUpPath = Server.MapPath("~/BackUps/"),
+                    NombreBD = dpBackUps.SelectedItem.Text
+                };
 
 
-            bool res = seguridad.RestoreBD(bk);
-            divError.Visible = !res;
-            divExito.Visible = res;
+                bool res = seguridad.RestoreBD(bk);
+                divError.Visible = !res;
+                divExito.Visible = res;
+            }
+            catch (Exception)
+            {
+
+                sinBackup.Visible = true;
+            }
         }
 
         protected void Unnamed_SelectedIndexChanged(object sender, EventArgs e)
