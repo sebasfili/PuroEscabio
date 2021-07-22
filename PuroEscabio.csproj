@@ -212,7 +212,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Security\Bitacora.aspx" />
-    <Content Include="Security\DataBaseIntegrity.aspx" />
+    <Content Include="Webmaster\DataBaseIntegrity.aspx" />
     <Content Include="Security\Roles.aspx" />
     <Content Include="Security\BackUp.aspx" />
     <Content Include="Security\Users.aspx" />
@@ -221,6 +221,7 @@
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="Webmaster\Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -334,11 +335,11 @@
     <Compile Include="Security\Bitacora.aspx.designer.cs">
       <DependentUpon>Bitacora.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Security\DataBaseIntegrity.aspx.cs">
+    <Compile Include="Webmaster\DataBaseIntegrity.aspx.cs">
       <DependentUpon>DataBaseIntegrity.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Security\DataBaseIntegrity.aspx.designer.cs">
+    <Compile Include="Webmaster\DataBaseIntegrity.aspx.designer.cs">
       <DependentUpon>DataBaseIntegrity.aspx</DependentUpon>
     </Compile>
     <Compile Include="Security\Roles.aspx.cs">

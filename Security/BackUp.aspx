@@ -59,9 +59,10 @@
         </div>
         <div class="tab-pane fade" id="restore" role="tabpanel" aria-labelledby="restore-tab">
             <div class="container m-3">
+                <asp:Button Text="Refrescar Buck-Ups" runat="server" CssClass="btn btn-warning btn-lg" ID="btnRefresh" OnClick="btnRefresh_Click"/>
                 <div class="row justify-content-lg-center">
                     <div class="col-lg-4 form-floating">
-                        <asp:DropDownList runat="server" ID="dpBackUps" CssClass="form-select" OnSelectedIndexChanged="Unnamed_SelectedIndexChanged" OnTextChanged="Unnamed_TextChanged">
+                        <asp:DropDownList runat="server" ID="dpBackUps" CssClass="form-select">
                         </asp:DropDownList>
                         <asp:Label Text="Base de Datos" runat="server" CssClass="form-label" AssociatedControlID="dpBackUps" />
                     </div>

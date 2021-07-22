@@ -3,8 +3,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="jumbotron">
-        <h1>Usted ingres&oacute; como <asp:Label Text="text" runat="server"  ID="lblRolUsuario"/> </h1>
-        <p class="lead">Bienvenido</p>      
+        <h1 role="alert" class="alert-secondary">Usted ingres&oacute; como <asp:Label Text="text" runat="server"  ID="lblRolUsuario" /> </h1>
+        <p class="lead"><h2>Bienvenido</h2></p>      
     </div>   
 
    <div class="alert alert-danger" role="alert" runat="server" id="divIntegridad" visible="false">

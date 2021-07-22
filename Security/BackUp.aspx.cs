@@ -3,12 +3,7 @@ using BLL;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Windows.Forms;
 
 namespace PuroEscabio.Security
 {
@@ -71,9 +66,6 @@ namespace PuroEscabio.Security
             {
                 //Label1.Text = "Page Refreshed";
             }
-
-           
-
         }
 
         protected void btnRestoreBD_Click(object sender, EventArgs e)
@@ -105,15 +97,26 @@ namespace PuroEscabio.Security
                 sinBackup.Visible = true;
             }
         }
+       
 
-        protected void Unnamed_SelectedIndexChanged(object sender, EventArgs e)
+        protected void btnRefresh_Click(object sender, EventArgs e)
         {
-            var a = 0;
-        }
+            dpBackUps.DataSource = null;
+            dpBackUps.Items.Clear();
 
-        protected void Unnamed_TextChanged(object sender, EventArgs e)
-        {
-            var a = 0;
+            foreach (BackUp item in CargarBackUps())
+            {
+                var listItem = new ListItem()
+                {
+                    Text = item.NombreBD,
+
+                };
+                dpBackUps.Items.Add(listItem);
+            }
+
+
+            dpBackUps.DataBind();
+
         }
     }
 }

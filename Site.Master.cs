@@ -12,6 +12,8 @@ namespace PuroEscabio
 {
     public partial class SiteMaster : MasterPage
     {
+    
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
@@ -40,6 +42,15 @@ namespace PuroEscabio
 
             switch (usuarioActual?.PerfilDeUsuario?.Descripcion)
             {
+                case "Webmaster":
+                    aUsers.Visible = true;
+                    aBitacora.Visible = true;
+                    aProductsList.Visible = false;
+                    aPackList.Visible = false;
+                    aOurProducts.Visible = false;
+                    aDigiVerificador.Visible = true;
+                    aStart.Visible = true;
+                    break;
                 case "Administrador":
                     //aRoles.Visible = true;
                     aUsers.Visible = true;
@@ -47,7 +58,7 @@ namespace PuroEscabio
                     aProductsList.Visible = false;
                     aPackList.Visible = false;
                     aOurProducts.Visible = false;
-                    aDigiVerificador.Visible = true;
+                    aDigiVerificador.Visible = false;
                     aStart.Visible = true;
                     break;
                 case "Usuario":

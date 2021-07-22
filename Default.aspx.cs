@@ -24,7 +24,9 @@ namespace PuroEscabio
             }
             else
             {
+
                 lblRolUsuario.Text = usuarioLogueado?.PerfilDeUsuario?.Descripcion;
+
                 ValidarIntegridadDeBaseDeDatos();
             }
         }
@@ -58,9 +60,10 @@ namespace PuroEscabio
                 divIntegridad.Visible = true;
                 var usuarioActual = Session["UsuarioLogueado"] as UsuarioBE;
 
-                if (string.Compare(usuarioActual.NombreDeUsuario, "sebastianfilippelli@gmail.com", false) == 0)
+                if (string.Compare(usuarioActual.PerfilDeUsuario.Descripcion, "webmaster", true) == 0)
                 {
                     Master.EnableMenu();
+
                 }
                 else
                 {
