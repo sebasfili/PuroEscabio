@@ -51,7 +51,8 @@ namespace BLL
 
         public void RecalcularDigitoVerificadorVerticalTodos()
         {
-            throw new NotImplementedException();
+            var seguridad = new SeguridadDAL();
+            seguridad.RecalcularDigitoVerificadorVerticalTodos();
         }
 
         public string GenerarTokenDeSesion(UsuarioBE user)

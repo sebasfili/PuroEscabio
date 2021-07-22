@@ -37,6 +37,28 @@ namespace DAL
             }
         }
 
+        public void RecalcularDigitoVerificadorVerticalTodos()
+        {
+            using (var dbContext = new PuroEscabioDataContext())
+            {
+                var rowsToHash = (from hash in dbContext.Usuarios select hash).ToList();
+
+                foreach (var row in rowsToHash)
+                {
+                   
+
+                }
+
+                var bebidaRows = (from hash in dbContext.Bebidas select hash).ToList();
+
+                foreach (var row in bebidaRows)
+                {
+                    
+                }
+
+                dbContext.SubmitChanges();
+            }
+        }
 
         public List<BitacoraBE> ObtenerBitacoraCompleta()
         {
