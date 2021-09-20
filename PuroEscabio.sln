@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "BLL\BLL.csproj", "{9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{82B0C243-B2E7-45D5-935A-116C09D74C2E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSPuroEscabio", "..\WSPuroEscabio\WSPuroEscabio.csproj", "{4D2D611E-A8F8-4427-AC09-490D3F16D7B1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSPuroEscabio", "WSPuroEscabio\WSPuroEscabio.csproj", "{4D2D611E-A8F8-4427-AC09-490D3F16D7B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
