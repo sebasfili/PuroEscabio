@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PuroEscabio" Class="PuroEscabioBDDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=PuroEscabio;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PuroEscabioConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Bebida" Member="Bebidas">
+    <Type Name="Bebida">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SKU" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Dig_ver_h" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Association Name="Bebida_Factura_Detalle" Member="Factura_Detalles" ThisKey="Id" OtherKey="Bebida_id" Type="Factura_Detalle" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuario" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Usuario" Member="Usuario1" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Contraseña" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Persona_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Dig_ver_h" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="Habilitado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Usuario_Bitacora" Member="Bitacoras" ThisKey="Id" OtherKey="Usuario_id" Type="Bitacora" />
+      <Association Name="Usuario_Factura" Member="Facturas" ThisKey="Id" OtherKey="Usuario_id" Type="Factura" />
+      <Association Name="Persona_Usuario" Member="Persona" ThisKey="Persona_id" OtherKey="Id" Type="Persona" IsForeignKey="true" />
+      <Association Name="Rol_Usuario" Member="Rol" ThisKey="Id_rol" OtherKey="Id" Type="Rol" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bitacora" Member="Bitacoras">
+    <Type Name="Bitacora">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha_inicio" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Fecha_fin" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Usuario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Association Name="Usuario_Bitacora" Member="Usuario" ThisKey="Usuario_id" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Factura" Member="Facturas">
+    <Type Name="Factura">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Razon_social" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Tipo_factura" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="CUIT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CUIT_CUIL_cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Usuario_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Factura_Factura_Detalle" Member="Factura_Detalles" ThisKey="Id" OtherKey="Factura_id" Type="Factura_Detalle" />
+      <Association Name="Usuario_Factura" Member="Usuario" ThisKey="Usuario_id" OtherKey="Id" Type="Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Factura_Detalle" Member="Factura_Detalles">
+    <Type Name="Factura_Detalle">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Bebida_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Factura_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Bebida_Factura_Detalle" Member="Bebida" ThisKey="Bebida_id" OtherKey="Id" Type="Bebida" IsForeignKey="true" />
+      <Association Name="Factura_Factura_Detalle" Member="Factura" ThisKey="Factura_id" OtherKey="Id" Type="Factura" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Familia" Member="Familias">
+    <Type Name="Familia">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Codigo_familia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Familia_FamiliaPatente" Member="FamiliaPatentes" ThisKey="Id" OtherKey="Id_familia" Type="FamiliaPatente" />
+      <Association Name="Familia_Patente" Member="Patentes" ThisKey="Id" OtherKey="Id_familia" Type="Patente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.FamiliaPatente" Member="FamiliaPatentes">
+    <Type Name="FamiliaPatente">
+      <Column Name="Id_familia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_patente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Familia_FamiliaPatente" Member="Familia" ThisKey="Id_familia" OtherKey="Id" Type="Familia" IsForeignKey="true" />
+      <Association Name="Patente_FamiliaPatente" Member="Patente" ThisKey="Id_patente" OtherKey="Id" Type="Patente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pais" Member="Pais">
+    <Type Name="Pai">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Pai_Persona" Member="Personas" ThisKey="Id" OtherKey="Pais_id" Type="Persona" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Patente" Member="Patentes">
+    <Type Name="Patente">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Codigo_patente" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Id_familia" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Patente_FamiliaPatente" Member="FamiliaPatentes" ThisKey="Id" OtherKey="Id_patente" Type="FamiliaPatente" />
+      <Association Name="Patente_RolPatente" Member="RolPatentes" ThisKey="Id" OtherKey="Id_patente" Type="RolPatente" />
+      <Association Name="Familia_Patente" Member="Familia" ThisKey="Id_familia" OtherKey="Id" Type="Familia" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Persona" Member="Personas">
+    <Type Name="Persona">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Apellido" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DNI" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Provincia_estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Pais_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Persona_Usuario" Member="Usuarios" ThisKey="Id" OtherKey="Persona_id" Type="Usuario" />
+      <Association Name="Pai_Persona" Member="Pai" ThisKey="Pais_id" OtherKey="Id" Type="Pai" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Rol" Member="Rols">
+    <Type Name="Rol">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Rol_Usuario" Member="Usuarios" ThisKey="Id" OtherKey="Id_rol" Type="Usuario" />
+      <Association Name="Rol_RolPatente" Member="RolPatentes" ThisKey="Id" OtherKey="Id_rol" Type="RolPatente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RolPatente" Member="RolPatentes">
+    <Type Name="RolPatente">
+      <Column Name="Id_patente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_rol" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Patente_RolPatente" Member="Patente" ThisKey="Id_patente" OtherKey="Id" Type="Patente" IsForeignKey="true" />
+      <Association Name="Rol_RolPatente" Member="Rol" ThisKey="Id_rol" OtherKey="Id" Type="Rol" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
