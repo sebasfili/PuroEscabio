@@ -58,6 +58,8 @@
     <Compile Include="BebidasBE.cs" />
     <Compile Include="BitacoraBE.cs" />
     <Compile Include="RolPatenteBE.cs" />
+    <Compile Include="StockRequest.cs" />
+    <Compile Include="StockResponse.cs" />
     <Compile Include="UsuarioBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

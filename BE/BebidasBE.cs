@@ -16,5 +16,7 @@ namespace BE
         public string Descripcion { get; set; }
         public decimal? Precio { get; set; }
         public string DigVerificador { get; set; }
+        public uint StockMinimo { get; set; }
+        public uint StockActual { get; set; }
     }
 }
