@@ -26,7 +26,7 @@
                 <asp:RequiredFieldValidator ID="reqPassword" runat="server" CssClass="alert alert-danger" role="alert" ControlToValidate="txtPassword" ErrorMessage="El campo es requerido"></asp:RequiredFieldValidator>
 
                 <div>
-                    <a href="#" class="link-secondary">¿Olvido la contraseña?</a>
+                    <a hidden="hidden" href="#" class="link-secondary">¿Olvido la contraseña?</a>
                 </div>
                 <asp:Button CssClass="btn btn-warning" Text="Ingresar" runat="server" ID="btnIngresar" OnClick="btnIngresar_Click" />
 

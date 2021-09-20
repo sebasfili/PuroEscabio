@@ -50,9 +50,13 @@ namespace PuroEscabio
                     aOurProducts.Visible = false;
                     aDigiVerificador.Visible = true;
                     aStart.Visible = true;
+                    aContact.Visible = false;
+                    aAbout.Visible = false;
                     break;
                 case "Administrador":
                     //aRoles.Visible = true;
+                    aContact.Visible = false;
+                    aAbout.Visible = false;
                     aUsers.Visible = true;
                     aBitacora.Visible = true;
                     aProductsList.Visible = false;
