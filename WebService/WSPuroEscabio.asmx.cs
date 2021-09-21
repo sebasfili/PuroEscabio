@@ -23,15 +23,46 @@ namespace WebService
         public StockResponse PedidoDeStock(StockRequest stockReq)
         {
             var wsDAL = new WebserviceDAL();
-            wsDAL.ObtenerStock();
-            StockResponse result = null;
-            return result;
+            var result = wsDAL.ObtenerStock();
+            var stockResponse = new StockResponse()
+            {
+                ProductosARenovar = new List<BebidasBE>(),
+                ProductosEnStock = new List<BebidasBE>()
+            };
+
+            result.ForEach(x =>
+            {
+                var bebida = new BebidasBE()
+                {
+                    Descripcion = x.Descripcion,
+                    DigVerificador = x.Dig_ver_h,
+                    Id = x.Id,
+                    Precio = x.Precio,
+                    SKU = x.SKU,
+                    StockActual = x.stock_actual,
+                    StockMinimo = x.stock_minimo
+                };
+
+                if (x.stock_actual < x.stock_minimo)
+                {
+                    stockResponse.ProductosARenovar.Add(bebida);
+                }
+                else
+                {
+                    stockResponse.ProductosEnStock.Add(bebida);
+                }
+            });
+
+         
+            return stockResponse;
         }
 
         //pedido de stock por sucursal
         [WebMethod]
         public StockResponse PedidoDeStockPorSucursal(StockRequest stockReq)
         {
+            var wsDAL = new WebserviceDAL();
+            wsDAL.ObtenerStockPorSucursal();
             StockResponse result = null;
             return result;
         }
@@ -40,7 +71,10 @@ namespace WebService
         [WebMethod]
         public StockResponse ModificarStock(StockRequest stockReq)
         {
-            StockResponse result = null;
+            var wsDAL = new WebserviceDAL();
+            wsDAL.ActualizarStock(stockReq);         
+
+            StockResponse result = PedidoDeStock(stockReq); ;
             return result;
         }
 

@@ -205,6 +205,10 @@ namespace WebService.Repository
 		
 		private string _Dig_ver_h;
 		
+		private System.Nullable<int> _stock_minimo;
+		
+		private System.Nullable<int> _stock_actual;
+		
 		private EntitySet<Factura_Detalle> _Factura_Detalles;
 		
     #region Extensibility Method Definitions
@@ -221,6 +225,10 @@ namespace WebService.Repository
     partial void OnPrecioChanged();
     partial void OnDig_ver_hChanging(string value);
     partial void OnDig_ver_hChanged();
+    partial void Onstock_minimoChanging(System.Nullable<int> value);
+    partial void Onstock_minimoChanged();
+    partial void Onstock_actualChanging(System.Nullable<int> value);
+    partial void Onstock_actualChanged();
     #endregion
 		
 		public Bebida()
@@ -325,6 +333,46 @@ namespace WebService.Repository
 					this._Dig_ver_h = value;
 					this.SendPropertyChanged("Dig_ver_h");
 					this.OnDig_ver_hChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_minimo", DbType="Int")]
+		public System.Nullable<int> stock_minimo
+		{
+			get
+			{
+				return this._stock_minimo;
+			}
+			set
+			{
+				if ((this._stock_minimo != value))
+				{
+					this.Onstock_minimoChanging(value);
+					this.SendPropertyChanging();
+					this._stock_minimo = value;
+					this.SendPropertyChanged("stock_minimo");
+					this.Onstock_minimoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_actual", DbType="Int")]
+		public System.Nullable<int> stock_actual
+		{
+			get
+			{
+				return this._stock_actual;
+			}
+			set
+			{
+				if ((this._stock_actual != value))
+				{
+					this.Onstock_actualChanging(value);
+					this.SendPropertyChanging();
+					this._stock_actual = value;
+					this.SendPropertyChanged("stock_actual");
+					this.Onstock_actualChanged();
 				}
 			}
 		}
