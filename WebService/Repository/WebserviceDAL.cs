@@ -7,5 +7,12 @@ namespace WebService.Repository
 {
     public class WebserviceDAL
     {
+        public void ObtenerStock()
+        {
+            using (var dbContext = new PuroEscabioBDDataContext())
+            {
+
+            }
+        }
     }
 }

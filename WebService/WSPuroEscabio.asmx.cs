@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using WebService.Repository;
 
 namespace WebService
 {
@@ -21,6 +22,8 @@ namespace WebService
         [WebMethod]
         public StockResponse PedidoDeStock(StockRequest stockReq)
         {
+            var wsDAL = new WebserviceDAL();
+            wsDAL.ObtenerStock();
             StockResponse result = null;
             return result;
         }
