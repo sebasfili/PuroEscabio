@@ -20,7 +20,7 @@ namespace WebService
     {
         //pedido de stock en total
         [WebMethod]
-        public StockResponse PedidoDeStock(StockRequest stockReq)
+        public StockResponse PedidoDeStock()
         {
             var wsDAL = new WebserviceDAL();
             var result = wsDAL.ObtenerStock();
@@ -74,7 +74,7 @@ namespace WebService
             var wsDAL = new WebserviceDAL();
             wsDAL.ActualizarStock(stockReq);         
 
-            StockResponse result = PedidoDeStock(stockReq); ;
+            StockResponse result = PedidoDeStock(); 
             return result;
         }
 

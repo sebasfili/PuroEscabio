@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="PedidoDeStock">
+        <s:complexType />
+      </s:element>
+      <s:element name="PedidoDeStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PedidoDeStockResult" type="tns:StockResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StockResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ProductosEnStock" type="tns:ArrayOfBebidasBE" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductosARenovar" type="tns:ArrayOfBebidasBE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBebidasBE">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="BebidasBE" nillable="true" type="tns:BebidasBE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="BebidasBE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="SKU" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Precio" nillable="true" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigVerificador" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockMinimo" nillable="true" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="StockActual" nillable="true" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PedidoDeStockPorSucursal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stockReq" type="tns:StockRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="StockRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Producto" type="tns:BebidasBE" />
+          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="PorSucursal" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="IDSucursal" type="s:unsignedInt" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PedidoDeStockPorSucursalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PedidoDeStockPorSucursalResult" type="tns:StockResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarStock">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="stockReq" type="tns:StockRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificarStockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificarStockResult" type="tns:StockResponse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CarritoDeCompras">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="tns:UsuarioBE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="UsuarioBE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreDeUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DigVerificador" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PerfilDeUsuario" type="tns:PerfilBE" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PerfilBE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Descripcion" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CarritoDeComprasResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CarritoDeComprasResult" type="tns:ItemBE" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ItemBE">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Fecha" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="Producto" type="tns:ArrayOfBebidasBE" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="PedidoDeStockSoapIn">
+    <wsdl:part name="parameters" element="tns:PedidoDeStock" />
+  </wsdl:message>
+  <wsdl:message name="PedidoDeStockSoapOut">
+    <wsdl:part name="parameters" element="tns:PedidoDeStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="PedidoDeStockPorSucursalSoapIn">
+    <wsdl:part name="parameters" element="tns:PedidoDeStockPorSucursal" />
+  </wsdl:message>
+  <wsdl:message name="PedidoDeStockPorSucursalSoapOut">
+    <wsdl:part name="parameters" element="tns:PedidoDeStockPorSucursalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificarStockSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificarStock" />
+  </wsdl:message>
+  <wsdl:message name="ModificarStockSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificarStockResponse" />
+  </wsdl:message>
+  <wsdl:message name="CarritoDeComprasSoapIn">
+    <wsdl:part name="parameters" element="tns:CarritoDeCompras" />
+  </wsdl:message>
+  <wsdl:message name="CarritoDeComprasSoapOut">
+    <wsdl:part name="parameters" element="tns:CarritoDeComprasResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="PedidoDeStock">
+      <wsdl:input message="tns:PedidoDeStockSoapIn" />
+      <wsdl:output message="tns:PedidoDeStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PedidoDeStockPorSucursal">
+      <wsdl:input message="tns:PedidoDeStockPorSucursalSoapIn" />
+      <wsdl:output message="tns:PedidoDeStockPorSucursalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificarStock">
+      <wsdl:input message="tns:ModificarStockSoapIn" />
+      <wsdl:output message="tns:ModificarStockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CarritoDeCompras">
+      <wsdl:input message="tns:CarritoDeComprasSoapIn" />
+      <wsdl:output message="tns:CarritoDeComprasSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PedidoDeStock">
+      <soap:operation soapAction="http://tempuri.org/PedidoDeStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PedidoDeStockPorSucursal">
+      <soap:operation soapAction="http://tempuri.org/PedidoDeStockPorSucursal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarStock">
+      <soap:operation soapAction="http://tempuri.org/ModificarStock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarritoDeCompras">
+      <soap:operation soapAction="http://tempuri.org/CarritoDeCompras" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="PedidoDeStock">
+      <soap12:operation soapAction="http://tempuri.org/PedidoDeStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PedidoDeStockPorSucursal">
+      <soap12:operation soapAction="http://tempuri.org/PedidoDeStockPorSucursal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificarStock">
+      <soap12:operation soapAction="http://tempuri.org/ModificarStock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CarritoDeCompras">
+      <soap12:operation soapAction="http://tempuri.org/CarritoDeCompras" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44384/WSPuroEscabio.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44384/WSPuroEscabio.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

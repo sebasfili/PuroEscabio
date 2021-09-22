@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuroEscabio", "PuroEscabio.csproj", "{F68FF406-BCEF-4090-954D-117A1AE73977}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F09FEDC6-CA11-442A-A8CF-6B143B8100BD} = {F09FEDC6-CA11-442A-A8CF-6B143B8100BD}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BE", "BE\BE.csproj", "{3A0C046A-02D3-433E-9B95-2564D124AA97}"
 EndProject

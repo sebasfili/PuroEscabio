@@ -61,6 +61,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li class="nav-item">
                             <a runat="server" class="nav-link active" id="aPackList" href="~/Products/PackList">Lista de Packs</a>
                         </li>
+                        <li class="nav-item">
+                            <a runat="server" class="nav-link active" id="aStock" href="~/Security/Stock.aspx">Stock</a>
+                        </li>
                     </ul>
                     <div class="d-flex">
 
