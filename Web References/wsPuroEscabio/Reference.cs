@@ -275,6 +275,8 @@ namespace PuroEscabio.wsPuroEscabio {
         
         private System.Nullable<int> stockActualField;
         
+        private string sucursalField;
+        
         /// <remarks/>
         public int Id {
             get {
@@ -345,6 +347,16 @@ namespace PuroEscabio.wsPuroEscabio {
             }
             set {
                 this.stockActualField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Sucursal {
+            get {
+                return this.sucursalField;
+            }
+            set {
+                this.sucursalField = value;
             }
         }
     }

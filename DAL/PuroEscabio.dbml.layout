@@ -1,161 +1,187 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 14.75" name="PuroEscabio">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.25, 14.875" name="PuroEscabio">
   <DataContextMoniker Name="/PuroEscabioDataContext" />
   <nestedChildShapes>
-    <classShape Id="14fea739-8ba4-4da4-ab2c-d7ef13242c8b" absoluteBounds="6.25, 10, 2, 1.7708968098958344">
+    <classShape Id="ed5426f2-8efa-4afb-a509-5e33a67346ed" absoluteBounds="6.25, 10, 2, 1.7708968098958344">
       <DataClassMoniker Name="/PuroEscabioDataContext/Bebida" />
       <nestedChildShapes>
-        <elementListCompartment Id="ffc22a76-deb8-48a9-8b65-ca2321fb764b" absoluteBounds="6.265, 10.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3148ae27-2bfa-4d3b-9d70-599b0c5bfb34" absoluteBounds="6.265, 10.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a7831788-6cf9-4598-8c1d-d0f198c01e13" absoluteBounds="3.5, 0.75, 2, 2.1554996744791666">
+    <classShape Id="c9c5313c-a4a9-4889-b949-475690a82d3c" absoluteBounds="3.5, 0.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/PuroEscabioDataContext/Usuario" />
       <nestedChildShapes>
-        <elementListCompartment Id="87ac9ff2-49f4-4040-a42a-1fcaf59b61f3" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="3b7501d0-ebef-45cb-98ed-f0c8e8e6fb1f" absoluteBounds="3.515, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d8025717-ac70-4c63-908d-4e851f83ac0b" absoluteBounds="6.25, 4.375, 2, 1.7708968098958327">
+    <classShape Id="c1c43136-9270-4618-892b-808924967405" absoluteBounds="9, 10, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/PuroEscabioDataContext/bebida_sucursal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="14c7dcb0-d742-40c0-9251-55446a830fa8" absoluteBounds="9.015, 10.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b8d570cf-dbca-40b1-a8d7-62a0fc72e581" absoluteBounds="6.25, 4.375, 2, 1.7708968098958327">
       <DataClassMoniker Name="/PuroEscabioDataContext/Bitacora" />
       <nestedChildShapes>
-        <elementListCompartment Id="b0475ca7-92fa-4e5e-bd11-b12c8fe7ff60" absoluteBounds="6.265, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7db7e4f8-ef92-4367-9748-24cf3e6baba0" absoluteBounds="6.265, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="51a5812a-e404-4b5a-9463-7dd66508862b" absoluteBounds="6.25, 6.875, 2, 2.1554996744791675">
+    <classShape Id="fcf049e5-be1f-4d4a-a75e-d25ebd8a7cef" absoluteBounds="6.25, 6.875, 2, 2.1554996744791675">
       <DataClassMoniker Name="/PuroEscabioDataContext/Factura" />
       <nestedChildShapes>
-        <elementListCompartment Id="232501e0-aafe-48a0-8352-7deb98d20bf7" absoluteBounds="6.265, 7.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="7deca725-8b42-488e-af90-48a2e6ce7220" absoluteBounds="6.265, 7.335, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="2ddd2bfa-040f-4b36-8fe2-674a5d8b4e90" absoluteBounds="9, 7.25, 2, 1.3862939453124996">
+    <classShape Id="e70a7fa4-f03c-4cb9-aff5-1f6c9cc2d815" absoluteBounds="9, 7.25, 2, 1.3862939453124996">
       <DataClassMoniker Name="/PuroEscabioDataContext/Factura_Detalle" />
       <nestedChildShapes>
-        <elementListCompartment Id="f7ce8deb-f8b6-4912-a2d0-1d827a76c2fd" absoluteBounds="9.015, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="42c63e5b-c406-480b-b829-a02b782598c9" absoluteBounds="9.015, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="d61abbcf-7972-43a9-b7f9-8f071d955aa2" absoluteBounds="1.5, 13.125, 2, 1.3862939453124987">
+    <classShape Id="26caea88-0be5-4bd7-89c3-b15f273996ab" absoluteBounds="1.5, 13.125, 2, 1.3862939453124987">
       <DataClassMoniker Name="/PuroEscabioDataContext/Familia" />
       <nestedChildShapes>
-        <elementListCompartment Id="e9bda2bd-0cfe-4f55-b8cc-d769ff75eec3" absoluteBounds="1.5150000000000001, 13.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="f1a3ee14-1f87-41c6-a4ed-f72d4fe487fa" absoluteBounds="1.5150000000000001, 13.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="ce1c2393-b5f9-41dd-be0f-a0404cba4fe8" absoluteBounds="6.25, 2.125, 2, 1.1939925130208335">
+    <classShape Id="23955003-0028-4c47-96a3-55c211aeab6a" absoluteBounds="6.25, 2.125, 2, 1.1939925130208335">
       <DataClassMoniker Name="/PuroEscabioDataContext/FamiliaPatente" />
       <nestedChildShapes>
-        <elementListCompartment Id="ab8ba6d9-9fcd-4002-850d-5c7e77cb5615" absoluteBounds="6.265, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="66e80bcb-40dd-4bfa-bc99-59143f3af6fd" absoluteBounds="6.265, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="87428618-eac6-491a-b12e-5a00ab0bde6c" absoluteBounds="1.5, 10.25, 2, 1.1939925130208344">
+    <classShape Id="45649d42-731a-4924-9192-7eb248a20342" absoluteBounds="1.5, 10.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/PuroEscabioDataContext/Pai" />
       <nestedChildShapes>
-        <elementListCompartment Id="bd8e0cde-dbd4-4645-aa35-d6016ba833fc" absoluteBounds="1.5150000000000001, 10.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="99965da1-2796-48e6-ba11-18e776afe51d" absoluteBounds="1.5150000000000001, 10.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="a2b0a9ce-2f21-4c63-9503-f11365bfd838" absoluteBounds="0.75, 1, 2, 1.5785953776041666">
+    <classShape Id="04bfcd06-ed4d-4ba7-8423-de1b96efbe4b" absoluteBounds="0.75, 1, 2, 1.5785953776041666">
       <DataClassMoniker Name="/PuroEscabioDataContext/Patente" />
       <nestedChildShapes>
-        <elementListCompartment Id="87e84a41-8532-49bc-bac7-c35f3f0b1f73" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="e7b83efe-c9a4-4f20-927a-5b64f8931d0f" absoluteBounds="0.765, 1.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="6fc40559-7e54-44eb-abf6-a3fa05cf86b0" absoluteBounds="0.75, 6.75, 2, 2.1554996744791666">
+    <classShape Id="880a8392-8e42-471c-b664-40d8c517d726" absoluteBounds="0.75, 6.75, 2, 2.1554996744791666">
       <DataClassMoniker Name="/PuroEscabioDataContext/Persona" />
       <nestedChildShapes>
-        <elementListCompartment Id="2fb82a5a-2e4c-484a-bd0f-6e1929f2c482" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="77165873-58b8-4387-a888-f2676a9fca13" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="72f76cfe-a212-4e96-850d-0d61132685f1" absoluteBounds="0.75, 4.25, 2, 1.1939925130208344">
+    <classShape Id="42367e16-1aca-467a-a45b-acc09d32d328" absoluteBounds="0.75, 4.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/PuroEscabioDataContext/Rol" />
       <nestedChildShapes>
-        <elementListCompartment Id="58890288-c371-474a-9b45-28fd98a2cdb6" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="944ad987-3bb9-4aa9-a0fe-c807cd20ed4f" absoluteBounds="0.765, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="66fb0a80-554d-4155-bfd1-251b48e106fd" absoluteBounds="3.5, 4.25, 2, 1.1939925130208344">
+    <classShape Id="f7d4fd7c-5a85-454a-9802-eda16ac8afee" absoluteBounds="3.5, 4.25, 2, 1.1939925130208344">
       <DataClassMoniker Name="/PuroEscabioDataContext/RolPatente" />
       <nestedChildShapes>
-        <elementListCompartment Id="82ebf82d-48ce-47af-9c81-8d6175824375" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="363912cc-01bb-41de-9773-a8bfc38709e1" absoluteBounds="3.515, 4.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="d4dc406d-293b-4103-8963-a71fcbd4d65f" absoluteBounds="6.25, 13.25, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/PuroEscabioDataContext/Sucursal" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8a9f91c4-7166-4c6d-b86b-5fef38b1731c" absoluteBounds="6.265, 13.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 10.8854484049479); (9 : 10.8854484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PuroEscabioDataContext/Bebida/Bebida_bebida_sucursal" />
+      <nodes>
+        <classShapeMoniker Id="ed5426f2-8efa-4afb-a509-5e33a67346ed" />
+        <classShapeMoniker Id="c1c43136-9270-4618-892b-808924967405" />
+      </nodes>
+    </associationConnector>
     <associationConnector edgePoints="[(5.5 : 2.80857559755609); (6.0625 : 3.37107559755609); (6.0625 : 5.26044840494792); (6.25 : 5.26044840494792)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Usuario/Usuario_Bitacora" />
       <nodes>
-        <classShapeMoniker Id="a7831788-6cf9-4598-8c1d-d0f198c01e13" />
-        <classShapeMoniker Id="d8025717-ac70-4c63-908d-4e851f83ac0b" />
+        <classShapeMoniker Id="c9c5313c-a4a9-4889-b949-475690a82d3c" />
+        <classShapeMoniker Id="b8d570cf-dbca-40b1-a8d7-62a0fc72e581" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(5.46769230769231 : 2.90549967447917); (5.875 : 3.31280736678686); (5.875 : 7.95274983723958); (6.25 : 7.95274983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Usuario/Usuario_Factura" />
       <nodes>
-        <classShapeMoniker Id="a7831788-6cf9-4598-8c1d-d0f198c01e13" />
-        <classShapeMoniker Id="51a5812a-e404-4b5a-9463-7dd66508862b" />
+        <classShapeMoniker Id="c9c5313c-a4a9-4889-b949-475690a82d3c" />
+        <classShapeMoniker Id="fcf049e5-be1f-4d4a-a75e-d25ebd8a7cef" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 10.8854484049479); (10 : 10.8854484049479); (10 : 8.6362939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 10); (8.625 : 9.625); (8.625 : 7.94314697265625); (9 : 7.94314697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Bebida/Bebida_Factura_Detalle" />
       <nodes>
-        <classShapeMoniker Id="14fea739-8ba4-4da4-ab2c-d7ef13242c8b" />
-        <classShapeMoniker Id="2ddd2bfa-040f-4b36-8fe2-674a5d8b4e90" />
+        <classShapeMoniker Id="ed5426f2-8efa-4afb-a509-5e33a67346ed" />
+        <classShapeMoniker Id="e70a7fa4-f03c-4cb9-aff5-1f6c9cc2d815" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(8.25 : 7.94314697265625); (9 : 7.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(8.25 : 7.53407348632812); (9 : 7.53407348632812)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Factura/Factura_Factura_Detalle" />
       <nodes>
-        <classShapeMoniker Id="51a5812a-e404-4b5a-9463-7dd66508862b" />
-        <classShapeMoniker Id="2ddd2bfa-040f-4b36-8fe2-674a5d8b4e90" />
+        <classShapeMoniker Id="fcf049e5-be1f-4d4a-a75e-d25ebd8a7cef" />
+        <classShapeMoniker Id="e70a7fa4-f03c-4cb9-aff5-1f6c9cc2d815" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(3.5 : 13.125); (3.875 : 12.75); (5.9375 : 12.75); (5.9375 : 3.63149251302083); (6.00357443490112 : 3.56541807811971 : JumpStart); (6.12142556509888 : 3.44756694792196 : JumpEnd); (6.25 : 3.31899251302083)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/PuroEscabioDataContext/Familia/Familia_FamiliaPatente" />
       <nodes>
-        <classShapeMoniker Id="d61abbcf-7972-43a9-b7f9-8f071d955aa2" />
-        <classShapeMoniker Id="ce1c2393-b5f9-41dd-be0f-a0404cba4fe8" />
+        <classShapeMoniker Id="26caea88-0be5-4bd7-89c3-b15f273996ab" />
+        <classShapeMoniker Id="23955003-0028-4c47-96a3-55c211aeab6a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.75 : 2.57859537760417); (1.75 : 3.11224359375); (3.04166666666667 : 3.11224359375 : JumpStart); (3.36458333333333 : 3.11224359375 : JumpEnd); (5.59110289362981 : 3.11224359375 : JumpStart); (5.88700132952724 : 3.11224359375 : JumpEnd); (6.25 : 3.11224359375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Patente/Patente_FamiliaPatente" />
       <nodes>
-        <classShapeMoniker Id="a2b0a9ce-2f21-4c63-9503-f11365bfd838" />
-        <classShapeMoniker Id="ce1c2393-b5f9-41dd-be0f-a0404cba4fe8" />
+        <classShapeMoniker Id="04bfcd06-ed4d-4ba7-8423-de1b96efbe4b" />
+        <classShapeMoniker Id="23955003-0028-4c47-96a3-55c211aeab6a" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(1.5 : 13.125); (1.125 : 12.75); (0.375 : 12.75); (0.375 : 2.95359537760417); (0.75 : 2.57859537760417)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/PuroEscabioDataContext/Familia/Familia_Patente" />
       <nodes>
-        <classShapeMoniker Id="d61abbcf-7972-43a9-b7f9-8f071d955aa2" />
-        <classShapeMoniker Id="a2b0a9ce-2f21-4c63-9503-f11365bfd838" />
+        <classShapeMoniker Id="26caea88-0be5-4bd7-89c3-b15f273996ab" />
+        <classShapeMoniker Id="04bfcd06-ed4d-4ba7-8423-de1b96efbe4b" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 6.75153746153846); (3.125 : 6.37653746153846); (3.125 : 1.82774983723958); (3.5 : 1.82774983723958)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Persona/Persona_Usuario" />
       <nodes>
-        <classShapeMoniker Id="6fc40559-7e54-44eb-abf6-a3fa05cf86b0" />
-        <classShapeMoniker Id="a7831788-6cf9-4598-8c1d-d0f198c01e13" />
+        <classShapeMoniker Id="880a8392-8e42-471c-b664-40d8c517d726" />
+        <classShapeMoniker Id="c9c5313c-a4a9-4889-b949-475690a82d3c" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.125 : 10.25); (2.125 : 8.90549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Pai/Pai_Persona" />
       <nodes>
-        <classShapeMoniker Id="87428618-eac6-491a-b12e-5a00ab0bde6c" />
-        <classShapeMoniker Id="6fc40559-7e54-44eb-abf6-a3fa05cf86b0" />
+        <classShapeMoniker Id="45649d42-731a-4924-9192-7eb248a20342" />
+        <classShapeMoniker Id="880a8392-8e42-471c-b664-40d8c517d726" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 4.28214495227364); (3.06607443490112 : 3.96607051737252 : JumpStart); (3.24642556509888 : 3.78571938717476 : JumpEnd); (3.28125 : 3.75089495227364); (3.28125 : 2.39787675585937); (3.5 : 2.39787675585937)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Rol/Rol_Usuario" />
       <nodes>
-        <classShapeMoniker Id="72f76cfe-a212-4e96-850d-0d61132685f1" />
-        <classShapeMoniker Id="a7831788-6cf9-4598-8c1d-d0f198c01e13" />
+        <classShapeMoniker Id="42367e16-1aca-467a-a45b-acc09d32d328" />
+        <classShapeMoniker Id="c9c5313c-a4a9-4889-b949-475690a82d3c" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.51666486663662); (3.06607443490112 : 2.83273930153774 : JumpStart); (3.18392556509888 : 2.9505904317355 : JumpEnd); (3.1875 : 2.95416486663662); (3.1875 : 4.84699625651042); (3.5 : 4.84699625651042)]" fixedFrom="NotFixed" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Patente/Patente_RolPatente" />
       <nodes>
-        <classShapeMoniker Id="a2b0a9ce-2f21-4c63-9503-f11365bfd838" />
-        <classShapeMoniker Id="66fb0a80-554d-4155-bfd1-251b48e106fd" />
+        <classShapeMoniker Id="04bfcd06-ed4d-4ba7-8423-de1b96efbe4b" />
+        <classShapeMoniker Id="f7d4fd7c-5a85-454a-9802-eda16ac8afee" />
       </nodes>
     </associationConnector>
     <associationConnector edgePoints="[(2.75 : 5.20799438476563); (3.04166666666667 : 5.20799438476562 : JumpStart); (3.20833333333333 : 5.20799438476563 : JumpEnd); (3.5 : 5.20799438476563)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/PuroEscabioDataContext/Rol/Rol_RolPatente" />
       <nodes>
-        <classShapeMoniker Id="72f76cfe-a212-4e96-850d-0d61132685f1" />
-        <classShapeMoniker Id="66fb0a80-554d-4155-bfd1-251b48e106fd" />
+        <classShapeMoniker Id="42367e16-1aca-467a-a45b-acc09d32d328" />
+        <classShapeMoniker Id="f7d4fd7c-5a85-454a-9802-eda16ac8afee" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 13.9431469726562); (10 : 13.9431469726562); (10 : 11.7708968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/PuroEscabioDataContext/Sucursal/Sucursal_bebida_sucursal" />
+      <nodes>
+        <classShapeMoniker Id="d4dc406d-293b-4103-8963-a71fcbd4d65f" />
+        <classShapeMoniker Id="c1c43136-9270-4618-892b-808924967405" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>

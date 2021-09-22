@@ -52,6 +52,7 @@ namespace PuroEscabio
                     aStart.Visible = true;
                     aContact.Visible = false;
                     aAbout.Visible = false;
+                    aStock.Visible = true;
                     break;
                 case "Administrador":
                     //aRoles.Visible = true;
@@ -64,6 +65,7 @@ namespace PuroEscabio
                     aOurProducts.Visible = false;
                     aDigiVerificador.Visible = false;
                     aStart.Visible = true;
+                    aStock.Visible = true;
                     break;
                 case "Usuario":
                     //aRoles.Visible = false;
@@ -74,6 +76,7 @@ namespace PuroEscabio
                     aPackList.Visible = true;
                     aStart.Visible = true;
                     aDigiVerificador.Visible = false;
+                    aStock.Visible = false;
                     break;
                 default:
                     //aRoles.Visible = false;
@@ -82,6 +85,7 @@ namespace PuroEscabio
                     aProductsList.Visible = false;
                     aPackList.Visible = false;
                     aDigiVerificador.Visible = false;
+                    aStock.Visible = false;
                     break;
             }
         }

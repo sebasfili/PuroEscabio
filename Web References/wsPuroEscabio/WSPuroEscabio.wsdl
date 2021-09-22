@@ -32,6 +32,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="DigVerificador" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="StockMinimo" nillable="true" type="s:int" />
           <s:element minOccurs="1" maxOccurs="1" name="StockActual" nillable="true" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sucursal" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="PedidoDeStockPorSucursal">

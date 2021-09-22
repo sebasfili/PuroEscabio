@@ -60,6 +60,9 @@ namespace DAL
     partial void InsertRol(Rol instance);
     partial void UpdateRol(Rol instance);
     partial void DeleteRol(Rol instance);
+    partial void InsertSucursal(Sucursal instance);
+    partial void UpdateSucursal(Sucursal instance);
+    partial void DeleteSucursal(Sucursal instance);
     #endregion
 		
 		public PuroEscabioDataContext() : 
@@ -105,6 +108,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<Usuario>();
+			}
+		}
+		
+		public System.Data.Linq.Table<bebida_sucursal> bebida_sucursals
+		{
+			get
+			{
+				return this.GetTable<bebida_sucursal>();
 			}
 		}
 		
@@ -185,6 +196,14 @@ namespace DAL
 			get
 			{
 				return this.GetTable<RolPatente>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Sucursal> Sucursals
+		{
+			get
+			{
+				return this.GetTable<Sucursal>();
 			}
 		}
 	}
@@ -716,6 +735,105 @@ namespace DAL
 		{
 			this.SendPropertyChanging();
 			entity.Usuario = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bebida_sucursal")]
+	public partial class bebida_sucursal
+	{
+		
+		private int _Id;
+		
+		private System.Nullable<int> _stock_min;
+		
+		private System.Nullable<int> _stock_actual;
+		
+		private System.Nullable<int> _Id_bebida;
+		
+		private System.Nullable<int> _Id_sucursal;
+		
+		public bebida_sucursal()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this._Id = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_min", DbType="Int")]
+		public System.Nullable<int> stock_min
+		{
+			get
+			{
+				return this._stock_min;
+			}
+			set
+			{
+				if ((this._stock_min != value))
+				{
+					this._stock_min = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_stock_actual", DbType="Int")]
+		public System.Nullable<int> stock_actual
+		{
+			get
+			{
+				return this._stock_actual;
+			}
+			set
+			{
+				if ((this._stock_actual != value))
+				{
+					this._stock_actual = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_bebida", DbType="Int")]
+		public System.Nullable<int> Id_bebida
+		{
+			get
+			{
+				return this._Id_bebida;
+			}
+			set
+			{
+				if ((this._Id_bebida != value))
+				{
+					this._Id_bebida = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id_sucursal", DbType="Int")]
+		public System.Nullable<int> Id_sucursal
+		{
+			get
+			{
+				return this._Id_sucursal;
+			}
+			set
+			{
+				if ((this._Id_sucursal != value))
+				{
+					this._Id_sucursal = value;
+				}
+			}
 		}
 	}
 	
@@ -2287,6 +2405,116 @@ namespace DAL
 				{
 					this._Id_rol = value;
 				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Sucursal")]
+	public partial class Sucursal : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _Id;
+		
+		private string _Descripcion;
+		
+		private string _Cod_suc;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnDescripcionChanging(string value);
+    partial void OnDescripcionChanged();
+    partial void OnCod_sucChanging(string value);
+    partial void OnCod_sucChanged();
+    #endregion
+		
+		public Sucursal()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int Id
+		{
+			get
+			{
+				return this._Id;
+			}
+			set
+			{
+				if ((this._Id != value))
+				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
+					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Descripcion", DbType="VarChar(100)")]
+		public string Descripcion
+		{
+			get
+			{
+				return this._Descripcion;
+			}
+			set
+			{
+				if ((this._Descripcion != value))
+				{
+					this.OnDescripcionChanging(value);
+					this.SendPropertyChanging();
+					this._Descripcion = value;
+					this.SendPropertyChanged("Descripcion");
+					this.OnDescripcionChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Cod_suc", DbType="VarChar(100)")]
+		public string Cod_suc
+		{
+			get
+			{
+				return this._Cod_suc;
+			}
+			set
+			{
+				if ((this._Cod_suc != value))
+				{
+					this.OnCod_sucChanging(value);
+					this.SendPropertyChanging();
+					this._Cod_suc = value;
+					this.SendPropertyChanged("Cod_suc");
+					this.OnCod_sucChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

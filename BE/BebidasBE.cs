@@ -18,5 +18,6 @@ namespace BE
         public string DigVerificador { get; set; }
         public int? StockMinimo { get; set; }
         public int? StockActual { get; set; }
+        public string Sucursal { get; set; }
     }
 }

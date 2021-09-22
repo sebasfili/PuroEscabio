@@ -30,20 +30,10 @@ namespace WebService
                 ProductosEnStock = new List<BebidasBE>()
             };
 
-            result.ForEach(x =>
-            {
-                var bebida = new BebidasBE()
-                {
-                    Descripcion = x.Descripcion,
-                    DigVerificador = x.Dig_ver_h,
-                    Id = x.Id,
-                    Precio = x.Precio,
-                    SKU = x.SKU,
-                    StockActual = x.stock_actual,
-                    StockMinimo = x.stock_minimo
-                };
+            result.ForEach(bebida =>
+            {            
 
-                if (x.stock_actual < x.stock_minimo)
+                if (bebida.StockActual < bebida.StockMinimo)
                 {
                     stockResponse.ProductosARenovar.Add(bebida);
                 }
