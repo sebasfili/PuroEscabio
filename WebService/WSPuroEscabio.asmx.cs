@@ -47,7 +47,7 @@ namespace WebService
             return stockResponse;
         }
 
-        //pedido de stock por sucursal
+        //Pedido de stock por sucursal
         [WebMethod]
         public StockResponse PedidoDeStockPorSucursal(int idSucursal)
         {

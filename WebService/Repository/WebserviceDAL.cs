@@ -46,7 +46,7 @@ namespace WebService.Repository
 
                     if (query != null)
                     {
-                        query.stock_actual = cantidad;
+                        query.stock_actual += cantidad;
 
                         dbContext.SubmitChanges();
                         transaction.Complete();
