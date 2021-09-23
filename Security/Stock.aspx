@@ -9,6 +9,9 @@
         <li class="nav-item" role="presentation">
             <button class="nav-link" id="stockSucursal-tab" data-bs-toggle="tab" data-bs-target="#tabStockSucursal" type="button" role="tab" aria-controls="stockSucursal" aria-selected="false">Stock por Sucursal</button>
         </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="updateStock-tab" data-bs-toggle="tab" data-bs-target="#tabUpdateStock" type="button" role="tab" aria-controls="tabUpdateStock" aria-selected="false">Actualizar Stock</button>
+        </li>
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="tabStockTotal" role="tabpanel" aria-labelledby="backUp-tab">
@@ -32,7 +35,7 @@
             <div class="container m-3">
                 <div class="row justify-content-lg-center">
                     <div class="col-lg-4">
-                        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
                         <asp:UpdatePanel runat="server">
                             <ContentTemplate>
                                 <div class="form-floating">
@@ -70,11 +73,60 @@
                     </div>
 
                 </div>
-
-
-
             </div>
         </div>
+
+        <div class="tab-pane fade" id="tabUpdateStock" role="tabpanel" aria-labelledby="restore-tab">
+            <h4>Complete el formulario para actualizar el Stock</h4>
+            <div class="container m-3">
+                <asp:UpdatePanel runat="server" >
+                    <ContentTemplate>
+                        <div class="row g-3">
+
+                            <div class="col-lg-4 form-floating">
+                                <asp:DropDownList runat="server" ID="dpProducto" CssClass="form-select">
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ErrorMessage="El campo es requerido" ControlToValidate="dpProducto" SetFocusOnError="true" runat="server" CssClass="alert-danger" />
+                                <asp:Label Text="Producto" runat="server" CssClass="form-label" AssociatedControlID="dpProducto" />
+                            </div>
+                            <div class="col-lg-4 form-floating">
+                                <asp:DropDownList runat="server" ID="dpSucursalUpdate" CssClass="form-select">
+                                </asp:DropDownList>
+                                <asp:RequiredFieldValidator ErrorMessage="El campo es requerido" ControlToValidate="dpSucursalUpdate" SetFocusOnError="true" runat="server" CssClass="alert-danger" />
+                                <asp:Label Text="Sucursal" runat="server" CssClass="form-label" AssociatedControlID="dpSucursalUpdate" />
+                            </div>
+                            <div class="col-lg-4 form-floating">
+                                <asp:TextBox runat="server" CssClass="form-control" TextMode="Number" ID="txtCantidadStock" placeholder="Ciudad" />
+                                <asp:RequiredFieldValidator ErrorMessage="El campo es requerido" ControlToValidate="txtCantidadStock" SetFocusOnError="true" runat="server" CssClass="alert-danger" />
+                                <br />
+                                <asp:CompareValidator runat="server"
+                                    CssClass="alert-danger"
+                                    role="alert"
+                                    SetFocusOnError="true"
+                                    ControlToValidate="txtCantidadStock"
+                                    Operator="GreaterThanEqual"
+                                    ValueToCompare="0"
+                                    Type="Integer"
+                                    Text="Debe ingresar un valor mayor a cero" />
+                                <asp:Label Text="Cantidad" runat="server" CssClass="form-label" AssociatedControlID="txtCantidadStock" />
+                            </div>
+
+                        </div>
+                        <div class="row g-3">
+                            <asp:Button Text="Aceptar" runat="server" CssClass="btn btn-warning btn-lg" ID="btnAceptar" OnClick="btnAceptar_Click" />
+                            <div class="alert alert-success alert-dismissible fade show" role="alert" runat="server" id="msgSuccess" visible="false">
+                                <h3 class="alert-heading">Éxito</h3>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <p>Se actuliazó correctamente el Stock</p>
+                                <hr>
+                                <p class="mb-0">Puede continuar trabajando...</p>
+                            </div>
+                        </div>
+                    </ContentTemplate>                    
+                </asp:UpdatePanel>
+            </div>
+        </div>
+
     </div>
 
 

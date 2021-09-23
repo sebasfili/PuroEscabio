@@ -11,6 +11,6 @@ namespace BE
         public BebidasBE Producto { get; set; }
         public int Cantidad { get; set; }
         public bool PorSucursal { get; set; }
-        public uint IDSucursal { get; set; }
+        public int IDSucursal { get; set; }
     }
 }

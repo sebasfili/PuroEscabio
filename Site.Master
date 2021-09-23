@@ -24,7 +24,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
+
     <form runat="server" id="masterForm" novalidate>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
         <!-- //header -->
         <!-- navigation -->
         <nav class="navbar sticky-lg-top navbar-expand-lg navbar-dark bg-dark">
@@ -35,7 +37,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent" runat="server">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                          <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link active" runat="server" id="aStart" aria-current="page" href="Default.aspx" visible="false">Inicio</a>
                         </li>
                         <li class="nav-item">
@@ -78,7 +80,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <asp:Label Visible="false" ID="lblUsuarioActual" runat="server" class="nav-link link-warning " />
                             </li>
                             <li>
-                                <asp:Button Text="Cerrar Sesión" Visible="false" runat="server" ID="btnCerrarSesion" CssClass="btn btn-warning" OnClick="aCerrarSesion_Click" />
+
+                                <asp:Button Text="Cerrar Sesión" Visible="false" runat="server" ID="btnCerrarSesion" CssClass="btn btn-warning"
+                                    CausesValidation="false" OnClick="aCerrarSesion_Click" />
                             </li>
                         </ul>
 
@@ -91,7 +95,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <!-- //top-header and slider -->
         <!-- top-brands -->
         <div class="container">
-         
+
 
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>

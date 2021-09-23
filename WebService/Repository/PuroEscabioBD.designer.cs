@@ -36,6 +36,9 @@ namespace WebService.Repository
     partial void InsertUsuario(Usuario instance);
     partial void UpdateUsuario(Usuario instance);
     partial void DeleteUsuario(Usuario instance);
+    partial void Insertbebida_sucursal(bebida_sucursal instance);
+    partial void Updatebebida_sucursal(bebida_sucursal instance);
+    partial void Deletebebida_sucursal(bebida_sucursal instance);
     partial void InsertBitacora(Bitacora instance);
     partial void UpdateBitacora(Bitacora instance);
     partial void DeleteBitacora(Bitacora instance);
@@ -224,6 +227,8 @@ namespace WebService.Repository
 		
 		private string _Dig_ver_h;
 		
+		private EntitySet<bebida_sucursal> _bebida_sucursals;
+		
 		private EntitySet<Factura_Detalle> _Factura_Detalles;
 		
     #region Extensibility Method Definitions
@@ -244,6 +249,7 @@ namespace WebService.Repository
 		
 		public Bebida()
 		{
+			this._bebida_sucursals = new EntitySet<bebida_sucursal>(new Action<bebida_sucursal>(this.attach_bebida_sucursals), new Action<bebida_sucursal>(this.detach_bebida_sucursals));
 			this._Factura_Detalles = new EntitySet<Factura_Detalle>(new Action<Factura_Detalle>(this.attach_Factura_Detalles), new Action<Factura_Detalle>(this.detach_Factura_Detalles));
 			OnCreated();
 		}
@@ -348,6 +354,19 @@ namespace WebService.Repository
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bebida_bebida_sucursal", Storage="_bebida_sucursals", ThisKey="Id", OtherKey="Id_bebida")]
+		public EntitySet<bebida_sucursal> bebida_sucursals
+		{
+			get
+			{
+				return this._bebida_sucursals;
+			}
+			set
+			{
+				this._bebida_sucursals.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bebida_Factura_Detalle", Storage="_Factura_Detalles", ThisKey="Id", OtherKey="Bebida_id")]
 		public EntitySet<Factura_Detalle> Factura_Detalles
 		{
@@ -379,6 +398,18 @@ namespace WebService.Repository
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_bebida_sucursals(bebida_sucursal entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bebida = this;
+		}
+		
+		private void detach_bebida_sucursals(bebida_sucursal entity)
+		{
+			this.SendPropertyChanging();
+			entity.Bebida = null;
 		}
 		
 		private void attach_Factura_Detalles(Factura_Detalle entity)
@@ -739,8 +770,10 @@ namespace WebService.Repository
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.bebida_sucursal")]
-	public partial class bebida_sucursal
+	public partial class bebida_sucursal : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _Id;
 		
@@ -752,11 +785,34 @@ namespace WebService.Repository
 		
 		private System.Nullable<int> _Id_sucursal;
 		
+		private EntityRef<Bebida> _Bebida;
+		
+		private EntityRef<Sucursal> _Sucursal;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void Onstock_minChanging(System.Nullable<int> value);
+    partial void Onstock_minChanged();
+    partial void Onstock_actualChanging(System.Nullable<int> value);
+    partial void Onstock_actualChanged();
+    partial void OnId_bebidaChanging(System.Nullable<int> value);
+    partial void OnId_bebidaChanged();
+    partial void OnId_sucursalChanging(System.Nullable<int> value);
+    partial void OnId_sucursalChanged();
+    #endregion
+		
 		public bebida_sucursal()
 		{
+			this._Bebida = default(EntityRef<Bebida>);
+			this._Sucursal = default(EntityRef<Sucursal>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -767,7 +823,11 @@ namespace WebService.Repository
 			{
 				if ((this._Id != value))
 				{
+					this.OnIdChanging(value);
+					this.SendPropertyChanging();
 					this._Id = value;
+					this.SendPropertyChanged("Id");
+					this.OnIdChanged();
 				}
 			}
 		}
@@ -783,7 +843,11 @@ namespace WebService.Repository
 			{
 				if ((this._stock_min != value))
 				{
+					this.Onstock_minChanging(value);
+					this.SendPropertyChanging();
 					this._stock_min = value;
+					this.SendPropertyChanged("stock_min");
+					this.Onstock_minChanged();
 				}
 			}
 		}
@@ -799,7 +863,11 @@ namespace WebService.Repository
 			{
 				if ((this._stock_actual != value))
 				{
+					this.Onstock_actualChanging(value);
+					this.SendPropertyChanging();
 					this._stock_actual = value;
+					this.SendPropertyChanged("stock_actual");
+					this.Onstock_actualChanged();
 				}
 			}
 		}
@@ -815,7 +883,15 @@ namespace WebService.Repository
 			{
 				if ((this._Id_bebida != value))
 				{
+					if (this._Bebida.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnId_bebidaChanging(value);
+					this.SendPropertyChanging();
 					this._Id_bebida = value;
+					this.SendPropertyChanged("Id_bebida");
+					this.OnId_bebidaChanged();
 				}
 			}
 		}
@@ -831,8 +907,104 @@ namespace WebService.Repository
 			{
 				if ((this._Id_sucursal != value))
 				{
+					if (this._Sucursal.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnId_sucursalChanging(value);
+					this.SendPropertyChanging();
 					this._Id_sucursal = value;
+					this.SendPropertyChanged("Id_sucursal");
+					this.OnId_sucursalChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Bebida_bebida_sucursal", Storage="_Bebida", ThisKey="Id_bebida", OtherKey="Id", IsForeignKey=true)]
+		public Bebida Bebida
+		{
+			get
+			{
+				return this._Bebida.Entity;
+			}
+			set
+			{
+				Bebida previousValue = this._Bebida.Entity;
+				if (((previousValue != value) 
+							|| (this._Bebida.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Bebida.Entity = null;
+						previousValue.bebida_sucursals.Remove(this);
+					}
+					this._Bebida.Entity = value;
+					if ((value != null))
+					{
+						value.bebida_sucursals.Add(this);
+						this._Id_bebida = value.Id;
+					}
+					else
+					{
+						this._Id_bebida = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Bebida");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Sucursal_bebida_sucursal", Storage="_Sucursal", ThisKey="Id_sucursal", OtherKey="Id", IsForeignKey=true)]
+		public Sucursal Sucursal
+		{
+			get
+			{
+				return this._Sucursal.Entity;
+			}
+			set
+			{
+				Sucursal previousValue = this._Sucursal.Entity;
+				if (((previousValue != value) 
+							|| (this._Sucursal.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Sucursal.Entity = null;
+						previousValue.bebida_sucursals.Remove(this);
+					}
+					this._Sucursal.Entity = value;
+					if ((value != null))
+					{
+						value.bebida_sucursals.Add(this);
+						this._Id_sucursal = value.Id;
+					}
+					else
+					{
+						this._Id_sucursal = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("Sucursal");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -2421,6 +2593,8 @@ namespace WebService.Repository
 		
 		private string _Cod_suc;
 		
+		private EntitySet<bebida_sucursal> _bebida_sucursals;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2435,6 +2609,7 @@ namespace WebService.Repository
 		
 		public Sucursal()
 		{
+			this._bebida_sucursals = new EntitySet<bebida_sucursal>(new Action<bebida_sucursal>(this.attach_bebida_sucursals), new Action<bebida_sucursal>(this.detach_bebida_sucursals));
 			OnCreated();
 		}
 		
@@ -2498,6 +2673,19 @@ namespace WebService.Repository
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Sucursal_bebida_sucursal", Storage="_bebida_sucursals", ThisKey="Id", OtherKey="Id_sucursal")]
+		public EntitySet<bebida_sucursal> bebida_sucursals
+		{
+			get
+			{
+				return this._bebida_sucursals;
+			}
+			set
+			{
+				this._bebida_sucursals.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2516,6 +2704,18 @@ namespace WebService.Repository
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_bebida_sucursals(bebida_sucursal entity)
+		{
+			this.SendPropertyChanging();
+			entity.Sucursal = this;
+		}
+		
+		private void detach_bebida_sucursals(bebida_sucursal entity)
+		{
+			this.SendPropertyChanging();
+			entity.Sucursal = null;
 		}
 	}
 }

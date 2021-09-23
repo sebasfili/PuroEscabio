@@ -78,12 +78,12 @@ namespace WebService
 
         //Responde con la foto actual de como queda el stock.
         [WebMethod]
-        public StockResponse ModificarStock(StockRequest stockReq)
+        public bool ModificarStock(int idSucursal, int idProducto, int cantidad)
         {
             var wsDAL = new WebserviceDAL();
-            wsDAL.ActualizarStock(stockReq);         
+            var result = wsDAL.ActualizarStock(idSucursal, idProducto, cantidad);         
 
-            StockResponse result = PedidoDeStock(); 
+            
             return result;
         }
 

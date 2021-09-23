@@ -52,22 +52,16 @@
       <s:element name="ModificarStock">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="stockReq" type="tns:StockRequest" />
+            <s:element minOccurs="1" maxOccurs="1" name="idSucursal" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="idProducto" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:complexType name="StockRequest">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Producto" type="tns:BebidasBE" />
-          <s:element minOccurs="1" maxOccurs="1" name="Cantidad" type="s:int" />
-          <s:element minOccurs="1" maxOccurs="1" name="PorSucursal" type="s:boolean" />
-          <s:element minOccurs="1" maxOccurs="1" name="IDSucursal" type="s:unsignedInt" />
-        </s:sequence>
-      </s:complexType>
       <s:element name="ModificarStockResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ModificarStockResult" type="tns:StockResponse" />
+            <s:element minOccurs="1" maxOccurs="1" name="ModificarStockResult" type="s:boolean" />
           </s:sequence>
         </s:complexType>
       </s:element>

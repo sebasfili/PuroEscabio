@@ -145,24 +145,28 @@ namespace PuroEscabio.wsPuroEscabio {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ModificarStock", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public StockResponse ModificarStock(StockRequest stockReq) {
+        public bool ModificarStock(int idSucursal, int idProducto, int cantidad) {
             object[] results = this.Invoke("ModificarStock", new object[] {
-                        stockReq});
-            return ((StockResponse)(results[0]));
+                        idSucursal,
+                        idProducto,
+                        cantidad});
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void ModificarStockAsync(StockRequest stockReq) {
-            this.ModificarStockAsync(stockReq, null);
+        public void ModificarStockAsync(int idSucursal, int idProducto, int cantidad) {
+            this.ModificarStockAsync(idSucursal, idProducto, cantidad, null);
         }
         
         /// <remarks/>
-        public void ModificarStockAsync(StockRequest stockReq, object userState) {
+        public void ModificarStockAsync(int idSucursal, int idProducto, int cantidad, object userState) {
             if ((this.ModificarStockOperationCompleted == null)) {
                 this.ModificarStockOperationCompleted = new System.Threading.SendOrPostCallback(this.OnModificarStockOperationCompleted);
             }
             this.InvokeAsync("ModificarStock", new object[] {
-                        stockReq}, this.ModificarStockOperationCompleted, userState);
+                        idSucursal,
+                        idProducto,
+                        cantidad}, this.ModificarStockOperationCompleted, userState);
         }
         
         private void OnModificarStockOperationCompleted(object arg) {
@@ -509,63 +513,6 @@ namespace PuroEscabio.wsPuroEscabio {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.4084.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class StockRequest {
-        
-        private BebidasBE productoField;
-        
-        private int cantidadField;
-        
-        private bool porSucursalField;
-        
-        private uint iDSucursalField;
-        
-        /// <remarks/>
-        public BebidasBE Producto {
-            get {
-                return this.productoField;
-            }
-            set {
-                this.productoField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public int Cantidad {
-            get {
-                return this.cantidadField;
-            }
-            set {
-                this.cantidadField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public bool PorSucursal {
-            get {
-                return this.porSucursalField;
-            }
-            set {
-                this.porSucursalField = value;
-            }
-        }
-        
-        /// <remarks/>
-        public uint IDSucursal {
-            get {
-                return this.iDSucursalField;
-            }
-            set {
-                this.iDSucursalField = value;
-            }
-        }
-    }
-    
-    /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     public delegate void PedidoDeStockCompletedEventHandler(object sender, PedidoDeStockCompletedEventArgs e);
     
@@ -635,10 +582,10 @@ namespace PuroEscabio.wsPuroEscabio {
         }
         
         /// <remarks/>
-        public StockResponse Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((StockResponse)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }

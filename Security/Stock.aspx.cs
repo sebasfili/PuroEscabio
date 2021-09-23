@@ -23,8 +23,33 @@ namespace PuroEscabio.Security
                 gvNoStock.DataBind();
 
                 ObtenerSucursales();
+                ObtenerProductos();
 
             }
+        }
+
+        private void ObtenerProductos()
+        {
+            var seguridad = new SeguridadBLL();
+            var result = seguridad.ObtenerProductos();
+            dpProducto.DataSource = null;
+            dpProducto.Items.Clear();
+
+            dpProducto.Items.Add(new ListItem() { Text = "Selecciona un Producto", Value = "" });
+
+            result.ForEach(prod =>
+            {
+                var listItem = new ListItem()
+                {
+                    Text = prod.Descripcion,
+                    Value = prod.Id.ToString()
+                };
+
+                dpProducto.Items.Add(listItem);
+
+            });
+
+            dpProducto.DataBind();
         }
 
         private void ObtenerSucursales()
@@ -34,8 +59,12 @@ namespace PuroEscabio.Security
 
             dpSucursales.DataSource = null;
             dpSucursales.Items.Clear();
+            dpSucursalUpdate.DataSource = null;
+            dpSucursalUpdate.Items.Clear();
+
 
             dpSucursales.Items.Add(new ListItem() { Text = "Selecciona una Sucursal", Value = "NoSucursal" });
+            dpSucursalUpdate.Items.Add(new ListItem() { Text = "Selecciona una Sucursal", Value = "" });
 
             result.ForEach(suc =>
             {
@@ -45,9 +74,10 @@ namespace PuroEscabio.Security
                     Value = suc.Id.ToString()
                 };
                 dpSucursales.Items.Add(listItem);
+                dpSucursalUpdate.Items.Add(listItem);
             });
 
-
+            dpSucursalUpdate.DataBind();
             dpSucursales.DataBind();
 
         }
@@ -102,6 +132,21 @@ namespace PuroEscabio.Security
 
                 updateGrids.Update();
 
+            }
+        }
+
+        protected void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(dpSucursalUpdate.SelectedValue) && !string.IsNullOrWhiteSpace(dpProducto.SelectedValue))
+            {
+                var ws = new WebService1();
+
+                var cantidad = int.Parse(txtCantidadStock.Text);
+                var IDSucursal = int.Parse(dpSucursalUpdate.SelectedValue);
+                var idProducto = int.Parse(dpProducto.SelectedValue);
+
+                var result = ws.ModificarStock(IDSucursal, idProducto, cantidad);
+                msgSuccess.Visible = result;
             }
         }
     }

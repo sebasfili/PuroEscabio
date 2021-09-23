@@ -37,6 +37,16 @@ namespace DAL
             }
         }
 
+        public List<Bebida> ObtenerProductos()
+        {
+            using (var dbContext = new PuroEscabioDataContext())
+            {
+                var query = (from prod in dbContext.Bebidas select prod).ToList();
+
+                return query;
+            }
+        }
+
         public List<Sucursal> ObtenerSucursales()
         {
             using (var dbContext = new PuroEscabioDataContext())

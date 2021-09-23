@@ -28,7 +28,7 @@
   </Table>
   <Table Name="dbo.bebida_sucursal" Member="bebida_sucursals">
     <Type Name="bebida_sucursal">
-      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="stock_min" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="stock_actual" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Id_bebida" Type="System.Int32" DbType="Int" CanBeNull="true" />

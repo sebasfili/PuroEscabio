@@ -30,28 +30,34 @@ namespace WebService.Repository
             }
         }
 
-        public bool ActualizarStock(StockRequest req)
+        public bool ActualizarStock(int idSucursal, int idProducto, int cantidad)
         {
-            bool result = false;
             using (var transaction = new TransactionScope())
             {
+
+
                 using (var dbContext = new PuroEscabioBDDataContext())
                 {
                     var query = (from stock in dbContext.bebida_sucursals
-                                 where stock.Id_bebida == req.Producto.Id && stock.Id_sucursal == req.IDSucursal
+                                 where stock.Id_bebida == idProducto && stock.Id_sucursal == idSucursal
                                  select stock
                              ).FirstOrDefault();
 
 
                     if (query != null)
                     {
-                        query.stock_actual = req.Cantidad;
+                        query.stock_actual = cantidad;
 
                         dbContext.SubmitChanges();
-                        return result;
+                        transaction.Complete();
+                        
+                        return true;
                     }
-
-                    return result;
+                    else
+                    {
+                        
+                        return false;
+                    }
                 }
             }
         }

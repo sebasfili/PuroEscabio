@@ -56,6 +56,27 @@ namespace BLL
             return sucursales;
         }
 
+        public List<BebidasBE> ObtenerProductos()
+        {
+            var seguridad = new SeguridadDAL();
+            var result = seguridad.ObtenerProductos();
+            var bebidas = new List<BebidasBE>();
+
+            result.ForEach(beb =>
+            {
+
+                var sucursalBe = new BebidasBE()
+                {
+                    Descripcion = beb.Descripcion,
+                    Id = beb.Id
+                };
+
+                bebidas.Add(sucursalBe);
+            });
+
+            return bebidas;
+        }
+
         public string EncriptarClaveDeUsuario(string password)
         {
             var ASCIIPassword = Encoding.ASCII.GetBytes(password);
