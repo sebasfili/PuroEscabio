@@ -116,24 +116,24 @@ namespace PuroEscabio.wsPuroEscabio {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/PedidoDeStockPorSucursal", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public StockResponse PedidoDeStockPorSucursal(StockRequest stockReq) {
+        public StockResponse PedidoDeStockPorSucursal(int idSucursal) {
             object[] results = this.Invoke("PedidoDeStockPorSucursal", new object[] {
-                        stockReq});
+                        idSucursal});
             return ((StockResponse)(results[0]));
         }
         
         /// <remarks/>
-        public void PedidoDeStockPorSucursalAsync(StockRequest stockReq) {
-            this.PedidoDeStockPorSucursalAsync(stockReq, null);
+        public void PedidoDeStockPorSucursalAsync(int idSucursal) {
+            this.PedidoDeStockPorSucursalAsync(idSucursal, null);
         }
         
         /// <remarks/>
-        public void PedidoDeStockPorSucursalAsync(StockRequest stockReq, object userState) {
+        public void PedidoDeStockPorSucursalAsync(int idSucursal, object userState) {
             if ((this.PedidoDeStockPorSucursalOperationCompleted == null)) {
                 this.PedidoDeStockPorSucursalOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPedidoDeStockPorSucursalOperationCompleted);
             }
             this.InvokeAsync("PedidoDeStockPorSucursal", new object[] {
-                        stockReq}, this.PedidoDeStockPorSucursalOperationCompleted, userState);
+                        idSucursal}, this.PedidoDeStockPorSucursalOperationCompleted, userState);
         }
         
         private void OnPedidoDeStockPorSucursalOperationCompleted(object arg) {

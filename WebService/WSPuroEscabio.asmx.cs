@@ -49,12 +49,31 @@ namespace WebService
 
         //pedido de stock por sucursal
         [WebMethod]
-        public StockResponse PedidoDeStockPorSucursal(StockRequest stockReq)
+        public StockResponse PedidoDeStockPorSucursal(int idSucursal)
         {
-            var wsDAL = new WebserviceDAL();
-            wsDAL.ObtenerStockPorSucursal();
-            StockResponse result = null;
-            return result;
+            var wsDAL = new WebserviceDAL();           
+            var result = wsDAL.ObtenerStockPorSucursal(idSucursal);
+
+            var stockResponse = new StockResponse()
+            {
+                ProductosARenovar = new List<BebidasBE>(),
+                ProductosEnStock = new List<BebidasBE>()
+            };
+
+            result.ForEach(bebida =>
+            {
+
+                if (bebida.StockActual < bebida.StockMinimo)
+                {
+                    stockResponse.ProductosARenovar.Add(bebida);
+                }
+                else
+                {
+                    stockResponse.ProductosEnStock.Add(bebida);
+                }
+            });
+
+            return stockResponse;
         }
 
         //Responde con la foto actual de como queda el stock.

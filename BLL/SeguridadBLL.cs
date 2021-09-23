@@ -35,6 +35,27 @@ namespace BLL
 
         }
 
+        public List<SucursalBE> ObtenerSucursales()
+        {
+            var seguridad = new SeguridadDAL();
+            var result = seguridad.ObtenerSucursales();
+            var sucursales = new List<SucursalBE>();
+
+            result.ForEach(suc =>
+            {
+
+                var sucursalBe = new SucursalBE()
+                {
+                    Descripcion = suc.Descripcion,
+                    Id = suc.Id
+                };
+
+                sucursales.Add(sucursalBe);
+            });
+
+            return sucursales;
+        }
+
         public string EncriptarClaveDeUsuario(string password)
         {
             var ASCIIPassword = Encoding.ASCII.GetBytes(password);

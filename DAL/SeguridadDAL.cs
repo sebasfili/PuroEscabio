@@ -37,6 +37,16 @@ namespace DAL
             }
         }
 
+        public List<Sucursal> ObtenerSucursales()
+        {
+            using (var dbContext = new PuroEscabioDataContext())
+            {
+                var query = (from suc in dbContext.Sucursals select suc).ToList();
+
+                return query;
+            }
+        }
+
         public void RecalcularDigitoVerificadorVerticalTodos()
         {
             using (var dbContext = new PuroEscabioDataContext())
@@ -45,7 +55,7 @@ namespace DAL
 
                 foreach (var row in rowsToHash)
                 {
-                   
+
 
                 }
 
@@ -53,7 +63,7 @@ namespace DAL
 
                 foreach (var row in bebidaRows)
                 {
-                    
+
                 }
 
                 dbContext.SubmitChanges();

@@ -1,5 +1,7 @@
-﻿using PuroEscabio.wsPuroEscabio;
+﻿using BLL;
+using PuroEscabio.wsPuroEscabio;
 using System;
+using System.Web.UI.WebControls;
 
 namespace PuroEscabio.Security
 {
@@ -9,7 +11,7 @@ namespace PuroEscabio.Security
         {
             if (!Page.IsPostBack)
             {
-                var ws = new WebService1();                
+                var ws = new WebService1();
                 var result = ws.PedidoDeStock();
 
                 gvStock.DataSource = result.ProductosEnStock;
@@ -19,9 +21,72 @@ namespace PuroEscabio.Security
                 gvNoStock.DataSource = result.ProductosARenovar;
                 gvNoStock.AutoGenerateColumns = true;
                 gvNoStock.DataBind();
+
+                ObtenerSucursales();
+
             }
         }
 
-        
+        private void ObtenerSucursales()
+        {
+            var seguridad = new SeguridadBLL();
+            var result = seguridad.ObtenerSucursales();
+
+            dpSucursales.DataSource = null;
+            dpSucursales.Items.Clear();
+
+            dpSucursales.Items.Add(new ListItem() { Text = "Selecciona una Sucursal", Value = "NoSucursal" });
+
+            result.ForEach(suc =>
+            {
+                var listItem = new ListItem()
+                {
+                    Text = suc.Descripcion,
+                    Value = suc.Id.ToString()
+                };
+                dpSucursales.Items.Add(listItem);
+            });
+
+
+            dpSucursales.DataBind();
+
+        }
+
+        protected void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void dpSucursales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblErrorSucursal.Visible = false;
+            
+
+            if (dpSucursales.SelectedValue != "NoSucursal")
+            {
+                var ws = new WebService1();
+                int idSucursal = int.Parse(dpSucursales.SelectedValue);
+
+                var result = ws.PedidoDeStockPorSucursal(idSucursal);
+
+                gvSucStock.DataSource = result.ProductosEnStock;
+                gvSucStock.AutoGenerateColumns = true;
+                gvSucStock.DataBind();
+
+
+                gvSucNoStock.DataSource = result.ProductosARenovar;
+                gvSucNoStock.AutoGenerateColumns = true;
+                gvSucNoStock.DataBind();
+
+
+                updateGrids.Update();
+
+            }
+            else
+            {
+                lblErrorSucursal.Visible = true;
+            
+            }
+        }
     }
 }
