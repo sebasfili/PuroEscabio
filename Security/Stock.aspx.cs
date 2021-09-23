@@ -60,10 +60,13 @@ namespace PuroEscabio.Security
         protected void dpSucursales_SelectedIndexChanged(object sender, EventArgs e)
         {
             lblErrorSucursal.Visible = false;
-            
+
 
             if (dpSucursales.SelectedValue != "NoSucursal")
             {
+                lblGridInfo1.Visible = false;
+                lblGridInfo2.Visible = false;
+
                 var ws = new WebService1();
                 int idSucursal = int.Parse(dpSucursales.SelectedValue);
 
@@ -85,7 +88,20 @@ namespace PuroEscabio.Security
             else
             {
                 lblErrorSucursal.Visible = true;
-            
+                lblGridInfo1.Visible = true;
+                lblGridInfo2.Visible = true;
+
+                gvSucStock.DataSource = null;
+                gvSucStock.AutoGenerateColumns = true;
+                gvSucStock.DataBind();
+
+
+                gvSucNoStock.DataSource = null;
+                gvSucNoStock.AutoGenerateColumns = true;
+                gvSucNoStock.DataBind();
+
+                updateGrids.Update();
+
             }
         }
     }

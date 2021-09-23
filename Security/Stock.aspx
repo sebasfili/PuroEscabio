@@ -56,9 +56,15 @@
                         <asp:UpdatePanel ID="updateGrids" runat="server" UpdateMode="Conditional">
                             <ContentTemplate>
                                 <h3>Con Stock</h3>
+                                <br />
+                                <asp:Label Text="Seleccione una Sucursal para ver los resultados" ID="lblGridInfo1" CssClass="alert alert-info" role="alert" runat="server" />
                                 <asp:GridView runat="server" ID="gvSucStock" PageSize="15" Width="90%" CssClass="table table-hover table-dark table-striped" HorizontalAlign="Center"></asp:GridView>
+                                <br />
                                 <h3>Stock Faltante</h3>
+                                <br />
+                                <asp:Label Text="Seleccione una Sucursal para ver los resultados" ID="lblGridInfo2" CssClass="alert alert-info" role="alert" runat="server" />
                                 <asp:GridView runat="server" ID="gvSucNoStock" PageSize="15" Width="90%" CssClass="table table-hover table-dark table-striped" HorizontalAlign="Center"></asp:GridView>
+                                <br />
                             </ContentTemplate>
                         </asp:UpdatePanel>
                     </div>
