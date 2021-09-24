@@ -22,7 +22,8 @@ namespace WebService.Repository
                                  StockActual = prod_suc.stock_actual,
                                  StockMinimo = prod_suc.stock_min,
                                  SKU = prod.SKU,
-                                 Sucursal = suc.Descripcion
+                                 Sucursal = suc.Descripcion,
+                                 Precio = prod.Precio
 
                              }).ToList();
 
@@ -50,12 +51,12 @@ namespace WebService.Repository
 
                         dbContext.SubmitChanges();
                         transaction.Complete();
-                        
+
                         return true;
                     }
                     else
                     {
-                        
+
                         return false;
                     }
                 }
@@ -76,7 +77,8 @@ namespace WebService.Repository
                                  StockActual = prod_suc.stock_actual,
                                  StockMinimo = prod_suc.stock_min,
                                  SKU = prod.SKU,
-                                 Sucursal = suc.Descripcion
+                                 Sucursal = suc.Descripcion,
+                                 Precio = prod.Precio
 
                              }).ToList();
 
