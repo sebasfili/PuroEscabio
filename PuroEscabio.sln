@@ -16,11 +16,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{8
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{F09FEDC6-CA11-442A-A8CF-6B143B8100BD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuroEscabio.App.Android", "..\PuroEscabio.App\PuroEscabio.App.Android\PuroEscabio.App.Android.csproj", "{3A4696DA-CF5D-4E60-81EC-11704A717565}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuroEscabio.App", "PuroEscabio.App\PuroEscabio.App\PuroEscabio.App.csproj", "{943954CE-3721-4ACD-AA25-403B4C965BFE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PuroEscabio.App", "..\PuroEscabio.App\PuroEscabio.App\PuroEscabio.App.csproj", "{0ED5FE50-DAE6-44C9-88D2-33540AC31005}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{C17366F9-83A9-404D-966A-5C19B6879314}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuroEscabio.App.Android", "PuroEscabio.App\PuroEscabio.App.Android\PuroEscabio.App.Android.csproj", "{3A4696DA-CF5D-4E60-81EC-11704A717565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,23 +46,19 @@ Global
 		{F09FEDC6-CA11-442A-A8CF-6B143B8100BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F09FEDC6-CA11-442A-A8CF-6B143B8100BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F09FEDC6-CA11-442A-A8CF-6B143B8100BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{943954CE-3721-4ACD-AA25-403B4C965BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{943954CE-3721-4ACD-AA25-403B4C965BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{943954CE-3721-4ACD-AA25-403B4C965BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{943954CE-3721-4ACD-AA25-403B4C965BFE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A4696DA-CF5D-4E60-81EC-11704A717565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A4696DA-CF5D-4E60-81EC-11704A717565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A4696DA-CF5D-4E60-81EC-11704A717565}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{3A4696DA-CF5D-4E60-81EC-11704A717565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A4696DA-CF5D-4E60-81EC-11704A717565}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A4696DA-CF5D-4E60-81EC-11704A717565}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{0ED5FE50-DAE6-44C9-88D2-33540AC31005}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0ED5FE50-DAE6-44C9-88D2-33540AC31005}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0ED5FE50-DAE6-44C9-88D2-33540AC31005}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0ED5FE50-DAE6-44C9-88D2-33540AC31005}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{3A4696DA-CF5D-4E60-81EC-11704A717565} = {C17366F9-83A9-404D-966A-5C19B6879314}
-		{0ED5FE50-DAE6-44C9-88D2-33540AC31005} = {C17366F9-83A9-404D-966A-5C19B6879314}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1C17398F-92CA-49E6-A99E-57FEFF0B4ADC}
