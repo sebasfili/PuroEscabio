@@ -1,16 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Xamarin.Forms;
 
-namespace PuroEscabio.App
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+
+namespace PuroEscabio.App.Views
 {
-    public partial class MainPage : ContentPage
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class AddPage : ContentPage
     {
-        public MainPage()
+        public AddPage()
         {
             InitializeComponent();
         }

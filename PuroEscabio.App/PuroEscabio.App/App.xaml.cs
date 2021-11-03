@@ -1,6 +1,5 @@
-﻿using System;
+﻿using PuroEscabio.App.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace PuroEscabio.App
 {
@@ -10,7 +9,7 @@ namespace PuroEscabio.App
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new HomePage());
         }
 
         protected override void OnStart()
