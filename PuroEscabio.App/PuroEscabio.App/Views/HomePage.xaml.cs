@@ -19,7 +19,7 @@ namespace PuroEscabio.App.Views
 
         private async void ToolbarItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new AddPage());
+            await Navigation.PushAsync(new AddPage(), true);
         }
     }
 }

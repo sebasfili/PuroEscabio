@@ -9,7 +9,12 @@ namespace PuroEscabio.App
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new HomePage());
+            MainPage = new NavigationPage(new HomePage())
+            {
+                BarBackgroundColor = Color.FromHex("#f39c12"),
+                BarTextColor = Color.Accent
+            };
+
         }
 
         protected override void OnStart()
