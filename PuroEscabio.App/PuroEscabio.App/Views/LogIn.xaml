@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PuroEscabio.App.Views.LogIn" 
+             Title="Puro Escabio - Ingresar">
+
+    <Grid ColumnSpacing="0" RowSpacing="0" Padding="30"  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Label Text="Usuario" 
+               VerticalOptions="Center" 
+               HorizontalOptions="StartAndExpand" 
+               Grid.Column="0" 
+               Grid.Row="0" 
+               FontSize="20"></Label>
+        <Entry x:Name="EnUser" 
+               HorizontalOptions="FillAndExpand" 
+               VerticalOptions="Center" 
+               Grid.Row="0" 
+               Grid.Column="1"
+              Grid.ColumnSpan="2"  
+               FontSize="20"></Entry>
+        <Label Text="Contraseña" 
+               VerticalOptions="Center" 
+               HorizontalOptions="StartAndExpand" 
+               Grid.Column="0" 
+               Grid.Row="1"  
+               FontSize="20"></Label>
+        <Entry x:Name="EnPassword" 
+               VerticalOptions="Center" 
+               HorizontalOptions="FillAndExpand"  
+               Grid.Column="1"
+               Grid.ColumnSpan="2" 
+               Grid.Row="1"  
+               FontSize="20"></Entry>
+        <Button Text="Aceptar" 
+                Grid.Row="2"
+                Grid.ColumnSpan="3"                
+                FontSize="20" 
+                Clicked="Button_Clicked_1"/>
+    </Grid>
+        
+ 
+</ContentPage>
