@@ -3,6 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PuroEscabio.App.Views.ProductList" Title="Productos">
 
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Comprar" Clicked="ToolbarItem_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
     <ListView ItemsSource="{Binding Products}" 
               RowHeight="50"
               SeparatorColor="OrangeRed"
@@ -26,11 +30,11 @@
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
                             <Image Source="brahamaLata.jfif" Aspect="AspectFit" Grid.Column="0"></Image>
-                            <Label Text="{Binding ProductName }"
+                            <Label Text="{Binding ProductAndCost }"
                                    Grid.Column="1"></Label>
-                            
+
                             <CheckBox Grid.Column="2" HorizontalOptions="Center" ></CheckBox>
-                            
+
                         </Grid>
                     </ViewCell.View>
                 </ViewCell>

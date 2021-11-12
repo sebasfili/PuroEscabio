@@ -41,7 +41,8 @@
                Grid.Column="1"
                Grid.ColumnSpan="2" 
                Grid.Row="1"  
-               FontSize="20"></Entry>
+               FontSize="20"
+               IsPassword="True"></Entry>
         <Button Text="Aceptar" 
                 Grid.Row="2"
                 Grid.ColumnSpan="3"                

@@ -16,8 +16,16 @@ namespace PuroEscabio.App.Views
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            await DisplayAlert("Puro Escabio", $"Ingresó como {EnUser.Text} - {EnPassword.Text}", "Aceptar");
-            await Navigation.PushAsync(new ProductList(), true);
+            if (!string.IsNullOrWhiteSpace(EnUser.Text) && !string.IsNullOrWhiteSpace(EnPassword.Text))
+            {
+                await Navigation.PushAsync(new ProductList(), true);
+            }
+            else
+            {
+                await DisplayAlert("Puro Escabio", $"Debe ingresar el Usuario y Contraseña", "Aceptar");
+
+            }
+
         }
     }
 }
