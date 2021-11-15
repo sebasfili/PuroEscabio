@@ -10,7 +10,8 @@
     <ListView ItemsSource="{Binding Products}" 
               RowHeight="50"
               SeparatorColor="OrangeRed"
-              HasUnevenRows="True">
+              HasUnevenRows="True"
+              >
         <ListView.HeaderTemplate>
             <DataTemplate>
                 <StackLayout Orientation="Horizontal"
@@ -33,7 +34,7 @@
                             <Label Text="{Binding ProductAndCost }"
                                    Grid.Column="1"></Label>
 
-                            <CheckBox Grid.Column="2" HorizontalOptions="Center" ></CheckBox>
+                            <CheckBox Grid.Column="2" HorizontalOptions="Center"  x:Name="chkBebida" IsChecked="{Binding Selected}" ></CheckBox>
 
                         </Grid>
                     </ViewCell.View>

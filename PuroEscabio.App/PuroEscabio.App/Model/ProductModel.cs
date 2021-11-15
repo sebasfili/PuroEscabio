@@ -9,6 +9,9 @@ namespace PuroEscabio.App.Model
         public string ProductName { get; set; }
         public decimal Cost { get; set; }
         public string ProductAndCost => $"{ProductName} - ${Cost}";
-        
+        public string SKU { get; set; }
+
+        public bool Selected { get; set; }
+
     }
 }

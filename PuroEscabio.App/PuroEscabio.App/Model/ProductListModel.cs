@@ -9,7 +9,7 @@ namespace PuroEscabio.App.Model
         public ProductListModel()
         {
             Hydrator<ProductModel> prodHydrator = new Hydrator<ProductModel>();
-            Products = prodHydrator.GetList(51);
+            Products = prodHydrator.GetList(15);
         }
 
         public IList<ProductModel> Products { get; set; }

@@ -9,16 +9,21 @@ namespace PuroEscabio.App.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ProductList : ContentPage
     {
+        private ProductListModel products;
         public ProductList()
         {
             InitializeComponent();
-            BindingContext = new ProductListModel();
+            products = new ProductListModel();
+            BindingContext = products;
+
               
         }
 
         private async void ToolbarItem_Clicked(object sender, System.EventArgs e)
         {
-            await Navigation.PushAsync(new ConfirmPurchase(), true);
+            await Navigation.PushAsync(new ConfirmPurchase(products), true);
         }
+
+       
     }
 }

@@ -1,12 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PuroEscabio.App.Views.ConfirmPurchase">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="PuroEscabio.App.Views.ConfirmPurchase"
+             Title="Finalizar compra">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Confirmar" x:Name="confirm" Clicked="confirm_Clicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    <ListView ItemsSource="{Binding .}" 
+              RowHeight="50"
+              SeparatorColor="OrangeRed"
+              HasUnevenRows="True"
+              >
+        <ListView.HeaderTemplate>
+            <DataTemplate>
+                <StackLayout Orientation="Horizontal"
+                              HorizontalOptions="Center">
+                    <Label Text="Listado de Productos"></Label>
+                </StackLayout>
+            </DataTemplate>
+        </ListView.HeaderTemplate>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Source="brahamaLata.jfif" Aspect="AspectFit" Grid.Column="0"></Image>
+                            <Label Text="{Binding ProductAndCost }"
+                                   Grid.Column="1"></Label>                          
+
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.FooterTemplate>
+            <DataTemplate>
+                <StackLayout Orientation="Horizontal"
+                              HorizontalOptions="Center">
+                    <Label Text="TP MCGA - Puro Escabio©"></Label>
+                </StackLayout>
+            </DataTemplate>
+        </ListView.FooterTemplate>
+    </ListView>
 </ContentPage>
