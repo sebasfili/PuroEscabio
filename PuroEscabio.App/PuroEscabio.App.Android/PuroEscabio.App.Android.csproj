@@ -73,7 +73,28 @@
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon.xml" />
     <AndroidResource Include="Resources\mipmap-anydpi-v26\icon_round.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\brahamaLitro.jfif" />
+    <AndroidResource Include="Resources\drawable\campari.jfif" />
+    <AndroidResource Include="Resources\drawable\champagneChandon.jfif" />
+    <AndroidResource Include="Resources\drawable\champagneNavarrocorrea.jfif" />
+    <AndroidResource Include="Resources\drawable\champagneVaronb.jfif" />
+    <AndroidResource Include="Resources\drawable\coronaLata.jfif" />
+    <AndroidResource Include="Resources\drawable\coronaPersonal.jfif" />
+    <AndroidResource Include="Resources\drawable\descarga.gif" />
+    <AndroidResource Include="Resources\drawable\fernet1982.jfif" />
+    <AndroidResource Include="Resources\drawable\fernetBranca.jfif" />
+    <AndroidResource Include="Resources\drawable\gancia.jfif" />
+    <AndroidResource Include="Resources\drawable\patagoniaLata.jfif" />
+    <AndroidResource Include="Resources\drawable\patagoniaLitro.jfif" />
+    <AndroidResource Include="Resources\drawable\vinoCalia.jfif" />
+    <AndroidResource Include="Resources\drawable\vinoDonvalentin.jfif" />
+    <AndroidResource Include="Resources\drawable\vinoLopez.jfif" />
+    <AndroidResource Include="Resources\drawable\vodkaSmirnoff.jfif" />
+    <AndroidResource Include="Resources\drawable\wiskyJackdaniels.jfif" />
+    <AndroidResource Include="Resources\drawable\wiskySingleton.jfif" />
+    <AndroidResource Include="Resources\drawable\wiskySmuggler.jfif" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PuroEscabio.App\PuroEscabio.App.csproj">
       <Project>{36308EA4-E61B-44D5-8480-152AE068EF0E}</Project>

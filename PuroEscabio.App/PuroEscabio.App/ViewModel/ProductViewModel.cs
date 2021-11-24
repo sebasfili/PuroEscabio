@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace PuroEscabio.App.Model
+﻿namespace PuroEscabio.App.ViewModel
 {
-    public class ProductModel
+    public class ProductViewModel
     {
         public string ProductName { get; set; }
         public decimal Cost { get; set; }
         public string ProductAndCost => $"{ProductName} - ${Cost}";
         public string SKU { get; set; }
-
+        public string PicName { get; set; }
         public bool Selected { get; set; }
-
     }
 }
