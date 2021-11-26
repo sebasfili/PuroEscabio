@@ -1,7 +1,6 @@
 ﻿using BLL;
 using PuroEscabio.wsPuroEscabio;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Web.UI.WebControls;
 using System.Xml;
