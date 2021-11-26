@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<ArrayOfBebidasBE xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BebidasBE>
+    <ID>1</ID>
+    <SKU>2222</SKU>
+    <Descripcion>desc</Descripcion>
+    <Precio>101.03</Precio>
+    <DigVerificador>2</DigVerificador>
+    <StockMinimo>3</StockMinimo>
+    <StockActual>123</StockActual>
+    <Sucursal>VL</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <ID>1</ID>
+    <SKU>2222</SKU>
+    <Descripcion>desc</Descripcion>
+    <Precio>101.03</Precio>
+    <DigVerificador>2</DigVerificador>
+    <StockMinimo>3</StockMinimo>
+    <StockActual>123</StockActual>
+    <Sucursal>VL</Sucursal>
+  </BebidasBE>
+</ArrayOfBebidasBE>

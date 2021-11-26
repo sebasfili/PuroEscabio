@@ -1,7 +1,11 @@
 ﻿using BLL;
 using PuroEscabio.wsPuroEscabio;
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Web.UI.WebControls;
+using System.Xml;
+using System.Xml.Serialization;
 
 namespace PuroEscabio.Security
 {
@@ -13,8 +17,10 @@ namespace PuroEscabio.Security
             {
                 var ws = new WebService1();
                 var result = ws.PedidoDeStock();
+                SerializeStock(result);
+              
 
-                gvStock.DataSource = result.ProductosEnStock;
+                gvStock.DataSource = ReadStockFromXml();
                 gvStock.AutoGenerateColumns = true;
                 gvStock.DataBind();
 
@@ -26,6 +32,33 @@ namespace PuroEscabio.Security
                 ObtenerProductos();
 
             }
+        }
+
+        private void SerializeStock(StockResponse result)
+        {
+            XmlSerializer writer = new XmlSerializer(typeof(BebidasBE[]));
+
+            var path = Path.Combine(Server.MapPath("~/Security"), "stock.xml");
+            FileStream file = File.Create(path);
+
+            writer.Serialize(file, result.ProductosEnStock);
+            file.Close();
+
+        }
+
+        public BebidasBE[] ReadStockFromXml()
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(BebidasBE[]));
+            BebidasBE[] bebidas;
+
+            var path = Path.Combine(Server.MapPath("~/Security"), "stock.xml");
+
+            using (XmlReader reader = XmlReader.Create(path))
+            {
+                bebidas = (BebidasBE[])ser.Deserialize(reader);
+            }
+
+            return bebidas;
         }
 
         private void ObtenerProductos()

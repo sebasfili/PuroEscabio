@@ -30,7 +30,7 @@
                                 <ColumnDefinition></ColumnDefinition>
                                 <ColumnDefinition></ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Image Source="brahamaLata.jfif" Aspect="AspectFit" Grid.Column="0"></Image>
+                            <Image Source="{Binding PicName}" Aspect="AspectFit" Grid.Column="0"></Image>
                             <Label Text="{Binding ProductAndCost }"
                                    Grid.Column="1"></Label>                          
 

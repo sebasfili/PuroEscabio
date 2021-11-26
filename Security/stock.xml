@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<ArrayOfBebidasBE xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">GIN456AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Gin</Descripcion>
+    <Precio xmlns="http://tempuri.org/">500.50</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">200</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">400</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Almagro</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">VOD789AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Vodka</Descripcion>
+    <Precio xmlns="http://tempuri.org/">650.00</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">100</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">500</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Caballito</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">GIN456AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Gin</Descripcion>
+    <Precio xmlns="http://tempuri.org/">500.50</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">200</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">400</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Caballito</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">PIS123AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Pisco</Descripcion>
+    <Precio xmlns="http://tempuri.org/">750.75</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">100</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">300</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Caballito</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">VOD789AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Vodka</Descripcion>
+    <Precio xmlns="http://tempuri.org/">650.00</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">200</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">500</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Villa Luro</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">PIS123AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Pisco</Descripcion>
+    <Precio xmlns="http://tempuri.org/">750.75</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">100</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">300</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Villa Luro</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">GIN456AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Gin</Descripcion>
+    <Precio xmlns="http://tempuri.org/">500.50</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">60</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">400</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Villa Crespo</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">VOD789AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Vodka</Descripcion>
+    <Precio xmlns="http://tempuri.org/">650.00</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">100</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">101</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Villa Crespo</Sucursal>
+  </BebidasBE>
+  <BebidasBE>
+    <Id xmlns="http://tempuri.org/">0</Id>
+    <SKU xmlns="http://tempuri.org/">GIN456AR</SKU>
+    <Descripcion xmlns="http://tempuri.org/">Gin</Descripcion>
+    <Precio xmlns="http://tempuri.org/">500.50</Precio>
+    <StockMinimo xmlns="http://tempuri.org/">500</StockMinimo>
+    <StockActual xmlns="http://tempuri.org/">600</StockActual>
+    <Sucursal xmlns="http://tempuri.org/">Floresta</Sucursal>
+  </BebidasBE>
+</ArrayOfBebidasBE>
